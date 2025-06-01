@@ -27,7 +27,10 @@ const DrawerContent = ({ navItems, handleDrawerToggle }: Props) => {
           <ListItem key={item.linkText} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
               <Link href={item.url}>
-                <ListItemText primary={item.linkText} />
+                <ListItemText
+                  primary={item.linkText}
+                  sx={{ color: 'black !important' }}
+                />
               </Link>
             </ListItemButton>
           </ListItem>

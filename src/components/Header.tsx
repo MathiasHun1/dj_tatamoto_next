@@ -1,6 +1,9 @@
 'use client';
 
+import { motion } from 'motion/react';
 import * as React from 'react';
+import Link from 'next/link';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -9,10 +12,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { motion } from 'motion/react';
-import Link from 'next/link';
+import Container from '@mui/material/Container';
 import DrawerContent from './DrawerContent';
 import useHideAnimation from '@/hooks/useHideAnimation';
+import DecorWave from './DecorWave';
 
 const drawerWidth = 240;
 const navItems = [
@@ -47,48 +50,55 @@ export default function Header() {
   };
 
   return (
-    <motion.div
-      style={{
-        width: '100%',
-        background: 'red',
-        position: 'sticky',
-        top: '0px',
-      }}
-      data-element="header-container"
-      animate={isHidden ? 'hidden' : 'visible'}
-      variants={containerVariants}
-      transition={{
-        duration: 0.4,
-        ease: 'easeInOut',
-      }}
-    >
-      <Box sx={{ display: 'flex' }}>
-        <AppBar component="nav" sx={{ position: 'static' }}>
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: 'none' } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            >
-              MUI
-            </Typography>
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              {navItems.map((item) => (
-                <Button key={item.linkText} sx={{ color: '#fff' }}>
-                  <Link href={item.url}>{item.linkText}</Link>
-                </Button>
-              ))}
-            </Box>
-          </Toolbar>
+    <>
+      <motion.header
+        style={{
+          width: '100%',
+          position: 'fixed',
+          top: '0px',
+        }}
+        data-element="header-motion-container"
+        animate={isHidden ? 'hidden' : 'visible'}
+        variants={containerVariants}
+        transition={{
+          duration: 0.35,
+          ease: 'easeInOut',
+        }}
+      >
+        <AppBar
+          component="nav"
+          sx={{
+            position: 'static',
+            boxShadow: 'none',
+          }}
+        >
+          <Container maxWidth="lg" disableGutters>
+            <Toolbar data-id="header-toolbar">
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { sm: 'none' } }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+              >
+                MUI
+              </Typography>
+              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                {navItems.map((item) => (
+                  <Button key={item.linkText} sx={{ color: '#fff' }}>
+                    <Link href={item.url}>{item.linkText}</Link>
+                  </Button>
+                ))}
+              </Box>
+            </Toolbar>
+          </Container>
         </AppBar>
         <nav>
           <Drawer
@@ -112,7 +122,19 @@ export default function Header() {
             />
           </Drawer>
         </nav>
-      </Box>
-    </motion.div>
+        <Box
+          data-id="decor-svg-container"
+          sx={{
+            position: '',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: { xs: '50px', md: '100px' },
+          }}
+        >
+          <DecorWave />
+        </Box>
+      </motion.header>
+    </>
   );
 }

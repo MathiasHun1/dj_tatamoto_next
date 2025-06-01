@@ -5,8 +5,9 @@ import theme from '../theme';
 import type { Metadata } from 'next';
 import './globals.css';
 
-import { Box, CssBaseline, Container } from '@mui/material';
 import Header from '@/components/Header';
+import Main from '@/components/Main';
+import Footer from '@/components/Footer';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -29,14 +30,10 @@ export default function RootLayout({
     <html lang="hu" className={roboto.variable}>
       <body>
         <AppRouterCacheProvider>
-          <CssBaseline />
           <ThemeProvider theme={theme}>
-            <Container maxWidth="lg" data-id="app-container">
-              <Header />
-              <Box component="main" sx={{ pt: 15 }}>
-                {children}
-              </Box>
-            </Container>
+            <Header />
+            <Main>{children}</Main>
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

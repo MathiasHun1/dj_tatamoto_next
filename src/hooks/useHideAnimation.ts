@@ -1,6 +1,10 @@
 import { useState, useRef } from 'react';
 import { useScroll, useMotionValueEvent } from 'motion/react';
-import { HIDE_NAV_VALUE, SHOW_NAV_VALUE } from '@/constants';
+import {
+  HIDE_NAV_VALUE,
+  SHOW_NAV_VALUE,
+  HIDE_NAV_THRESHOLD,
+} from '@/constants';
 
 const useHideAnimation = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -22,7 +26,7 @@ const useHideAnimation = () => {
       scrollState.up++;
     }
 
-    if (current < 150 && isHidden) {
+    if (current < HIDE_NAV_THRESHOLD && isHidden) {
       return setIsHidden(false);
     }
 
