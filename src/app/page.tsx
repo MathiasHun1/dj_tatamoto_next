@@ -1,11 +1,11 @@
-import { Box, Container, Stack, Typography } from '@mui/material';
+import { Box, Container, Stack, Typography, Paper } from '@mui/material';
 import HeroSection from '@/components/HeroSection';
 import Logo from '@/components/Logo';
 import { grey } from '@mui/material/colors';
 import Link from 'next/link';
 
 import DecorLine from '@/components/DecorLine';
-import CheckIcon from '@mui/icons-material/Check';
+import WhyMeList from '@/components/pages/home/WhyMeList';
 
 export default function Home() {
   return (
@@ -66,13 +66,17 @@ export default function Home() {
         sx={{ position: 'relative', backgroundColor: grey[900] }}
       >
         <Box sx={{ pt: 5 }}>
-          <Typography variant="h4" color="text.secondary" sx={{ mb: 3 }}>
+          <Typography
+            variant="h4"
+            color="text.secondary"
+            sx={{ mb: 3, textTransform: 'uppercase', textAlign: 'center' }}
+          >
             Üdvözöllek!
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
-            sx={{ textAlign: 'justify', mb: 3}}
+            sx={{ textAlign: 'justify', mb: 3 }}
           >
             A nevem Magyari László, avagy Dj TataMoto. Évtizedes tapasztalattal
             vállalok zeneszolgáltatást esküvőkre, céges bulikra és egyéb
@@ -81,23 +85,18 @@ export default function Home() {
           </Typography>
 
           <Link href="/bemutatkozas">
-            <Typography variant="h5" color="secondary" sx={{textDecoration: "underline"}}>
-              Hosszabb bemutatkozás itt ->
+            <Typography
+              variant="h5"
+              color="secondary"
+              sx={{ textDecoration: 'underline' }}
+            >
+              Hosszabb bemutatkozás itt -
             </Typography>
           </Link>
         </Box>
 
-        <Box component="section" sx={{pt: 8}}>
-            <Typography variant="h4" color="text.secondary">
-              Miért érdemes engem választanod?
-            </Typography>
-            <Stack component='ul'>
-              <Stack component="li" direction="row">
-                <Box>
-                  <CheckIcon color='secondary' fontSize='large'/>
-                </Box>
-              </Stack>
-            </Stack>
+        <Box component="section" sx={{ pt: 18 }}>
+          <WhyMeList />
         </Box>
       </Container>
     </>

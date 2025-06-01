@@ -56,6 +56,8 @@ export default function Header() {
           width: '100%',
           position: 'fixed',
           top: '0px',
+          zIndex: 1000,
+          isolation: 'isolate',
         }}
         data-element="header-motion-container"
         animate={isHidden ? 'hidden' : 'visible'}
