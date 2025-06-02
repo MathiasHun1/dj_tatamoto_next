@@ -6,23 +6,23 @@ import { grey } from '@mui/material/colors';
 const cards = [
   {
     title: 'Jogtiszta szolgáltatás',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus iusto quam ullam nostrum quidem dolorum ex id exercitationem temporibus, eaque ipsa! Aut emporibus, quo officiis recusandae facilis totam ullam nostrum!',
+    body: 'MAHASZ jogdíjjal rendelkezem. Számlaképes szolgáltatóként, minden esetben ÁFA-mentes számla készül.',
   },
   {
-    title: 'Jogtiszta szolgáltatás',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus iusto quam ullam nostrum quidem dolorum ex id exercitationem temporibus, eaque ipsa! Aut emporibus, quo officiis recusandae facilis totam ullam nostrum!',
+    title: 'Megbízthatóság',
+    body: 'Nálam nincsenek meglepetés költségek – amit megbeszélünk, azt kapjátok. Ha egyedi igényeitek vannak, a csomagokat rugalmasan alakítom, hogy minden a terveitek szerint alakuljon.',
   },
   {
-    title: 'Jogtiszta szolgáltatás',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus iusto quam ullam nostrum quidem dolorum ex id exercitationem temporibus, eaque ipsa! Aut emporibus, quo officiis recusandae facilis totam ullam nostrum!',
+    title: 'Minőségi hangzás és látvány',
+    body: 'Nagy teljesítményű professzionális hangrendszer, és programozható hangulatfények. A fények színvilága egyszerűen igazítható az esemény arculatához.',
   },
   {
-    title: 'Jogtiszta szolgáltatás',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus iusto quam ullam nostrum quidem dolorum ex id exercitationem temporibus, eaque ipsa! Aut emporibus, quo officiis recusandae facilis totam ullam nostrum!',
+    title: 'Színvonalas zenei szolgáltatás',
+    body: 'Több tízezer dal, a retrótól a mai toplistákig. Legyen pop, rock, funky vagy R&B – nálam mindenki megtalálja a kedvencét!',
   },
   {
-    title: 'Jogtiszta szolgáltatás',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus iusto quam ullam nostrum quidem dolorum ex id exercitationem temporibus, eaque ipsa! Aut emporibus, quo officiis recusandae facilis totam ullam nostrum!',
+    title: 'Elérhető ár, kompromisszumok nélkül',
+    body: 'A szolgáltatásaim nemcsak színvonalasak, hanem ár-érték arányban is kiemelkedőek. Hiszem, hogy a minőségi szórakoztatásnak nem kell vagyonba kerülnie.',
   },
 ];
 
