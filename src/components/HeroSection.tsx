@@ -1,16 +1,28 @@
+'use client';
+
 import { Theme } from '@emotion/react';
 import { Box, SxProps } from '@mui/material';
 import React from 'react';
 
 type Props = {
   backgroundURL: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   sx?: SxProps<Theme>;
+  mobileHeight?: number;
+  desktopHeight?: number;
 };
 
-const HeroSection = ({ backgroundURL, children, sx }: Props) => {
+const HeroSection = ({
+  backgroundURL,
+  children,
+  mobileHeight = 50,
+  desktopHeight = 50,
+  sx,
+}: Props) => {
   const boxStyles = {
-    height: { xs: '80dvh', md: '90dvh' },
+    position: 'relative',
+    zIndex: -10,
+    height: { xs: `${mobileHeight}dvh`, md: `${desktopHeight}dvh` },
     backgroundImage: `url(${backgroundURL})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',

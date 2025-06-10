@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Container, Stack, Typography } from '@mui/material';
 import HeroSection from '@/components/HeroSection';
 import Logo from '@/components/Logo';
@@ -12,8 +14,9 @@ export default function Home() {
   return (
     <>
       <HeroSection
-        backgroundURL="/hero.jpg"
-        sx={{ position: 'relative', zIndex: -10 }}
+        backgroundURL="/hero2.jpg"
+        mobileHeight={80}
+        desktopHeight={90}
       >
         <Stack
           data-id="stackElement"
@@ -82,7 +85,7 @@ export default function Home() {
             Üdvözöllek!
           </Typography>
           <Typography variant="body1" sx={{ textAlign: 'justify', mb: 3 }}>
-            A nevem Magyari László, avagy Dj TataMoto. Évtizedes tapasztalattal
+            A nevem Magyari László, avagy Dj TataMoto. Többéves tapasztalattal
             vállalok zeneszolgáltatást esküvőkre, céges bulikra és egyéb
             rendezvényekre – elérhető áron, megbízhatóan. Legyen szó retróról,
             mai slágerekről vagy egyedi kívánságokról, a jó hangulat garantált!
@@ -94,7 +97,7 @@ export default function Home() {
               color="secondary"
               sx={{ textDecoration: 'underline' }}
             >
-              Hosszabb bemutatkozás itt -
+              Hosszabb bemutatkozás itt
             </Typography>
           </Link>
         </Box>
