@@ -2,7 +2,7 @@
 
 import React from 'react';
 import HeroSection from '@/components/HeroSection';
-import { Typography, Container, Box, styled } from '@mui/material';
+import { Typography, Container, Box } from '@mui/material';
 import Image from 'next/image';
 
 const About = () => {
