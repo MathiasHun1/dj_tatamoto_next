@@ -22,7 +22,7 @@ const HeroSection = ({
   const boxStyles = {
     position: 'relative',
     zIndex: -10,
-    height: { xs: `${mobileHeight}%`, md: `${desktopHeight}%` },
+    height: { xs: `${mobileHeight}vh`, md: `${desktopHeight}vh` },
     backgroundImage: `url(${backgroundURL})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
