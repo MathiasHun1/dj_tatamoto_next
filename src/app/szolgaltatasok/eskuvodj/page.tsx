@@ -11,9 +11,9 @@ import CircleIcon from '@mui/icons-material/Circle';
 import { grey } from '@mui/material/colors';
 import Image from 'next/image';
 import { styled } from '@mui/material';
+import { relative } from 'path';
 
 const StyledBox = styled(Box)(({ theme }) => ({
-  marginBottom: '80px',
   position: 'relative',
   opacity: 0.8,
   '&:before': {
@@ -61,7 +61,7 @@ const howIWorkItems = [
 
 const page = () => {
   return (
-    <Container disableGutters maxWidth="lg">
+    <Container disableGutters maxWidth="lg" sx={{ pb: 5 }}>
       <HeroSection
         backgroundURL="/hero_wedding.avif"
         mobileHeight={40}
@@ -86,11 +86,16 @@ const page = () => {
         </Typography>
 
         <Box sx={{ pt: 10 }}>
-          <Typography component="h2" variant="h4" color="primary.light">
+          <Typography
+            component="h2"
+            variant="h4"
+            color="primary.light"
+            sx={{ pb: 5 }}
+          >
             Miért válassz engem az esküvődre?
           </Typography>
-          <List disablePadding sx={{ pt: 2 }}>
-            <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
+          <List disablePadding>
+            <ListItem disableGutters sx={{ pt: 0, alignItems: 'flex-start' }}>
               <CircleIcon
                 sx={{ width: '12px', mt: 0.5, mr: 2 }}
                 fontSize="small"
@@ -143,7 +148,7 @@ const page = () => {
         </Box>
       </Container>
 
-      <StyledBox>
+      <StyledBox sx={{ mb: 10 }}>
         <Image
           src="/wedding_2.avif"
           alt=""
@@ -176,6 +181,31 @@ const page = () => {
           </Box>
         </Box>
       </Container>
+
+      <StyledBox
+        sx={{
+          height: '250px',
+          position: 'relative',
+          zIndex: -0,
+          pb: 0,
+          '& img': {
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          },
+        }}
+      >
+        <Image
+          src="/wedding_3.jpg"
+          alt=""
+          width={500}
+          height={500}
+          priority={true}
+        />
+      </StyledBox>
+      <Typography variant="h5" color="text.primary">
+        Gyakran ismételt kérdések
+      </Typography>
     </Container>
   );
 };
