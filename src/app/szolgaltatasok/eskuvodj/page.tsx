@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+
 import HeroSection from '@/components/HeroSection';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -6,15 +7,46 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Box from '@mui/material/Box';
 import CircleIcon from '@mui/icons-material/Circle';
+import { grey } from '@mui/material/colors';
+import Image from 'next/image';
+import { styled } from '@mui/material';
+
+const StyledBox = styled(Box)(({ theme }) => ({
+  marginBottom: '80px',
+  position: 'relative',
+  opacity: 0.8,
+  '&:before': {
+    position: 'absolute',
+    content: '""',
+    inset: 0,
+    clipPath: 'polygon(0% 0%, 100% 0%, 0% 15%)',
+    backgroundColor: theme.palette.background.default,
+  },
+  '&:after': {
+    position: 'absolute',
+    content: '""',
+    inset: 0,
+    clipPath: 'polygon(0% 100%, 100% 100%, 100% 85%)',
+    backgroundColor: theme.palette.background.default,
+  },
+}));
 
 const page = () => {
   return (
-    <>
+    <Box>
       <HeroSection
         backgroundURL="/hero_wedding.avif"
         mobileHeight={40}
+        sx={{ '&:after': { opacity: 0.4 } }}
       ></HeroSection>
-      <Container maxWidth="lg" sx={{ py: 5 }}>
+      <Container
+        maxWidth="lg"
+        sx={{
+          py: 5,
+          background: (theme) =>
+            `linear-gradient(to bottom, ${grey[800]}, ${theme.palette.background.default}, ${grey[800]}, ${theme.palette.background.default})`,
+        }}
+      >
         <Typography variant="body1" color="text.primary">
           <Typography component="span" variant="h4" color="primary.light">
             Gratulálok
@@ -29,7 +61,7 @@ const page = () => {
           <Typography component="h2" variant="h4" color="primary.light">
             Miért válassz engem az esküvődre?
           </Typography>
-          <List>
+          <List sx={{ pt: 2 }}>
             <ListItem sx={{ alignItems: 'flex-start' }}>
               <CircleIcon
                 sx={{ width: '16px', mt: 0.5, mr: 2 }}
@@ -82,7 +114,17 @@ const page = () => {
           </List>
         </Box>
       </Container>
-    </>
+
+      <StyledBox>
+        <Image
+          src="/wedding_2.avif"
+          alt=""
+          width={500}
+          height={500}
+          priority={true}
+        />
+      </StyledBox>
+    </Box>
   );
 };
 
