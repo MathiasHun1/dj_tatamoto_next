@@ -16,7 +16,7 @@ export default function Home() {
       <HeroSection
         backgroundURL="/hero2.jpg"
         mobileHeight={80}
-        desktopHeight={90}
+        desktopHeight={60}
       >
         <Stack
           data-id="stackElement"

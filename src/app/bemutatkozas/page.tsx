@@ -11,7 +11,7 @@ const About = () => {
       {/* <Box sx={{ pt: 15 }}></Box> */}
       <HeroSection
         backgroundURL="/hero2.jpg"
-        mobileHeight={60}
+        mobileHeight={50}
         // sx={{ pt: 25, backgroundPosition: '0% 50%' }}
       ></HeroSection>
 
@@ -65,25 +65,6 @@ const About = () => {
           </Typography>
         </Box>
       </Container>
-
-      <Box
-        maxWidth="lg"
-        sx={{
-          height: '80px',
-          position: 'relative',
-          marginInline: 'auto',
-          filter: (theme) =>
-            `drop-shadow(0 0 1px ${theme.palette.primary.light})`,
-          '&:after': {
-            position: 'absolute',
-            content: '""',
-            inset: 0,
-            clipPath: 'polygon(0 70%, 100% 80%, 100% 20% , 0 0)',
-            background: (theme) =>
-              `linear-gradient(to right, ${theme.palette.primary.main}, ${theme.palette.primary.light})`,
-          },
-        }}
-      ></Box>
     </>
   );
 };

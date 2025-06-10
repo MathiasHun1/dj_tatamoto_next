@@ -128,10 +128,7 @@ export default function Header() {
             },
           }}
         >
-          <DrawerContent
-            navItems={navItems}
-            handleDrawerToggle={handleDrawerToggle}
-          />
+          <DrawerContent handleDrawerToggle={handleDrawerToggle} />
         </Drawer>
 
         <Box

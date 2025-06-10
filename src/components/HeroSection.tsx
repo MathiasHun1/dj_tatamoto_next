@@ -15,8 +15,8 @@ type Props = {
 const HeroSection = ({
   backgroundURL,
   children,
-  mobileHeight = 50,
-  desktopHeight = 50,
+  mobileHeight = 500,
+  desktopHeight = 900,
   sx,
 }: Props) => {
   const boxStyles = {
@@ -32,7 +32,7 @@ const HeroSection = ({
       content: '""',
       inset: 0,
       zIndex: 1,
-      backgroundColor: 'hsla(0, 0%, 0%, 0.4)',
+      backgroundColor: 'hsla(0, 0%, 0%, 0.55)',
     },
     ...sx,
   };

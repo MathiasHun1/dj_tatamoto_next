@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Typography,
   Divider,
   List,
-  ListItem,
   ListItemButton,
   ListItemText,
+  Collapse,
 } from '@mui/material';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
 import Link from 'next/link';
 
 type Props = {
-  navItems: { linkText: string; url: string }[];
   handleDrawerToggle: () => void;
 };
 
-const DrawerContent = ({ navItems, handleDrawerToggle }: Props) => {
+const DrawerContent = ({ handleDrawerToggle }: Props) => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = (e: React.SyntheticEvent) => {
+    e.stopPropagation();
+    setOpen(!open);
+  };
+
   return (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -23,18 +31,36 @@ const DrawerContent = ({ navItems, handleDrawerToggle }: Props) => {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item.linkText} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <Link href={item.url}>
-                <ListItemText
-                  primary={item.linkText}
-                  sx={{ color: 'black !important' }}
-                />
-              </Link>
+        <ListItemButton component={Link} href="/">
+          <ListItemText primary="Kezdőlap" />
+        </ListItemButton>
+
+        <ListItemButton component={Link} href="/bemutatkozas">
+          <ListItemText primary="Bemutatkozás" />
+        </ListItemButton>
+
+        <ListItemButton onClick={handleClick}>
+          <ListItemText primary="Szolgáltalások" />
+          {open ? <ExpandLess /> : <ExpandMore />}
+        </ListItemButton>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItemButton component={Link} href="/szolgaltatasok/eskuvodj">
+              <ListItemText primary="Esküvő" sx={{ pl: 3 }} />
             </ListItemButton>
-          </ListItem>
-        ))}
+
+            <ListItemButton
+              component={Link}
+              href="/szolgaltatasok/rendezvenydj"
+            >
+              <ListItemText primary="Rendezvény" sx={{ pl: 3 }} />
+            </ListItemButton>
+          </List>
+        </Collapse>
+
+        <ListItemButton component={Link} href="/kapcsolat">
+          <ListItemText primary="Kapcsolat" />
+        </ListItemButton>
       </List>
     </Box>
   );
