@@ -16,6 +16,7 @@ import Container from '@mui/material/Container';
 import DrawerContent from './DrawerContent';
 import useHideAnimation from '@/hooks/useHideAnimation';
 import DecorWave from './DecorWave';
+import { grey } from '@mui/material/colors';
 
 const drawerWidth = 240;
 const navItems = [
@@ -30,6 +31,7 @@ const navItems = [
   {
     linkText: 'Szolgáltatások',
     url: '/szolgaltatasok',
+    subPages: ['esküvő', 'rendezvény'],
   },
 ];
 const containerVariants = {
@@ -102,28 +104,36 @@ export default function Header() {
             </Toolbar>
           </Container>
         </AppBar>
-        <nav>
-          <Drawer
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-            sx={{
-              display: { xs: 'block', sm: 'none' },
-              '& .MuiDrawer-paper': {
-                boxSizing: 'border-box',
-                width: drawerWidth,
+
+        <Drawer
+          component="nav"
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+            },
+          }}
+          slotProps={{
+            paper: {
+              sx: {
+                bgcolor: grey[800],
               },
-            }}
-          >
-            <DrawerContent
-              navItems={navItems}
-              handleDrawerToggle={handleDrawerToggle}
-            />
-          </Drawer>
-        </nav>
+            },
+          }}
+        >
+          <DrawerContent
+            navItems={navItems}
+            handleDrawerToggle={handleDrawerToggle}
+          />
+        </Drawer>
+
         <Box
           data-id="decor-svg-container"
           sx={{

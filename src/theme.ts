@@ -1,15 +1,17 @@
 'use client';
 import { createTheme } from '@mui/material/styles';
 import { deepPurple, yellow } from '@mui/material/colors';
+import { grey } from '@mui/material/colors';
 
 const theme = createTheme({
   // cssVariables: true,
   typography: {
-    fontFamily: 'var(--font-roboto)',
+    fontFamily: 'var(--font-playpenSans)',
     body1: {
       lineHeight: 1.8,
     },
   },
+
   palette: {
     primary: {
       main: deepPurple[600],
@@ -18,8 +20,26 @@ const theme = createTheme({
       main: yellow[500],
     },
     text: {
-      secondary: 'white',
+      primary: '#ffffff',
+      secondary: yellow[500],
     },
+    divider: grey[600],
+    background: {
+      default: grey[900],
+    },
+    action: {
+      hover: 'rgba(0, 0, 0, 0.5)',
+    },
+  },
+  components: {
+    MuiTypography: {
+      defaultProps: {
+        color: 'text.primary',
+      },
+    },
+  },
+  shape: {
+    borderRadius: 8,
   },
 });
 

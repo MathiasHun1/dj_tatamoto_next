@@ -3,48 +3,47 @@
 import { Box, Typography, Stack, Grid } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const cards = [
   {
     titleText: 'Esküvő dj',
     bodyText: '„Hogy minden olyan legyen, amilyennek Ti megálmodtátok!”',
     imageUrl: '/wedding-image.jpg',
+    pageLink: '/szolgaltatasok/eskuvo',
   },
   {
     titleText: 'Céges rendezvény',
     bodyText: '„Hogy minden olyan legyen, amilyennek Ti megálmodtátok!”',
     imageUrl: '/workplace-party-image.jpg',
+    pageLink: '/szolgaltatasok/rendezveny',
   },
   {
     titleText: 'Kültéri rendezvény',
-    bodyText: 'Főzőverseny? Falunap? Zenei aláfestéssel az iagaz!',
+    bodyText: 'Főzőverseny? Falunap? Zenei aláfestéssel az igazi!',
     imageUrl: '/cook-festival-image.webp',
+    pageLink: '/szolgaltatasok/rendezveny',
   },
 ];
 
 const ServicesList = () => {
   const smallBoxHeight = 120;
   const bigBoxHeight = 400;
-  const slopeValue = 48;
+  const slopeValue = 20; //adjust decoration steepness with this value!
 
   return (
-    <Stack>
+    <Stack component="section" sx={{ pb: 5 }}>
       <Box
         sx={(theme) => ({
           height: `${smallBoxHeight}px`,
           backgroundColor: theme.palette.primary.main,
-          mt: 10,
           pt: 2,
           clipPath: `polygon(0 0, 100% 0, 100% ${
             smallBoxHeight - slopeValue
-          }px, 50% 100%, 0 60%)`,
+          }px, 50% 100%, 0 ${smallBoxHeight - slopeValue}px)`,
         })}
       >
-        <Typography
-          variant="h4"
-          color="text.secondary"
-          sx={{ textAlign: 'center' }}
-        >
+        <Typography variant="h4" align="center">
           Szolgáltatásaim
         </Typography>
       </Box>
@@ -52,27 +51,26 @@ const ServicesList = () => {
       {cards.map((card, index) => (
         <ServiceCard
           key={index}
-          // direction={`${
-          //   cards.length % (index + 1) === 0 ? 'reverse' : 'normal'
-          // }`}
           titleText={card.titleText}
           bodyText={card.bodyText}
           imageURL={card.imageUrl}
           bigBoxHeight={bigBoxHeight}
           slopeValue={slopeValue}
+          pageLink={card.pageLink}
         />
       ))}
     </Stack>
   );
 };
 
-type CardProps = {
+type ServiceCardProps = {
   direction?: 'normal' | 'reverse';
   bigBoxHeight: number;
   slopeValue: number;
   titleText: string;
   bodyText: string;
   imageURL: string;
+  pageLink?: string;
 };
 
 const ServiceCard = ({
@@ -82,15 +80,15 @@ const ServiceCard = ({
   titleText,
   bodyText,
   imageURL,
-}: CardProps) => {
+  pageLink,
+}: ServiceCardProps) => {
   return (
     <Box
       sx={{
         height: `${bigBoxHeight}px`,
-        clipPath: `polygon(0 0, 50% 48px ,100% 0, 100% ${
+        clipPath: `polygon(0 0, 50% ${slopeValue}px ,100% 0, 100% ${
           bigBoxHeight - slopeValue
         }px, 50% 100%, 0 ${bigBoxHeight - slopeValue}px)`,
-        backgroundColor: grey[800],
       }}
     >
       <Grid
@@ -100,21 +98,37 @@ const ServiceCard = ({
           flexDirection: `${direction === 'reverse' ? 'row-reverse' : ''}`,
         }}
       >
-        <Grid size={6} sx={{ pt: 10, px: 2 }}>
+        <Grid
+          size={6}
+          sx={{
+            pt: 10,
+            px: 2,
+            textAlign: 'center',
+            backgroundColor: grey[800],
+          }}
+        >
           <Typography
             variant="h5"
-            color="secondary"
-            sx={{ textAlign: 'center', pb: 3 }}
+            color="text.secondary"
+            align="center"
+            sx={{ pb: 3 }}
           >
             {titleText}
           </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ textAlign: 'center' }}
-          >
+          <Typography variant="body1" align="center">
             {bodyText}
           </Typography>
+          {pageLink && (
+            <Typography
+              component={Link}
+              href={pageLink}
+              variant="body1"
+              color="secondary"
+              sx={{ textDecoration: 'underline', pt: 3 }}
+            >
+              Megnézem --
+            </Typography>
+          )}
         </Grid>
 
         <Grid size={6}>

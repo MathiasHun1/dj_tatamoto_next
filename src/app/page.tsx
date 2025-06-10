@@ -1,85 +1,87 @@
 import { Box, Container, Stack, Typography } from '@mui/material';
 import HeroSection from '@/components/HeroSection';
 import Logo from '@/components/Logo';
-import { grey } from '@mui/material/colors';
 import Link from 'next/link';
 
 import DecorLine from '@/components/DecorLine';
 import WhyMeList from '@/components/pages/home/WhyMeList';
 import ServicesList from '@/components/pages/home/ServicesList';
+import { grey } from '@mui/material/colors';
 
 export default function Home() {
   return (
     <>
-      <Box sx={{ position: 'relative', zIndex: -10 }}>
-        <HeroSection backgroundURL="/hero.jpg">
-          <Stack
-            data-id="stackElement"
-            direction="column"
-            spacing={5}
-            sx={{
-              position: 'absolute',
-              zIndex: 2,
-              top: '20%',
-              alignItems: 'center',
-              width: '100%',
-            }}
+      <HeroSection
+        backgroundURL="/hero.jpg"
+        sx={{ position: 'relative', zIndex: -10 }}
+      >
+        <Stack
+          data-id="stackElement"
+          direction="column"
+          spacing={5}
+          sx={{
+            position: 'absolute',
+            zIndex: 2,
+            top: '20%',
+            alignItems: 'center',
+            width: '100%',
+          }}
+        >
+          <Logo sx={{ width: { xs: '250px', md: '400px' } }} />
+
+          <Typography
+            variant="h4"
+            color="secondary"
+            sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}
           >
-            <Logo sx={{ width: { xs: '250px', md: '400px' } }} />
+            ESKÜVŐ DJ
+          </Typography>
 
-            <Typography
-              variant="h4"
-              color="secondary"
-              sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}
-            >
-              ESKÜVŐ DJ
-            </Typography>
+          <Typography
+            variant="h4"
+            color="secondary"
+            sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}
+          >
+            RENDEZVÉNY DJ
+          </Typography>
 
-            <Typography
-              variant="h4"
-              color="secondary"
-              sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}
-            >
-              RENDEZVÉNY DJ
-            </Typography>
+          <Typography
+            variant="h4"
+            color="secondary"
+            sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}
+          >
+            BUDAPESTEN
+          </Typography>
 
-            <Typography
-              variant="h4"
-              color="secondary"
-              sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}
-            >
-              BUDAPESTEN
-            </Typography>
-
-            <Typography
-              variant="h4"
-              color="secondary"
-              sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}
-            >
-              ORSZÁGOSAN
-            </Typography>
-          </Stack>
-        </HeroSection>
+          <Typography
+            variant="h4"
+            color="secondary"
+            sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}
+          >
+            ORSZÁGOSAN
+          </Typography>
+        </Stack>
         <DecorLine />
-      </Box>
+      </HeroSection>
+
+      {/*--------- BEMUTATKOZÁS --------*/}
       <Container
         maxWidth="lg"
-        sx={{ position: 'relative', backgroundColor: grey[900] }}
+        sx={{ position: 'relative', bgcolor: grey[900] }}
       >
-        {/*--------- BEMUTATKOZÁS --------*/}
         <Box sx={{ pt: 5 }}>
           <Typography
             variant="h4"
-            color="text.secondary"
-            sx={{ mb: 3, textTransform: 'uppercase', textAlign: 'center' }}
+            component="p"
+            sx={{
+              mb: 3,
+              textTransform: 'uppercase',
+              textAlign: 'center',
+            }}
           >
             Üdvözöllek!
           </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ textAlign: 'justify', mb: 3 }}
-          >
+          <Typography variant="body1" sx={{ textAlign: 'justify', mb: 3 }}>
             A nevem Magyari László, avagy Dj TataMoto. Évtizedes tapasztalattal
             vállalok zeneszolgáltatást esküvőkre, céges bulikra és egyéb
             rendezvényekre – elérhető áron, megbízhatóan. Legyen szó retróról,
@@ -108,14 +110,16 @@ export default function Home() {
         </Box>
       </Container>
 
-      <ServicesList />
-
       {/*------------ SZOLGÁLTATÁSOK -----------*/}
       <Container
         maxWidth="lg"
-        sx={{ position: 'relative', backgroundColor: grey[900] }}
+        sx={{
+          px: { xs: 0, sm: 3 },
+          pt: 10,
+          position: 'relative',
+        }}
       >
-        <Box component="section">{/* <ServicesList /> */}</Box>
+        <ServicesList />
       </Container>
     </>
   );

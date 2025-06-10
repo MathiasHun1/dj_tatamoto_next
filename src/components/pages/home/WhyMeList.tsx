@@ -31,8 +31,8 @@ const WhyMeList = () => {
     <Stack component="ul" spacing={3}>
       <Typography
         variant="h4"
-        color="text.secondary"
-        sx={{ textAlign: 'center', textTransform: 'uppercase' }}
+        align="center"
+        sx={{ textTransform: 'uppercase' }}
       >
         Miért érdemes engem választanod?
       </Typography>
@@ -56,12 +56,10 @@ const ListItem = ({ title, body }: Props) => {
           <CheckIcon color="secondary" fontSize="large" />
         </Box>
         <Box>
-          <Typography variant="h5" color="text.secondary" sx={{ pb: 1.2 }}>
+          <Typography variant="h5" sx={{ pb: 1.2 }}>
             {title}
           </Typography>
-          <Typography variant="body1" color="text.secondary">
-            {body}
-          </Typography>
+          <Typography variant="body1">{body}</Typography>
         </Box>
       </Stack>
     </Paper>
