@@ -9,6 +9,7 @@ const theme = createTheme({
     fontFamily: 'var(--font-playpenSans)',
     body1: {
       lineHeight: 1.8,
+      fontWeight: 200,
     },
   },
 

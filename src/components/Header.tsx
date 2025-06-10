@@ -74,6 +74,7 @@ export default function Header() {
           sx={{
             position: 'static',
             boxShadow: 'none',
+            height: '30px',
           }}
         >
           <Container maxWidth="lg" disableGutters>
@@ -83,9 +84,15 @@ export default function Header() {
                 aria-label="open drawer"
                 edge="start"
                 onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: 'none' } }}
+                sx={{
+                  mr: 2,
+                  display: { sm: 'none' },
+                  width: '50px',
+                }}
               >
-                <MenuIcon />
+                <MenuIcon
+                  sx={{ width: '100%', height: '100%', aspectRatio: 1 }}
+                />
               </IconButton>
               <Typography
                 variant="h6"

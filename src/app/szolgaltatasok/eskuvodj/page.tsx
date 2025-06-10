@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import CircleIcon from '@mui/icons-material/Circle';
 import { grey } from '@mui/material/colors';
 import Image from 'next/image';
@@ -31,9 +32,36 @@ const StyledBox = styled(Box)(({ theme }) => ({
   },
 }));
 
+const howIWorkItems = [
+  {
+    strongText: 'Első kapcsolatfelvétel',
+    text: 'Vedd fel velem a kapcsolatot telefonon vagy e-mailben, hogy megbeszéljük az esküvő dátumát és az alapvető elképzeléseket.',
+  },
+  {
+    strongText: 'Személyes konzultáció',
+    text: 'Találkozzunk egy kötetlen beszélgetésre, ahol részletesen átbeszéljük az igényeiteket, zenei preferenciáitokat, az esküvő menetét és minden egyéb részletet.',
+  },
+  {
+    strongText: 'Ajánlatkészítés',
+    text: ' Az egyeztetettek alapján elkészítem a személyre szabott, részletes árajánlatot.',
+  },
+  {
+    strongText: 'Szerződéskötés',
+    text: 'A megegyezés után szerződést kötünk a szolgáltatásról.',
+  },
+  {
+    strongText: 'Zenei tervezés',
+    text: ' Folyamatosan egyeztetünk a zenékkel kapcsolatban, és összeállítjuk a tökéletes playlistet.',
+  },
+  {
+    strongText: 'A Nagy Nap',
+    text: 'Megérkezem a helyszínre, felállítom a technikát, és gondoskodom róla, hogy minden zökkenőmentes legyen!',
+  },
+];
+
 const page = () => {
   return (
-    <Box>
+    <Container disableGutters maxWidth="lg">
       <HeroSection
         backgroundURL="/hero_wedding.avif"
         mobileHeight={40}
@@ -61,10 +89,10 @@ const page = () => {
           <Typography component="h2" variant="h4" color="primary.light">
             Miért válassz engem az esküvődre?
           </Typography>
-          <List sx={{ pt: 2 }}>
-            <ListItem sx={{ alignItems: 'flex-start' }}>
+          <List disablePadding sx={{ pt: 2 }}>
+            <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
               <CircleIcon
-                sx={{ width: '16px', mt: 0.5, mr: 2 }}
+                sx={{ width: '12px', mt: 0.5, mr: 2 }}
                 fontSize="small"
               />
               <Typography variant="body1" color="text.primary">
@@ -77,9 +105,9 @@ const page = () => {
                 ki.
               </Typography>
             </ListItem>
-            <ListItem sx={{ alignItems: 'flex-start' }}>
+            <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
               <CircleIcon
-                sx={{ width: '16px', mt: 0.5, mr: 2 }}
+                sx={{ width: '12px', mt: 0.5, mr: 2 }}
                 fontSize="small"
               />
               <Typography variant="body1" color="text.primary">
@@ -88,9 +116,9 @@ const page = () => {
                 kristálytiszta, a fények pedig hangulatosak és legyenek.
               </Typography>
             </ListItem>
-            <ListItem sx={{ alignItems: 'flex-start' }}>
+            <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
               <CircleIcon
-                sx={{ width: '16px', mt: 0.5, mr: 2 }}
+                sx={{ width: '12px', mt: 0.5, mr: 2 }}
                 fontSize="small"
               />
               <Typography variant="body1" color="text.primary">
@@ -100,9 +128,9 @@ const page = () => {
                 változásokhoz.
               </Typography>
             </ListItem>
-            <ListItem sx={{ alignItems: 'flex-start' }}>
+            <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
               <CircleIcon
-                sx={{ width: '16px', mt: 0.5, mr: 2 }}
+                sx={{ width: '12px', mt: 0.5, mr: 2 }}
                 fontSize="small"
               />
               <Typography variant="body1" color="text.primary">
@@ -124,7 +152,31 @@ const page = () => {
           priority={true}
         />
       </StyledBox>
-    </Box>
+
+      <Container maxWidth="lg">
+        <Box sx={{ pb: 10 }}>
+          <Typography
+            component="h2"
+            variant="h4"
+            color="primary.light"
+            sx={{ pb: 5 }}
+          >
+            Hogyan dolgozom?
+          </Typography>
+          <Box component="ol" sx={{ pl: 2.5 }}>
+            <Stack spacing={2}>
+              {howIWorkItems.map((item, index) => (
+                <li key={index}>
+                  <Typography variant="body1" color="text.primary">
+                    <strong>{item.strongText}</strong>: {item.text}
+                  </Typography>
+                </li>
+              ))}
+            </Stack>
+          </Box>
+        </Box>
+      </Container>
+    </Container>
   );
 };
 
