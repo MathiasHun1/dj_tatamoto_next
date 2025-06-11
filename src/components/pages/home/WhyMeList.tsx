@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Typography, Paper, Box } from '@mui/material';
+import { Stack, Typography, Paper, Box, Grid } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import { grey } from '@mui/material/colors';
 
@@ -36,9 +36,17 @@ const WhyMeList = () => {
       >
         Miért érdemes engem választanod?
       </Typography>
-      {cards.map((card, index) => (
-        <ListItem key={index} title={card.title} body={card.body} />
-      ))}
+      <Grid container spacing={4}>
+        {cards.map((card, index) => (
+          <Grid
+            key={index}
+            size={{ xs: 12, md: 6 }}
+            offset={{ md: index === 4 ? 3 : 0 }}
+          >
+            <ListItem title={card.title} body={card.body} />
+          </Grid>
+        ))}
+      </Grid>
     </Stack>
   );
 };
@@ -50,7 +58,10 @@ type Props = {
 
 const ListItem = ({ title, body }: Props) => {
   return (
-    <Paper elevation={24} sx={{ p: 3, backgroundColor: grey[800] }}>
+    <Paper
+      elevation={24}
+      sx={{ p: 3, backgroundColor: grey[800], height: { md: '100%' } }}
+    >
       <Stack direction="row" spacing={2}>
         <Box>
           <CheckIcon color="secondary" fontSize="large" />

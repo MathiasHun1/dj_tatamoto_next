@@ -6,8 +6,8 @@ import theme from '../theme';
 import type { Metadata } from 'next';
 import './globals.css';
 
+import Box from '@mui/material/Box';
 import Header from '@/components/Header';
-import Main from '@/components/Main';
 import Footer from '@/components/Footer';
 
 const roboto = Roboto({
@@ -41,7 +41,9 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <Header />
-            <Main>{children}</Main>
+            <Box component="main" sx={{ pb: { md: 3 } }}>
+              {children}
+            </Box>
             <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>

@@ -8,19 +8,20 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const data = [
   {
     question: 'Játszol mulatós zenét?',
-    answer: 'ide jön valami válasz',
+    answer:
+      'Nekem a ti kívánságotok az első, ha azt szeretnétek, mulatós zenét is szívesen játszom',
   },
   {
-    question: 'kérdés',
-    answer: 'ide jön valami válasz',
+    question: 'feltöltés alatt..',
+    answer: '-',
   },
   {
-    question: 'kérdés',
-    answer: 'ide jön valami válasz',
+    question: 'feltöltés alatt..',
+    answer: '-',
   },
   {
-    question: 'kérdés',
-    answer: 'ide jön valami válasz',
+    question: 'feltöltés alatt..',
+    answer: '-',
   },
 ];
 

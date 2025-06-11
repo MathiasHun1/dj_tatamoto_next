@@ -7,6 +7,7 @@ import {
   ListSubheader,
   ListItem,
   Divider,
+  Box,
 } from '@mui/material';
 import { styled } from '@mui/material';
 import { grey } from '@mui/material/colors';
@@ -35,53 +36,84 @@ const Footer = () => {
   return (
     <>
       <DecorSeparatorLine />
-      <Container component="footer" maxWidth="lg" sx={{ pb: 5 }}>
+      <Container component="footer" maxWidth="lg" sx={{ pb: 5, pt: { md: 3 } }}>
         {/*----------- CONTACTS --------------*/}
-        <SyledList>
-          <SubHeader>KAPCSOLAT</SubHeader>
-
-          <ListItem disableGutters>
-            <PhoneIcon sx={{ color: grey[600], mr: 2 }} fontSize="small" />
-            <LightText variant="body2">+3630 - 414-7026</LightText>
-          </ListItem>
-
-          <ListItem disableGutters>
-            <MailIcon sx={{ color: grey[600], mr: 2 }} fontSize="small" />
-            <LightText variant="body2">laszlo70@outlook.com</LightText>
-          </ListItem>
-
-          <ListItem disableGutters>
-            <HomeIcon sx={{ color: grey[600], mr: 2 }} fontSize="small" />
-            <LightText variant="body2">1201 Budapest Szondi utca 11</LightText>
-          </ListItem>
-
-          <Divider variant="fullWidth" sx={{ my: 2 }} />
-
-          {/*          ---------------------             */}
-        </SyledList>
-
-        <SyledList>
-          <SubHeader>PARTNEREIM</SubHeader>
-          <Divider variant="fullWidth" sx={{ my: 2 }} />
-        </SyledList>
-
-        <SyledList>
-          <SubHeader>Dj TataMoto</SubHeader>
-
-          <ListItem disableGutters>
-            <LightText variant="body2"> www.djtatamoto.hu</LightText>
-          </ListItem>
-
-          <ListItem disableGutters>
-            <LightText variant="body2">Esküvő Dj - Rendezvény Dj</LightText>
-          </ListItem>
-
-          <ListItem disableGutters>
-            <LightText variant="body2">
-              Magyari László EV - DjTataMoto
-            </LightText>
-          </ListItem>
-        </SyledList>
+        <Box sx={{ display: { md: 'flex' }, justifyContent: 'space-around' }}>
+          <SyledList>
+            <SubHeader>KAPCSOLAT</SubHeader>
+            <ListItem disableGutters>
+              <PhoneIcon sx={{ color: grey[600], mr: 2 }} fontSize="small" />
+              <LightText variant="body2">+3630 - 414-7026</LightText>
+            </ListItem>
+            <ListItem disableGutters>
+              <MailIcon sx={{ color: grey[600], mr: 2 }} fontSize="small" />
+              <LightText variant="body2">laszlo70@outlook.com</LightText>
+            </ListItem>
+            <ListItem disableGutters>
+              <HomeIcon sx={{ color: grey[600], mr: 2 }} fontSize="small" />
+              <LightText variant="body2">
+                1201 Budapest Szondi utca 11
+              </LightText>
+            </ListItem>
+            <Divider
+              variant="fullWidth"
+              sx={{ my: 2, display: { md: 'none' } }}
+            />
+          </SyledList>
+          {/*---------    PARTNERS   ------------*/}
+          <SyledList>
+            <SubHeader>PARTNEREIM</SubHeader>
+            <ListItem
+              disableGutters
+              component="a"
+              href="https://www.facebook.com/ballaszilardceremoniamester"
+              target="_blank"
+            >
+              <LightText variant="body2" sx={{ '&:hover': { color: 'white' } }}>
+                Balla Szilárd - ceremóniamester
+              </LightText>
+            </ListItem>
+            <ListItem
+              disableGutters
+              component="a"
+              href="https://www.borostyanvendeghaz-matraderecske.hu/"
+              target="_blank"
+            >
+              <LightText variant="body2" sx={{ '&:hover': { color: 'white' } }}>
+                Borostyán vendégház - Mátraderecske
+              </LightText>
+            </ListItem>
+            <ListItem
+              disableGutters
+              component="a"
+              href="https://masszazsbarlang.hu/"
+              target="_blank"
+            >
+              <LightText variant="body2" sx={{ '&:hover': { color: 'white' } }}>
+                Andi masszázs - masszázsbarlang
+              </LightText>
+            </ListItem>
+            <Divider
+              variant="fullWidth"
+              sx={{ my: 2, display: { md: 'none' } }}
+            />
+          </SyledList>
+          {/*---------------   INFO   -------------*/}
+          <SyledList>
+            <SubHeader>Dj TataMoto</SubHeader>
+            <ListItem disableGutters>
+              <LightText variant="body2">www.djtatamoto.hu</LightText>
+            </ListItem>
+            <ListItem disableGutters>
+              <LightText variant="body2">Esküvő Dj - Rendezvény Dj</LightText>
+            </ListItem>
+            <ListItem disableGutters>
+              <LightText variant="body2">
+                Magyari László EV - DjTataMoto
+              </LightText>
+            </ListItem>
+          </SyledList>
+        </Box>
 
         <Typography
           variant="body2"

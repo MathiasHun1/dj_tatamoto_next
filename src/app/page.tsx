@@ -16,7 +16,7 @@ export default function Home() {
       <HeroSection
         backgroundURL="/hero2.jpg"
         mobileHeight={80}
-        desktopHeight={60}
+        desktopHeight={80}
       >
         <Stack
           data-id="stackElement"
@@ -69,7 +69,7 @@ export default function Home() {
 
       {/*--------- BEMUTATKOZÁS --------*/}
       <Container
-        maxWidth="lg"
+        maxWidth="md"
         sx={{ position: 'relative', bgcolor: grey[900] }}
       >
         <Box sx={{ pt: 5 }}>
@@ -114,16 +114,8 @@ export default function Home() {
       </Container>
 
       {/*------------ SZOLGÁLTATÁSOK -----------*/}
-      <Container
-        maxWidth="lg"
-        sx={{
-          px: { xs: 0, sm: 3 },
-          pt: 10,
-          position: 'relative',
-        }}
-      >
-        <ServicesList />
-      </Container>
+
+      <ServicesList />
     </>
   );
 }
