@@ -19,15 +19,15 @@ const StyledBox = styled(Box)(({ theme }) => ({
   '&:before': {
     position: 'absolute',
     content: '""',
-    inset: 0,
-    clipPath: 'polygon(0% 0%, 100% 0%, 0% 15%)',
+    inset: '-1px',
+    clipPath: 'polygon(0 0, 100% 0, 0 15%)',
     backgroundColor: theme.palette.background.default,
   },
   '&:after': {
     position: 'absolute',
     content: '""',
-    inset: 0,
-    clipPath: 'polygon(0% 100%, 100% 100%, 100% 85%)',
+    inset: '-1px',
+    clipPath: 'polygon(0 100%, 100% 100%, 100% 85%)',
     backgroundColor: theme.palette.background.default,
   },
 }));
