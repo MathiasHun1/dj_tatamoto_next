@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   Box,
   Typography,
+  Container,
   Divider,
   List,
   ListItemButton,
@@ -11,6 +12,7 @@ import {
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type Props = {
   handleDrawerToggle: () => void;
@@ -26,9 +28,16 @@ const DrawerContent = ({ handleDrawerToggle }: Props) => {
 
   return (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
+      <Box sx={{ py: 2 }}>
+        <Box sx={{ width: '60px', marginInline: 'auto' }}>
+          <Image
+            src="/DJTata_logo_clipped.svg"
+            alt="logo dj tatamoto"
+            width={100}
+            height={100}
+          />
+        </Box>
+      </Box>
       <Divider />
       <List>
         <ListItemButton component={Link} href="/">
@@ -57,6 +66,10 @@ const DrawerContent = ({ handleDrawerToggle }: Props) => {
             </ListItemButton>
           </List>
         </Collapse>
+
+        <ListItemButton component={Link} href="/galeria">
+          <ListItemText primary="Fotók" />
+        </ListItemButton>
 
         <ListItemButton component={Link} href="/kapcsolat">
           <ListItemText primary="Kapcsolat" />

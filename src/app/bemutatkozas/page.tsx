@@ -1,26 +1,30 @@
-'use client';
-
 import React from 'react';
 import HeroSection from '@/components/HeroSection';
 import { Typography, Container, Box } from '@mui/material';
 import Image from 'next/image';
+import DecorationRightLine from '@/components/DecorationRightLine';
 
 const About = () => {
   return (
     <>
-      {/* <Box sx={{ pt: 15 }}></Box> */}
-      <HeroSection
-        backgroundURL="/hero2.jpg"
-        mobileHeight={50}
-        // sx={{ pt: 25, backgroundPosition: '0% 50%' }}
-      ></HeroSection>
+      <HeroSection backgroundURL="/hero2.jpg" mobileHeight={50}>
+        <DecorationRightLine />
+      </HeroSection>
 
       <Container maxWidth="lg">
-        <Box sx={{ py: 5 }}>
+        <Box sx={{ pb: 5 }}>
+          <Typography
+            component="p"
+            variant="h4"
+            color="primary.light"
+            sx={{ pb: 2 }}
+          >
+            Üdvözöllek,
+          </Typography>
           <Typography variant="body1" color="text.primary">
-            Üdvözöllek, Magyari László - Dj TataMoto - vagyok. A zene és a
-            szórakoztatás mindig is közel állt hozzám, olyannyira, hogy fiatalon
-            -munka mellett- a zeneakadémiára is beiratkoztam. 10 évvel ezelőtt
+            Magyari László - Dj TataMoto - vagyok. A zene és a szórakoztatás
+            mindig is közel állt hozzám, olyannyira, hogy fiatalon -munka
+            mellett- a zeneakadémiára is beiratkoztam. 10 évvel ezelőtt
             kóstoltam bele a dj szakmába, akkor még hobbiként. Baráti esküvőkön,
             rendezvényeken zenéltem, ahol nemcsak értékes tapasztalatokra tettem
             szert, de rengeteg örömet is szereztem a közönségnek – és magamnak

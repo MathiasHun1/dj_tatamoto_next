@@ -31,7 +31,6 @@ const navItems = [
   {
     linkText: 'Szolgáltatások',
     url: '/szolgaltatasok',
-    subPages: ['esküvő', 'rendezvény'],
   },
 ];
 const containerVariants = {

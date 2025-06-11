@@ -10,6 +10,7 @@ type Props = {
   sx?: SxProps<Theme>;
   mobileHeight?: number;
   desktopHeight?: number;
+  backgroundDarkness?: number;
 };
 
 const HeroSection = ({
@@ -17,6 +18,7 @@ const HeroSection = ({
   children,
   mobileHeight = 500,
   desktopHeight = 900,
+  backgroundDarkness = 0.55,
   sx,
 }: Props) => {
   const boxStyles = {
@@ -32,7 +34,7 @@ const HeroSection = ({
       content: '""',
       inset: 0,
       zIndex: 1,
-      backgroundColor: 'hsla(0, 0%, 0%, 0.55)',
+      backgroundColor: `hsla(0, 0%, 0%, ${backgroundDarkness})`,
     },
     ...sx,
   };

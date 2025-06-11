@@ -10,19 +10,19 @@ const cards = [
     titleText: 'Esküvő dj',
     bodyText: '„Hogy minden olyan legyen, amilyennek Ti megálmodtátok!”',
     imageUrl: '/wedding-image.jpg',
-    pageLink: '/szolgaltatasok/eskuvo',
+    pageLink: '/szolgaltatasok/eskuvodj',
   },
   {
     titleText: 'Céges rendezvény',
     bodyText: '„Hogy minden olyan legyen, amilyennek Ti megálmodtátok!”',
     imageUrl: '/workplace-party-image.jpg',
-    pageLink: '/szolgaltatasok/rendezveny',
+    pageLink: '/szolgaltatasok/rendezvenydj',
   },
   {
     titleText: 'Kültéri rendezvény',
     bodyText: 'Főzőverseny? Falunap? Zenei aláfestéssel az igazi!',
     imageUrl: '/cook-festival-image.webp',
-    pageLink: '/szolgaltatasok/rendezveny',
+    pageLink: '/szolgaltatasok/rendezvenydj',
   },
 ];
 
@@ -32,15 +32,20 @@ const ServicesList = () => {
   const slopeValue = 20; //adjust decoration steepness with this value!
 
   return (
-    <Stack component="section" sx={{ pb: 5 }}>
+    <Stack component="section" sx={{}}>
       <Box
         sx={(theme) => ({
           height: `${smallBoxHeight}px`,
           backgroundColor: theme.palette.primary.main,
           pt: 2,
-          clipPath: `polygon(0 0, 100% 0, 100% ${
-            smallBoxHeight - slopeValue
-          }px, 50% 100%, 0 ${smallBoxHeight - slopeValue}px)`,
+          position: 'relative',
+          '&:after': {
+            position: 'absolute',
+            content: '""',
+            inset: 0,
+            clipPath: `polygon(0 100%, 100% 100%, 0 calc(100% - 20px) )`,
+            background: (theme) => theme.palette.background.default,
+          },
         })}
       >
         <Typography variant="h4" align="center">
@@ -76,7 +81,6 @@ type ServiceCardProps = {
 const ServiceCard = ({
   direction = 'normal',
   bigBoxHeight,
-  slopeValue,
   titleText,
   bodyText,
   imageURL,
@@ -85,10 +89,28 @@ const ServiceCard = ({
   return (
     <Box
       sx={{
+        position: 'relative',
         height: `${bigBoxHeight}px`,
-        clipPath: `polygon(0 0, 50% ${slopeValue}px ,100% 0, 100% ${
-          bigBoxHeight - slopeValue
-        }px, 50% 100%, 0 ${bigBoxHeight - slopeValue}px)`,
+
+        '&:before': {
+          position: 'absolute',
+          content: '""',
+          inset: 0,
+          bottom: '-1px',
+          top: '-1px',
+          background: (theme) => theme.palette.background.default,
+          clipPath: `polygon(0 0, 100% 0, 100% 20px )`,
+          zIndex: 100,
+        },
+        '&:after': {
+          position: 'absolute',
+          content: '""',
+          inset: 0,
+          bottom: '-1px',
+          top: '-1px',
+          background: (theme) => theme.palette.background.default,
+          clipPath: `polygon(0 100%, 100% 100%, 0 calc(100% - 20px))`,
+        },
       }}
     >
       <Grid
