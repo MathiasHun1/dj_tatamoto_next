@@ -32,7 +32,7 @@ const ServicesList = () => {
   const slopeValue = 20; //adjust decoration steepness with this value!
 
   return (
-    <Stack component="section" sx={{}}>
+    <Stack component="section" sx={{ pb: 0.5 }}>
       <Box
         sx={(theme) => ({
           height: `${smallBoxHeight}px`,
