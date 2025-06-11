@@ -11,7 +11,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 import { grey } from '@mui/material/colors';
 import Image from 'next/image';
 import { styled } from '@mui/material';
-import { relative } from 'path';
+import AccordionComponent from '@/components/pages/szolgaltatasok/Accordion';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -102,12 +102,12 @@ const page = () => {
               />
               <Typography variant="body1" color="text.primary">
                 <strong>Személyre szabott zenei élmény</strong>: Nem sablonokban
-                gondolkodom. Mint minden ember, minden esküvő más, más az ízlés,
-                más a vendégkör. A profi esküvő dj feladata, hogy egyedi
-                ízlésetek és elképzeléseitek alapján állítsa össze a lejátszási
-                listát. Éppen ezért, nem kínálok kész esküvő-csomagokat.
-                Esküvő-dj ajánlatom a személyes megbeszélésünk alapján alakítom
-                ki.
+                gondolkodom. Mint minden ember, minden esküvő egyedi, más a
+                környezet, az ízlés, más a vendégkör. A profi esküvő dj
+                feladata, hogy egyedi ízlésetek és elképzeléseitek alapján
+                állítsa össze a lejátszási listát. Éppen ezért, nem kínálok kész
+                esküvő-csomagokat. Esküvő-dj ajánlatom a személyes
+                megbeszélésünk alapján alakítom ki.
               </Typography>
             </ListItem>
             <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
@@ -187,7 +187,7 @@ const page = () => {
           height: '250px',
           position: 'relative',
           zIndex: -0,
-          pb: 0,
+          mb: 3,
           '& img': {
             width: '100%',
             height: '100%',
@@ -203,9 +203,13 @@ const page = () => {
           priority={true}
         />
       </StyledBox>
-      <Typography variant="h5" color="text.primary">
-        Gyakran ismételt kérdések
-      </Typography>
+
+      <Container maxWidth="lg">
+        <Typography variant="h4" color="primary.light" sx={{ pb: 3 }}>
+          Gyakran ismételt kérdések
+        </Typography>
+        <AccordionComponent />
+      </Container>
     </Container>
   );
 };

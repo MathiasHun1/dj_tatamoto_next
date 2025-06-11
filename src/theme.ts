@@ -27,6 +27,7 @@ const theme = createTheme({
     divider: grey[600],
     background: {
       default: grey[900],
+      paper: grey[800],
     },
     action: {
       hover: 'rgba(0, 0, 0, 0.5)',
@@ -38,6 +39,14 @@ const theme = createTheme({
         color: 'text.primary',
       },
     },
+
+    // MuiContainer: {
+    //   styleOverrides: {
+    //     root: {
+    //       backgroundColor: grey[900],
+    //     },
+    //   },
+    // },
   },
   shape: {
     borderRadius: 8,
