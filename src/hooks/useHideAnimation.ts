@@ -30,6 +30,10 @@ const useHideAnimation = () => {
       return setIsHidden(false);
     }
 
+    if (current < HIDE_NAV_THRESHOLD && !isHidden) {
+      return;
+    }
+
     if (scrollState.down > HIDE_NAV_VALUE && !isHidden) {
       return setIsHidden(true);
     }
