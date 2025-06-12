@@ -1,4 +1,3 @@
-import React from 'react';
 import HeroSection from '@/components/HeroSection';
 import { Typography, Container, Box, Grid } from '@mui/material';
 import Image from 'next/image';
