@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.djtatamoto.hu
+
+# Sitemaps
+Sitemap: https://www.djtatamoto.hu/sitemap.xml
