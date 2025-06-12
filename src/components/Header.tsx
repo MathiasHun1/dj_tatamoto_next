@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'motion/react';
 import * as React from 'react';
+import { motion } from 'motion/react';
+import { useState } from 'react';
 import Link from 'next/link';
 
 import AppBar from '@mui/material/AppBar';
@@ -10,29 +11,20 @@ import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+import List from '@mui/material/List';
 import DrawerContent from './DrawerContent';
 import useHideAnimation from '@/hooks/useHideAnimation';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Image from 'next/image';
+
 import DecorWave from './DecorWave';
 import { grey } from '@mui/material/colors';
 
 const drawerWidth = 240;
-const navItems = [
-  {
-    linkText: 'Kezdőlap',
-    url: '/',
-  },
-  {
-    linkText: 'Bemutatkozás',
-    url: '/bemutatkozas',
-  },
-  {
-    linkText: 'Szolgáltatások',
-    url: '/szolgaltatasok',
-  },
-];
+
 const containerVariants = {
   hidden: {
     y: '-125%',
@@ -43,8 +35,18 @@ const containerVariants = {
 };
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const { isHidden } = useHideAnimation();
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const open = Boolean(anchorEl);
+
+  const handleOpen = (e: React.SyntheticEvent) => {
+    setAnchorEl(e.currentTarget as HTMLButtonElement);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -69,11 +71,11 @@ export default function Header() {
         }}
       >
         <AppBar
-          component="nav"
+          component="div"
           sx={{
             position: 'static',
             boxShadow: 'none',
-            height: '30px',
+            height: { xs: '30px', sm: '50px' },
           }}
         >
           <Container maxWidth="lg" disableGutters>
@@ -85,7 +87,7 @@ export default function Header() {
                 onClick={handleDrawerToggle}
                 sx={{
                   mr: 2,
-                  display: { sm: 'none' },
+                  display: { md: 'none' },
                   width: '50px',
                 }}
               >
@@ -93,20 +95,65 @@ export default function Header() {
                   sx={{ width: '100%', height: '100%', aspectRatio: 1 }}
                 />
               </IconButton>
-              <Typography
-                variant="h6"
+              <Box
                 component="div"
-                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                sx={{
+                  flexGrow: 1,
+                  display: { xs: 'none', md: 'block' },
+                  pt: 2,
+                }}
               >
-                MUI
-              </Typography>
-              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                {navItems.map((item) => (
-                  <Button key={item.linkText} sx={{ color: '#fff' }}>
-                    <Link href={item.url}>{item.linkText}</Link>
-                  </Button>
-                ))}
+                <Box sx={{ width: '160px' }}>
+                  <Image
+                    src="/tataLogo.svg"
+                    alt="dj tataMoto logo"
+                    width={200}
+                    height={100}
+                  />
+                </Box>
               </Box>
+
+              <List
+                component="nav"
+                sx={{ display: { xs: 'none', md: 'block' } }}
+              >
+                <Button sx={{ color: '#fff' }}>
+                  <Link href="/">Kezdőlap</Link>
+                </Button>
+
+                <Button sx={{ color: '#fff' }}>
+                  <Link href="/bemutatkozas">Bemutatkozás</Link>
+                </Button>
+
+                <Button sx={{ color: '#fff' }} onClick={handleOpen}>
+                  Szolgáltatások
+                </Button>
+
+                <Menu open={open} anchorEl={anchorEl} onClose={handleClose}>
+                  <MenuItem>
+                    <Link href="/szolgaltatasok/eskuvodj" onClick={handleClose}>
+                      Esküvő
+                    </Link>
+                  </MenuItem>
+
+                  <MenuItem>
+                    <Link
+                      href="/szolgaltatasok/rendezvenydj"
+                      onClick={handleClose}
+                    >
+                      Rendezvény
+                    </Link>
+                  </MenuItem>
+                </Menu>
+
+                <Button sx={{ color: '#fff' }}>
+                  <Link href="/galeria">Galéria</Link>
+                </Button>
+
+                <Button sx={{ color: '#fff' }}>
+                  <Link href="/kapcsolat">Kapcsolat</Link>
+                </Button>
+              </List>
             </Toolbar>
           </Container>
         </AppBar>

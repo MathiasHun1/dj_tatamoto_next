@@ -3,6 +3,8 @@
 import React from 'react';
 import { styled } from '@mui/material';
 import Box from '@mui/material/Box';
+import { SxProps } from '@mui/material';
+import { Theme } from '@emotion/react';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: 'absolute',
@@ -13,8 +15,8 @@ const StyledBox = styled(Box)(({ theme }) => ({
   zIndex: 100,
 }));
 
-const DecorationRightLine = () => {
-  return <StyledBox />;
+const DecorationRightLine = ({ sx }: { sx?: SxProps<Theme> }) => {
+  return <StyledBox sx={{ ...sx }} />;
 };
 
 export default DecorationRightLine;

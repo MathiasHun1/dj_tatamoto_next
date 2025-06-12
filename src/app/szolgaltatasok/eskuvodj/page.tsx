@@ -7,11 +7,13 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import Grid from '@mui/material/Grid';
 import CircleIcon from '@mui/icons-material/Circle';
 import { grey } from '@mui/material/colors';
 import Image from 'next/image';
 import { styled } from '@mui/material';
 import AccordionComponent from '@/components/pages/szolgaltatasok/Accordion';
+import DecorationRightLine from '@/components/DecorationRightLine';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -61,31 +63,36 @@ const howIWorkItems = [
 
 const page = () => {
   return (
-    <Container disableGutters maxWidth="lg" sx={{ pb: 5 }}>
+    <>
       <HeroSection
         backgroundURL="/hero_wedding.avif"
         mobileHeight={40}
+        desktopHeight={70}
         sx={{ '&:after': { opacity: 0.4 } }}
-      ></HeroSection>
+      >
+        <DecorationRightLine sx={{ display: { xs: 'none', md: 'block' } }} />
+      </HeroSection>
       <Container
         maxWidth="lg"
         sx={{
           py: 5,
-          background: (theme) =>
-            `linear-gradient(to bottom, ${grey[800]}, ${theme.palette.background.default}, ${grey[800]}, ${theme.palette.background.default})`,
+          background: {
+            xs: `linear-gradient(to bottom, ${grey[800]}, ${grey[900]}, ${grey[800]}, ${grey[900]})`,
+            md: 'none',
+          },
         }}
       >
         <Typography variant="body1" color="text.primary">
           <Typography component="span" variant="h4" color="primary.light">
             Gratulálok
-          </Typography>{' '}
+          </Typography>
           friss eljegyzésedhez! Az esküvő az élet egyik legfontosabb napja, és a
           tökéletes zene elengedhetetlen ahhoz, hogy a hangulat valóban
           felejthetetlen legyen! Magam is házas ember lévén, pontosan tudom
           micsoda kihívás a Nagy Nap megszervezése.
         </Typography>
 
-        <Box sx={{ pt: 10 }}>
+        <Box sx={{ pt: { xs: 10, md: 15 } }}>
           <Typography
             component="h2"
             variant="h4"
@@ -94,7 +101,14 @@ const page = () => {
           >
             Miért válassz engem az esküvődre?
           </Typography>
-          <List disablePadding>
+          <List
+            disablePadding
+            sx={{
+              '& .MuiListItem-root': {
+                pb: { md: 3 },
+              },
+            }}
+          >
             <ListItem disableGutters sx={{ pt: 0, alignItems: 'flex-start' }}>
               <CircleIcon
                 sx={{ width: '12px', mt: 0.5, mr: 2 }}
@@ -148,16 +162,17 @@ const page = () => {
         </Box>
       </Container>
 
-      <StyledBox sx={{ mb: 10 }}>
-        <Image
-          src="/wedding_2.avif"
-          alt=""
-          width={500}
-          height={500}
-          priority={true}
-        />
-      </StyledBox>
-
+      <Container disableGutters maxWidth="lg">
+        <StyledBox sx={{ mb: 10 }}>
+          <Image
+            src="/wedding_2.avif"
+            alt=""
+            width={500}
+            height={500}
+            priority={true}
+          />
+        </StyledBox>
+      </Container>
       <Container maxWidth="lg">
         <Box sx={{ pb: 10 }}>
           <Typography
@@ -169,7 +184,7 @@ const page = () => {
             Hogyan dolgozom?
           </Typography>
           <Box component="ol" sx={{ pl: 2.5 }}>
-            <Stack spacing={2}>
+            <Stack spacing={{ xs: 2, md: 3 }}>
               {howIWorkItems.map((item, index) => (
                 <li key={index}>
                   <Typography variant="body1" color="text.primary">
@@ -182,35 +197,50 @@ const page = () => {
         </Box>
       </Container>
 
-      <StyledBox
-        sx={{
-          height: '250px',
-          position: 'relative',
-          zIndex: -0,
-          mb: 3,
-          '& img': {
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          },
-        }}
-      >
-        <Image
-          src="/wedding_3.jpg"
-          alt=""
-          width={500}
-          height={500}
-          priority={true}
-        />
-      </StyledBox>
-
-      <Container maxWidth="lg">
-        <Typography variant="h4" color="primary.light" sx={{ pb: 3 }}>
-          Gyakran ismételt kérdések
-        </Typography>
-        <AccordionComponent />
+      <Container disableGutters maxWidth="lg" sx={{ pb: 15 }}>
+        <Grid container spacing={{ xs: 0, md: 5 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <StyledBox
+              sx={{
+                height: { xs: '250px', md: '350px' },
+                borderRadius: { md: 1 },
+                overflow: { md: 'hidden' },
+                position: 'relative',
+                zIndex: -0,
+                mb: { xs: 3, md: 0 },
+                '& img': {
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                },
+                '&:before': {
+                  display: { md: 'none' },
+                },
+                '&:after': {
+                  display: { md: 'none' },
+                },
+              }}
+            >
+              <Image
+                src="/wedding_3.jpg"
+                alt=""
+                width={500}
+                height={500}
+                priority={true}
+              />
+            </StyledBox>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Container maxWidth="lg">
+              <Typography variant="h4" color="primary.light" sx={{ pb: 3 }}>
+                Gyakran ismételt kérdések
+              </Typography>
+              <AccordionComponent />
+            </Container>
+          </Grid>
+        </Grid>
       </Container>
-    </Container>
+    </>
   );
 };
 
