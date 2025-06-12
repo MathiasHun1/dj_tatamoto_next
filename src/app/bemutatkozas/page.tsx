@@ -35,7 +35,7 @@ const About = () => {
               <Typography variant="body1" color="text.primary">
                 Magyari László - Dj TataMoto - vagyok. A zene és a szórakoztatás
                 mindig is közel állt hozzám, olyannyira, hogy fiatalon -munka
-                mellett- a zeneakadémiára is beiratkoztam. 10 évvel ezelőtt
+                mellett- zeneiskolába is beiratkoztam. 10 évvel ezelőtt
                 kóstoltam bele a dj szakmába, akkor még hobbiként. Baráti
                 esküvőkön, rendezvényeken zenéltem, ahol nemcsak értékes
                 tapasztalatokra tettem szert, de rengeteg örömet is szereztem a
@@ -72,7 +72,7 @@ const About = () => {
 
           <Typography variant="body1">
             Célom, hogy minden esemény emlékezetes legyen, hogy a közönségre
-            rezonálva és akalomhoz leginkább passzoló zenei aláfestést rakjam
+            rezonálva és az akalomhoz leginkább passzoló zenei aláfestést rakjam
             össze, bármi is legyen a felkérés. Kifejezetten kis- és közepes
             méretű rendezvényeket vállalok, korrekt áron, személyre szabott
             zenei élménnyel. Legyen szó retróról, mai slágerekről vagy egyedi

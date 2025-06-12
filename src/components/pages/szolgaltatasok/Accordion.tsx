@@ -12,16 +12,16 @@ const data = [
       'Nekem a ti kívánságotok az első, ha azt szeretnétek, mulatós zenét is szívesen játszom',
   },
   {
-    question: 'feltöltés alatt..',
-    answer: '-',
+    question: 'A fénytechikának / füstgépnek van e külön díja?',
+    answer: 'Nincs, az ár tartalmazza a komplett felszerelést',
   },
   {
-    question: 'feltöltés alatt..',
-    answer: '-',
+    question: 'Vendégmikrofon van e?',
+    answer: 'Igen, vezeték nélküli mikrofonnal tudok szolgálni',
   },
   {
-    question: 'feltöltés alatt..',
-    answer: '-',
+    question: 'Ceremónia hangosítását meg tudod oldani?',
+    answer: 'Természetesen!',
   },
 ];
 

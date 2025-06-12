@@ -10,7 +10,7 @@ const cards = [
   },
   {
     title: 'Megbízthatóság',
-    body: 'Nálam nincsenek meglepetés költségek – amit megbeszélünk, azt kapjátok. Ha egyedi igényeitek vannak, a csomagokat rugalmasan alakítom, hogy minden a terveitek szerint alakuljon.',
+    body: 'Nálam nincsenek meglepetés költségek – amit megbeszélünk, azt kapod. A szolgáltatást rugalmasan alakítom, hogy minden a terveid szerint alakuljon.',
   },
   {
     title: 'Minőségi hangzás és látvány',

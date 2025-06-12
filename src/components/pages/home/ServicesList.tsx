@@ -23,13 +23,14 @@ const cards = [
   },
   {
     titleText: 'Céges rendezvény',
-    bodyText: '„Hogy minden olyan legyen, amilyennek Ti megálmodtátok!”',
+    bodyText:
+      'Évzárók, csapatépítők - egy profi dj és a jó zene megalapozza a sikeres eseményt!',
     imageUrl: '/workplace-party-image.jpg',
     pageLink: '/szolgaltatasok/rendezvenydj',
   },
   {
-    titleText: 'Kültéri rendezvény',
-    bodyText: 'Főzőverseny? Falunap? Zenei aláfestéssel az igazi!',
+    titleText: 'Egyéb rendezvények',
+    bodyText: 'Születésnap? Főzőverseny? Falunap? Zenei aláfestéssel az igazi!',
     imageUrl: '/cook-festival-image.webp',
     pageLink: '/szolgaltatasok/rendezvenydj',
   },
@@ -37,7 +38,7 @@ const cards = [
 
 const ServicesList = () => {
   const smallBoxHeight = 120;
-  const bigBoxHeight = 400;
+  const bigBoxHeight = 500;
 
   return (
     <Container
