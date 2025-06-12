@@ -3,7 +3,7 @@ import { Phone, LocationPin, Mail } from '@mui/icons-material';
 
 const page = () => {
   return (
-    <Container sx={{ pt: 201, height: '100vh' }}>
+    <Container sx={{ pt: { xs: 20, md: '30vh' }, height: '100vh' }}>
       <Typography
         variant="h3"
         color="text.secondary"
