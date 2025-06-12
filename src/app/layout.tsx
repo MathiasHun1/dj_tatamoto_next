@@ -5,6 +5,7 @@ import { CssBaseline } from '@mui/material';
 import theme from '../theme';
 import type { Metadata } from 'next';
 import './globals.css';
+import { jsonLD } from '@/jsonLD';
 
 import Box from '@mui/material/Box';
 import Header from '@/components/Header';
@@ -27,6 +28,27 @@ const playpenSans = Playpen_Sans({
 export const metadata: Metadata = {
   title: 'Dj Tatamoto - esküvő - rendezvény',
   description: 'Profi Dj esküvőre, rendezvényre, céges bulira, privát bulira',
+  keywords: 'dj, eskuvo dj, rendezveny dj',
+  robots: {
+    index: true, // allow indexing
+    follow: true, // allow following links
+  },
+  openGraph: {
+    title: 'Dj Tatamoto - esküvő - rendezvény',
+    description: 'Profi Dj esküvőre, rendezvényre, céges bulira, privát bulira',
+    siteName: 'Profi Dj esküvőre, rendezvényre, céges bulira, privát bulira',
+    url: 'https://djtatamoto.hu',
+    images: [
+      {
+        url: 'https://djtatamoto.hu/hero2.jpg',
+        width: 1200,
+        height: 630,
+        alt: '',
+      },
+    ],
+    locale: 'hu_HU',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
@@ -36,6 +58,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className={`${roboto.variable} ${playpenSans.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLD),
+          }}
+        />
+      </head>
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
