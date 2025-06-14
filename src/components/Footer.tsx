@@ -10,11 +10,13 @@ import {
   Box,
 } from '@mui/material';
 import { styled } from '@mui/material';
-import { grey } from '@mui/material/colors';
+import { grey, deepPurple } from '@mui/material/colors';
 import MailIcon from '@mui/icons-material/Mail';
 import PhoneIcon from '@mui/icons-material/Phone';
 import HomeIcon from '@mui/icons-material/Home';
+
 import DecorSeparatorLine from './DecorSeparatorLine';
+import theme from '@/theme';
 
 const SubHeader = styled(ListSubheader)({
   backgroundColor: 'inherit',
@@ -29,14 +31,24 @@ const LightText = styled(Typography)(({ theme }) => ({
 const SyledList = styled(List)(({ theme }) => ({
   paddingInline: theme.spacing(3),
   paddingBottom: 0,
-  backgroundColor: theme.palette.background.default,
+  // backgroundColor: theme.palette.background.default,
+  backgroundColor: 'transparent',
 }));
 
 const Footer = () => {
   return (
-    <>
+    <Box
+      component="footer"
+      sx={{
+        pb: 5,
+        backgroundImage: {
+          xs: `radial-gradient(circle at 0% 200%, ${deepPurple[900]} 25%, ${theme.palette.background.default} 80%)`,
+          md: `radial-gradient(circle at 30% 300%, ${deepPurple[900]} 25%, ${theme.palette.background.default} 80%)`,
+        },
+      }}
+    >
       <DecorSeparatorLine />
-      <Container component="footer" maxWidth="lg" sx={{ pb: 5, pt: { md: 3 } }}>
+      <Container maxWidth="lg">
         {/*----------- CONTACTS --------------*/}
         <Box sx={{ display: { md: 'flex' }, justifyContent: 'space-around' }}>
           <SyledList>
@@ -114,7 +126,6 @@ const Footer = () => {
             </ListItem>
           </SyledList>
         </Box>
-
         <Typography
           variant="body2"
           color="divider"
@@ -124,7 +135,7 @@ const Footer = () => {
           © {new Date().getFullYear()} - Minden jog fenntartva!
         </Typography>
       </Container>
-    </>
+    </Box>
   );
 };
 

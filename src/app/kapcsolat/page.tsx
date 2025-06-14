@@ -12,11 +12,6 @@ const page = () => {
       >
         Kapcsolat
       </Typography>
-      {/*
-      <Typography variant="body1" color="text.primary" textAlign="center">
-        Keress meg közvetlenül valamelyik elérhetőségemen, vagy írj egy
-        ajánlatkérőt az oldalon található formula segítségével
-      </Typography> */}
       <List sx={{ width: 'fit-content', marginInline: 'auto' }}>
         <ListItem>
           <Phone sx={{ mr: 2 }} />

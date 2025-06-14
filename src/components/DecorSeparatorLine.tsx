@@ -3,7 +3,6 @@ import { Box } from '@mui/material';
 const DecorSeparatorLine = () => {
   return (
     <Box
-      maxWidth="lg"
       sx={{
         height: '80px',
         position: 'relative',
