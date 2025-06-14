@@ -28,7 +28,7 @@ const cards = [
 
 const WhyMeList = () => {
   return (
-    <Stack component="ul" spacing={3}>
+    <Stack component="ul" spacing={3} sx={{ pb: 10 }}>
       <Typography
         variant="h4"
         align="center"

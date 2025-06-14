@@ -23,7 +23,7 @@ const theme = createTheme({
     },
     text: {
       primary: '#ffffff',
-      secondary: yellow[500],
+      secondary: yellow[400],
     },
     divider: grey[600],
     background: {
@@ -40,14 +40,6 @@ const theme = createTheme({
         color: 'text.primary',
       },
     },
-
-    // MuiContainer: {
-    //   styleOverrides: {
-    //     root: {
-    //       backgroundColor: grey[900],
-    //     },
-    //   },
-    // },
   },
   shape: {
     borderRadius: 8,
