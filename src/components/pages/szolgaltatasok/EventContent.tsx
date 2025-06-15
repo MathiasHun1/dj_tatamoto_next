@@ -1,5 +1,4 @@
-import { Box, Grid, Container, Typography, Stack } from '@mui/material';
-import Image from 'next/image';
+import { Grid, Container, Typography, Stack } from '@mui/material';
 
 import AccordionComponent from './Accordion';
 import EventCard from '@/components/EventCard';
@@ -11,16 +10,18 @@ const accordionData = [
       'Természetesen! Ha szeretnéd, megbeszélhetjük a lejátszandó mixek stílusát, és rám bízhatod a playlistet - De akér te is adhatsz kívánságlistát - Legjobb a kettő elegye. Az est zenéjének kialakitása teljesen rugalmas ',
   },
   {
+    question: 'A megbeszélt ár tartalmazza a füstgépet is?',
+    answer:
+      'A megegyezésünk tartalmazza az összes technikát is, nincsenek megelepetés felárak',
+  },
+  {
     question: 'Van kiszállási díjad?',
     answer: 'Pest megyén beül a kiszállás ingyenes, egyébként **Ft / km',
   },
   {
-    question: '',
-    answer: '',
-  },
-  {
-    question: '',
-    answer: '',
+    question: 'A buli előtt menyi idővel érkezem?',
+    answer:
+      'Legalább két óra kell a szükséges technika összeszereléséhez, tehát két órával a buli előtt',
   },
 ];
 
@@ -52,7 +53,7 @@ const EventContent = () => {
             lehetővé teszi, hogy a megbízásodat gondtalanul teljesítsem. A
             barátságos ár mellett profi szolgáltatást nyújtok, amellyel biztos
             lehetsz benne, hogy a rendezvényed a legjobb kezekben lesz! Keress
-            bizalommal, és tegyük együtt felejthetetlenné a rendezvényedet!
+            bizalommal, és tegyük együtt felejthetetlenné az eseményt!
           </Typography>
         </Grid>
 
@@ -64,9 +65,10 @@ const EventContent = () => {
           size={{ xs: 12 }}
           sx={{
             position: 'relative',
+            filter: '',
           }}
         >
-          <Stack spacing={2} alignItems="center">
+          <Stack spacing={4} alignItems="center">
             <EventCard
               imageSource="/restaurant.jpg"
               cardText="Éttermi aláfestés"
@@ -75,7 +77,7 @@ const EventContent = () => {
               imageSource="/event_outdoor.jpg"
               cardText="Kültéri rendezvény"
             />
-            <EventCard imageSource="/karaoke_2.jpg" cardText="Karaoke" />
+            <EventCard imageSource="/karaoke_3.jpg" cardText="Karaoke" />
             <EventCard imageSource="/dance.jpg" cardText="Tánc" />
           </Stack>
         </Grid>
