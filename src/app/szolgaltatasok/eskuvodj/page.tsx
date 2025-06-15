@@ -61,6 +61,26 @@ const howIWorkItems = [
   },
 ];
 
+const accordionData = [
+  {
+    question: 'Játszol mulatós zenét?',
+    answer:
+      'Nekem a ti kívánságotok az első, ha azt szeretnétek, mulatós zenét is szívesen játszom',
+  },
+  {
+    question: 'A fénytechikának / füstgépnek van e külön díja?',
+    answer: 'Nincs, az ár tartalmazza a komplett felszerelést',
+  },
+  {
+    question: 'Vendégmikrofon van e?',
+    answer: 'Igen, vezeték nélküli mikrofonnal tudok szolgálni',
+  },
+  {
+    question: 'Ceremónia hangosítását meg tudod oldani?',
+    answer: 'Természetesen!',
+  },
+];
+
 const page = () => {
   return (
     <>
@@ -235,7 +255,7 @@ const page = () => {
               <Typography variant="h4" color="primary.light" sx={{ pb: 3 }}>
                 Gyakran ismételt kérdések
               </Typography>
-              <AccordionComponent />
+              <AccordionComponent data={accordionData} />
             </Container>
           </Grid>
         </Grid>

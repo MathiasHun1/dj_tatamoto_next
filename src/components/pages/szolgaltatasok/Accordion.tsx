@@ -5,27 +5,11 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const data = [
-  {
-    question: 'Játszol mulatós zenét?',
-    answer:
-      'Nekem a ti kívánságotok az első, ha azt szeretnétek, mulatós zenét is szívesen játszom',
-  },
-  {
-    question: 'A fénytechikának / füstgépnek van e külön díja?',
-    answer: 'Nincs, az ár tartalmazza a komplett felszerelést',
-  },
-  {
-    question: 'Vendégmikrofon van e?',
-    answer: 'Igen, vezeték nélküli mikrofonnal tudok szolgálni',
-  },
-  {
-    question: 'Ceremónia hangosítását meg tudod oldani?',
-    answer: 'Természetesen!',
-  },
-];
-
-const AccordionComponent = () => {
+const AccordionComponent = ({
+  data,
+}: {
+  data: Array<{ question: string; answer: string }>;
+}) => {
   return (
     <Paper>
       {data.map((d, index) => (
