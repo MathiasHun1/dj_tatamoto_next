@@ -1,14 +1,16 @@
 'use client';
 
-import { Box, Typography } from '@mui/material';
+import { Box, SxProps, Theme, Typography } from '@mui/material';
 import Image from 'next/image';
 
 const EventCard = ({
   imageSource,
   cardText,
+  sx,
 }: {
   imageSource: string;
   cardText: string;
+  sx?: SxProps<Theme>;
 }) => {
   return (
     <Box
@@ -16,8 +18,9 @@ const EventCard = ({
         position: 'relative',
         width: {
           xs: '70%',
-          md: '200px',
+          md: '300px',
         },
+        ...sx,
       }}
     >
       <Box

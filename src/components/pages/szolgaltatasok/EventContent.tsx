@@ -31,7 +31,7 @@ const accordionData = [
 
 const EventContent = () => {
   return (
-    <Container maxWidth="lg" sx={{ pb: 6 }}>
+    <Container maxWidth="lg" sx={{ pb: { md: 6 } }}>
       <Grid
         container
         sx={{
@@ -39,7 +39,7 @@ const EventContent = () => {
           zIndex: 10,
           transform: { xs: 'translateY(-100px)' },
         }}
-        spacing={{ xs: 5 }}
+        spacing={{ xs: 8 }}
       >
         <Grid size={{ xs: 12, md: 8 }} offset={{ md: 4 }} sx={{ zIndex: 10 }}>
           <Typography variant="body1" color="text.primary">
@@ -73,10 +73,11 @@ const EventContent = () => {
           }}
         >
           <Stack
-            spacing={{ xs: 4, md: 8 }}
+            spacing={{ xs: 4 }}
             alignItems="center"
             justifyContent={{ md: 'center' }}
             direction={{ md: 'row' }}
+            sx={{ pt: { md: 6 } }}
           >
             <EventCard
               imageSource="/restaurant.jpg"
@@ -85,9 +86,14 @@ const EventContent = () => {
             <EventCard
               imageSource="/event_outdoor.jpg"
               cardText="Kültéri rendezvény"
+              sx={{ transform: { md: 'translateY(20%)' } }}
             />
             <EventCard imageSource="/karaoke_3.jpg" cardText="Karaoke" />
-            <EventCard imageSource="/dance.jpg" cardText="Tánc" />
+            <EventCard
+              imageSource="/dance.jpg"
+              cardText="Tánc"
+              sx={{ transform: { md: 'translateY(20%)' } }}
+            />
           </Stack>
         </Grid>
       </Grid>
