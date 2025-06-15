@@ -7,19 +7,23 @@ const accordionData = [
   {
     question: 'Adhatok le kívánságlistát?',
     answer:
-      'Természetesen! Ha szeretnéd, megbeszélhetjük a lejátszandó mixek stílusát, és rám bízhatod a playlistet - De akér te is adhatsz kívánságlistát - Legjobb a kettő elegye. Az est zenéjének kialakitása teljesen rugalmas ',
+      'Természetesen! Ha szeretnéd, megbeszélhetjük a lejátszandó mixek stílusát, és rám bízhatod a playlistet - De akér te is adhatsz kívánságlistát - Legjobb a kettő elegye. Az este zenéjének kialakitása teljesen rugalmas ',
+  },
+  {
+    question: 'Hozott pendrive-ről játszol le számot?',
+    answer: 'Igen ha .mp3 vagy .wav formátumban van',
   },
   {
     question: 'A megbeszélt ár tartalmazza a füstgépet is?',
     answer:
-      'A megegyezésünk tartalmazza az összes technikát is, nincsenek megelepetés felárak',
+      'A megegyezésünk tartalmazza az összes technikát, nincsenek megelepetés felárak',
   },
   {
-    question: 'Van kiszállási díjad?',
-    answer: 'Pest megyén beül a kiszállás ingyenes, egyébként **Ft / km',
+    question: 'Van  időkorlát a buliban?',
+    answer: 'Nincs, addig maradok amíg igény van rá',
   },
   {
-    question: 'A buli előtt menyi idővel érkezem?',
+    question: 'A buli előtt menyi idővel érkezel?',
     answer:
       'Legalább két óra kell a szükséges technika összeszereléséhez, tehát két órával a buli előtt',
   },
@@ -68,7 +72,12 @@ const EventContent = () => {
             filter: '',
           }}
         >
-          <Stack spacing={4} alignItems="center">
+          <Stack
+            spacing={{ xs: 4, md: 8 }}
+            alignItems="center"
+            justifyContent={{ md: 'center' }}
+            direction={{ md: 'row' }}
+          >
             <EventCard
               imageSource="/restaurant.jpg"
               cardText="Éttermi aláfestés"
