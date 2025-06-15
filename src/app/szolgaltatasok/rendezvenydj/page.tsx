@@ -1,7 +1,6 @@
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
 
 import HeroSection from '@/components/HeroSection';
 import EventContent from '@/components/pages/szolgaltatasok/EventContent';

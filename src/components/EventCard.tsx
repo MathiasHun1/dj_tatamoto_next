@@ -1,8 +1,7 @@
 'use client';
 
-import { Box, Typography, darken } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
-import { yellow, deepPurple } from '@mui/material/colors';
 
 const EventCard = ({
   imageSource,
