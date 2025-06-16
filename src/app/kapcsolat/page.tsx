@@ -1,4 +1,4 @@
-import { Container, Typography, List, ListItem, styled } from '@mui/material';
+import { Container, Typography, List, ListItem } from '@mui/material';
 import { Phone, LocationPin, Mail } from '@mui/icons-material';
 import Link from 'next/link';
 
