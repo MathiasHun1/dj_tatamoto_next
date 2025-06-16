@@ -75,7 +75,7 @@ const EventContent = () => {
           <Stack
             spacing={{ xs: 4 }}
             alignItems="center"
-            justifyContent={{ md: 'center' }}
+            justifyContent={{ md: 'space-evenly' }}
             direction={{ md: 'row' }}
             sx={{ pt: { md: 6 } }}
           >
@@ -84,16 +84,16 @@ const EventContent = () => {
               cardText="Éttermi aláfestés"
             />
             <EventCard
-              imageSource="/event_outdoor.jpg"
-              cardText="Kültéri rendezvény"
-              sx={{ transform: { md: 'translateY(20%)' } }}
-            />
-            <EventCard imageSource="/karaoke_3.jpg" cardText="Karaoke" />
-            <EventCard
               imageSource="/dance.jpg"
               cardText="Tánc"
-              sx={{ transform: { md: 'translateY(20%)' } }}
+              // sx={{ transform: { md: 'translateY(20%)' } }}
             />
+            <EventCard
+              imageSource="/event_outdoor.jpg"
+              cardText="Kültéri rendezvény"
+              // sx={{ transform: { md: 'translateY(20%)' } }}
+            />
+            {/* <EventCard imageSource="/karaoke_3.jpg" cardText="Karaoke" /> */}
           </Stack>
         </Grid>
       </Grid>
