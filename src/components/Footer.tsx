@@ -34,7 +34,6 @@ const LightText = styled(Typography)(({ theme }) => ({
 const SyledList = styled(List)(({ theme }) => ({
   paddingInline: theme.spacing(3),
   paddingBottom: 0,
-  // backgroundColor: theme.palette.background.default,
   backgroundColor: 'transparent',
 }));
 
