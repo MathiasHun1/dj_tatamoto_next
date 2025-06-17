@@ -11,9 +11,9 @@ import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import List from '@mui/material/List';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 import DrawerContent from './DrawerContent';
 import useHideAnimation from '@/hooks/useHideAnimation';
 import Menu from '@mui/material/Menu';
@@ -37,16 +37,6 @@ const containerVariants = {
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { isHidden } = useHideAnimation();
-  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
-  const open = Boolean(anchorEl);
-
-  const handleOpen = (e: React.SyntheticEvent) => {
-    setAnchorEl(e.currentTarget as HTMLButtonElement);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -113,47 +103,7 @@ export default function Header() {
                 </Box>
               </Box>
 
-              <List
-                component="nav"
-                sx={{ display: { xs: 'none', md: 'block' } }}
-              >
-                <Button sx={{ color: '#fff' }}>
-                  <Link href="/">Kezdőlap</Link>
-                </Button>
-
-                <Button sx={{ color: '#fff' }}>
-                  <Link href="/bemutatkozas">Bemutatkozás</Link>
-                </Button>
-
-                <Button sx={{ color: '#fff' }} onClick={handleOpen}>
-                  Szolgáltatások
-                </Button>
-
-                <Menu open={open} anchorEl={anchorEl} onClose={handleClose}>
-                  <MenuItem>
-                    <Link href="/szolgaltatasok/eskuvodj" onClick={handleClose}>
-                      Esküvő
-                    </Link>
-                  </MenuItem>
-
-                  <MenuItem>
-                    <Link
-                      href="/szolgaltatasok/rendezvenydj"
-                      onClick={handleClose}
-                    >
-                      Rendezvény
-                    </Link>
-                  </MenuItem>
-                </Menu>
-
-                <Button sx={{ color: '#fff' }}>
-                  <Link href="/galeria">Galéria</Link>
-                </Button>
-
-                <Button sx={{ color: '#fff' }}>
-                  <Link href="/kapcsolat">Kapcsolat</Link>
-                </Button>
-              </List>
+              <HeaderTabs />
             </Toolbar>
           </Container>
         </AppBar>
@@ -200,3 +150,63 @@ export default function Header() {
     </>
   );
 }
+
+const HeaderTabs = () => {
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const open = Boolean(anchorEl);
+  const [value, setValue] = useState(0);
+
+  const handleOpen = (e: React.SyntheticEvent) => {
+    setAnchorEl(e.target as HTMLButtonElement);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+
+  return (
+    <>
+      <Tabs
+        value={value}
+        onChange={(e, value) => handleChange(e, value)}
+        role="navigation"
+        sx={{
+          display: { xs: 'none', md: 'block' },
+          '& .MuiTab-root': {
+            color: (theme) => theme.palette.text.primary,
+          },
+          '& .MuiTab-root.Mui-selected': {
+            color: (theme) => theme.palette.secondary.light,
+          },
+        }}
+      >
+        <Tab component={Link} href="/" label="Kezdőlap" />
+
+        <Tab component={Link} href="/bemutatkozas" label="Bemutatkozás" />
+
+        <Tab label="Szolgáltatások" onClick={handleOpen} />
+
+        <Tab component={Link} href="/galeria" label="Galéria" />
+
+        <Tab component={Link} href="/kapcsolat" label="Kapcsolat" />
+      </Tabs>
+      <Menu open={open} anchorEl={anchorEl} onClose={handleClose}>
+        <MenuItem>
+          <Link href="/szolgaltatasok/eskuvodj" onClick={handleClose}>
+            Esküvő
+          </Link>
+        </MenuItem>
+
+        <MenuItem>
+          <Link href="/szolgaltatasok/rendezvenydj" onClick={handleClose}>
+            Rendezvény
+          </Link>
+        </MenuItem>
+      </Menu>
+    </>
+  );
+};
