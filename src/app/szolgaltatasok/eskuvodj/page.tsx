@@ -152,7 +152,7 @@ const page = () => {
               <Typography variant="body1" color="text.primary">
                 <strong>Profi technika és megbízhatóság</strong>: A technikai
                 eszközállományom sok év alatt fejlesztettem, hogy a hangzás
-                kristálytiszta, a fények pedig hangulatosak és legyenek.
+                kristálytiszta, a fények pedig hangulatosak legyenek.
               </Typography>
             </ListItem>
             <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>

@@ -21,7 +21,7 @@ const cards = [
   {
     titleText: 'Egyéb rendezvények',
     bodyText: 'Születésnap? Főzőverseny? Falunap? Zenei aláfestéssel az igazi!',
-    imageUrl: '/cook-festival-image.webp',
+    imageUrl: '/tata_rendezveny.jpg',
     pageLink: '/szolgaltatasok/rendezvenydj',
   },
 ];
