@@ -1,18 +1,19 @@
 'use client';
 
+import { useState } from 'react';
 import { Box, Container, Stack, Typography } from '@mui/material';
 import HeroSection from '@/components/HeroSection';
 import Logo from '@/components/Logo';
+import { grey } from '@mui/material/colors';
 
 import WhyMeList from '@/components/pages/home/WhyMeList';
 import ServicesList from '@/components/pages/home/ServicesList';
 import ImageCarousel from '@/components/ImageCarousel';
-import { grey } from '@mui/material/colors';
+import Reviews from '@/components/Reviews';
 
 import img1 from '../../public/images/gallery/main/2.jpg';
 import img2 from '../../public/images/gallery/main/1.jpg';
 import img3 from '../../public/images/gallery/main/3.jpg';
-import { useState } from 'react';
 
 const imagesArray = [img1, img2, img3];
 
@@ -69,6 +70,9 @@ export default function Home() {
       {/*------------ GALERIA --------------*/}
 
       {carouselOpen && <ImageCarousel imagesArray={imagesArray} activeIndex={0} setCarouselOpen={setCarouselOpen} />}
+
+      {/*------------ Vélemények --------------*/}
+      <Reviews />
     </>
   );
 }
