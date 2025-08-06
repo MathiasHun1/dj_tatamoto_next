@@ -150,9 +150,10 @@ const EventContent = () => {
               </ListItem>
             </List>
           </Box>
+          <Box sx={{ pt: { xs: 5, md: 10 } }}>
+            <Reviews />
+          </Box>
         </Grid>
-
-        <Reviews />
 
         {/*------------ HOGYAN DOLGOZOM  -----------*/}
 
