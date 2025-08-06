@@ -113,3 +113,14 @@ strong {
   letter-spacing: 1px;
   text-decoration: underline;
 }
+
+/*----------- Utilites --------------*/
+
+.carousel-btn-override {
+  background-color: transparent !important;
+  border: none !important;
+
+  & svg {
+    fill: white !important;
+  }
+}

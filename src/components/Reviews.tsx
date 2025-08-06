@@ -15,12 +15,13 @@ const Reviews = dynamic(
           layout="carousel"
           featurableId={publicKey}
           carouselSpeed={8000}
-          maxCharacters={100}
+          maxCharacters={300}
           maxItems={3}
           carouselClassName="carousel"
           carouselBtnClassName="carousel_btn"
-          carouselBtnLeftClassName="carousel_btn_left"
-          carouselBtnRightClassName="carousel_btn_right"
+          carouselBtnLeftClassName="carousel_btn_left carousel-btn-override"
+          carouselBtnRightClassName="carousel_btn_right carousel-btn-override"
+          showDots={false}
         />
       </Box>
     ));

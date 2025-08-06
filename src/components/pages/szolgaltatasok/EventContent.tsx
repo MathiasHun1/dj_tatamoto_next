@@ -1,7 +1,11 @@
-import { Grid, Container, Typography, Stack } from '@mui/material';
+import { Grid, Container, Typography, Stack, Box, List, ListItem } from '@mui/material';
+import CircleIcon from '@mui/icons-material/Circle';
 
 import AccordionComponent from './Accordion';
 import EventCard from '@/components/EventCard';
+import Image from 'next/image';
+import eventImg from '../../../../public/images/gallery/event/event1.jpg';
+import Reviews from '@/components/Reviews';
 
 const accordionData = [
   {
@@ -15,8 +19,7 @@ const accordionData = [
   },
   {
     question: 'A megbeszélt ár tartalmazza a füstgépet is?',
-    answer:
-      'A megegyezésünk tartalmazza az összes technikát, nincsenek megelepetés felárak',
+    answer: 'A megegyezésünk tartalmazza az összes technikát, nincsenek megelepetés felárak',
   },
   {
     question: 'Van  időkorlát a buliban?',
@@ -24,43 +27,107 @@ const accordionData = [
   },
   {
     question: 'A buli előtt menyi idővel érkezel?',
-    answer:
-      'Legalább két óra kell a szükséges technika összeszereléséhez, tehát két órával a buli előtt',
+    answer: 'Legalább két óra kell a szükséges technika összeszereléséhez, tehát két órával a buli előtt',
   },
 ];
 
 const EventContent = () => {
   return (
-    <Container maxWidth="lg" sx={{ pb: { md: 6 } }}>
+    <Container maxWidth="lg" sx={{ pb: { md: 6 }, pt: 6 }}>
       <Grid
         container
         sx={{
           position: 'relative',
           zIndex: 10,
-          transform: { xs: 'translateY(-100px)' },
         }}
         spacing={{ xs: 8 }}
       >
-        <Grid size={{ xs: 12, md: 8 }} offset={{ md: 4 }} sx={{ zIndex: 10 }}>
-          <Typography variant="body1" color="text.primary">
-            <Typography component="span" variant="h6">
-              Profi DJ szolgáltatás minden eseményre -
-            </Typography>{' '}
-            Születésnapról, céges buliról, vagy bármilyen más ünnepi alkalomról
-            van szó, rendezvény DJ-ként állok rendelkezésedre. Több 1000
-            elérhető dal mellet, az esetlegesen helyszínen felvetődő
-            kívánságokat is be tudom szerezni azonnal. Mindenki megtalálja a
-            kedvére való zenét, a legkisebbektől a legidősebbekig. A zenei
-            felhozatal mellett a látványos fénytechnikával, füstgéppel
-            gondoskodom arról, hogy a hangulat felejthetetlen legyen. Bármilyen
-            környezetben is tartod az eseményt, a modern felszereltségem
-            lehetővé teszi, hogy a megbízásodat gondtalanul teljesítsem. A
-            barátságos ár mellett profi szolgáltatást nyújtok, amellyel biztos
-            lehetsz benne, hogy a rendezvényed a legjobb kezekben lesz! Keress
-            bizalommal, és tegyük együtt felejthetetlenné az eseményt!
-          </Typography>
+        <Grid size={12} offset={{ md: 0 }} sx={{ zIndex: 10 }}>
+          <Grid container gap={3}>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Typography component="span" variant="h5" color="text.secondary" sx={{ fontWeight: 'bold' }}>
+                Profi DJ szolgáltatás minden eseményre
+              </Typography>{' '}
+              <Typography variant="body1" color="text.primary">
+                Születésnapról, céges buliról, vagy bármilyen más ünnepi alkalomról van szó, rendezvény DJ-ként állok rendelkezésedre. Több 1000
+                elérhető dal mellet, az esetlegesen helyszínen felvetődő kívánságokat is be tudom szerezni azonnal. Mindenki megtalálja a kedvére való
+                zenét, a legkisebbektől a legidősebbekig. A zenei felhozatal mellett a látványos fénytechnikával, füstgéppel gondoskodom arról, hogy a
+                hangulat felejthetetlen legyen.
+                {/*------- Image small screen -------*/}
+                <Box component="span" sx={{ display: { xs: 'block', md: 'none' }, mt: 2, mb: 2 }}>
+                  <Image
+                    src={eventImg}
+                    alt="DJ szolgáltatás"
+                    width={500}
+                    height={500}
+                    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+                  />
+                </Box>
+                Bármilyen környezetben is tartod az eseményt, a modern felszereltségem lehetővé teszi, hogy a megbízásodat gondtalanul teljesítsem. A
+                barátságos ár mellett profi szolgáltatást nyújtok, amellyel biztos lehetsz benne, hogy a rendezvényed a legjobb kezekben lesz! Keress
+                bizalommal, és tegyük együtt felejthetetlenné az eseményt!
+              </Typography>
+            </Grid>
+
+            {/*------- Image big screen -------*/}
+            <Grid size={5} sx={{ display: { xs: 'none', md: 'block' } }}>
+              <Image src={eventImg} alt="DJ szolgáltatás" width={500} height={500} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+            </Grid>
+          </Grid>
         </Grid>
 
+        <Grid size={12}>
+          {/*------------ MIÉRT ENGEM ? -----------*/}
+
+          <Box sx={{ pt: { xs: 10, md: 15 } }}>
+            <Typography component="h2" variant="h4" color="text.secondary" sx={{ pb: 5 }}>
+              Miért válassz engem az rendezvényre?
+            </Typography>
+            <List
+              disablePadding
+              sx={{
+                '& .MuiListItem-root': {
+                  pb: { md: 3 },
+                },
+              }}
+            >
+              <ListItem disableGutters sx={{ pt: 0, alignItems: 'flex-start' }}>
+                <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
+                <Typography variant="body1" color="text.primary">
+                  <strong>Személyre szabott zenei élmény</strong>: Nem sablonokban gondolkodom. Mint minden ember, minden esküvő egyedi, más a
+                  környezet, az ízlés, más a vendégkör. A profi esküvő dj feladata, hogy egyedi ízlésetek és elképzeléseitek alapján állítsa össze a
+                  lejátszási listát. Éppen ezért, nem kínálok kész esküvő-csomagokat. Esküvő-dj ajánlatom a személyes megbeszélésünk alapján alakítom
+                  ki.
+                </Typography>
+              </ListItem>
+              <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
+                <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
+                <Typography variant="body1" color="text.primary">
+                  <strong>Profi technika és megbízhatóság</strong>: A technikai eszközállományom sok év alatt fejlesztettem, hogy a hangzás
+                  kristálytiszta, a fények pedig hangulatosak legyenek.
+                </Typography>
+              </ListItem>
+              <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
+                <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
+                <Typography variant="body1" color="text.primary">
+                  <strong>Rugalmasság és kommunikáció</strong>: Fontosnak tartom a folyamatos kapcsolattartást. Szívesen válaszolok minden kérdésre,
+                  és rugalmasan alkalmazkodom az esetleges változásokhoz.
+                </Typography>
+              </ListItem>
+              <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
+                <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
+                <Typography variant="body1" color="text.primary">
+                  <strong>Stresszmentes tervezés</strong>: Leveszem a vállatokról a zenei tervezés terhét, így teljes mértékben a pillanatra
+                  koncentrálhattok.
+                </Typography>
+              </ListItem>
+            </List>
+          </Box>
+
+          <Reviews />
+        </Grid>
+
+        {/*------------ GYIK  -----------*/}
         <Grid size={{ xs: 12 }}>
           <AccordionComponent data={accordionData} />
         </Grid>
@@ -72,28 +139,10 @@ const EventContent = () => {
             filter: '',
           }}
         >
-          <Stack
-            spacing={{ xs: 4 }}
-            alignItems="center"
-            justifyContent={{ md: 'space-evenly' }}
-            direction={{ md: 'row' }}
-            sx={{ pt: { md: 6 } }}
-          >
-            <EventCard
-              imageSource="/restaurant.jpg"
-              cardText="Éttermi aláfestés"
-            />
-            <EventCard
-              imageSource="/dance.jpg"
-              cardText="Tánc"
-              // sx={{ transform: { md: 'translateY(20%)' } }}
-            />
-            <EventCard
-              imageSource="/event_outdoor.jpg"
-              cardText="Kültéri rendezvény"
-              // sx={{ transform: { md: 'translateY(20%)' } }}
-            />
-            {/* <EventCard imageSource="/karaoke_3.jpg" cardText="Karaoke" /> */}
+          <Stack spacing={{ xs: 4 }} alignItems="center" justifyContent={{ md: 'space-evenly' }} direction={{ md: 'row' }} sx={{ pt: { md: 6 } }}>
+            <EventCard imageSource="/restaurant.jpg" cardText="Éttermi aláfestés" />
+            <EventCard imageSource="/dance.jpg" cardText="Tánc" />
+            <EventCard imageSource="/event_outdoor.jpg" cardText="Kültéri rendezvény" />
           </Stack>
         </Grid>
       </Grid>

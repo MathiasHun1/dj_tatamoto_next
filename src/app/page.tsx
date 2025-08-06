@@ -18,7 +18,7 @@ import img3 from '../../public/images/gallery/main/3.jpg';
 const imagesArray = [img1, img2, img3];
 
 export default function Home() {
-  const [carouselOpen, setCarouselOpen] = useState(true);
+  const [carouselOpen, setCarouselOpen] = useState(false);
 
   return (
     <>
@@ -68,6 +68,7 @@ export default function Home() {
       </Container>
 
       {/*------------ GALERIA --------------*/}
+      <div style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '24px', margin: '40px 0' }}>-- GALÉRIA HELYE --</div>
 
       {carouselOpen && <ImageCarousel imagesArray={imagesArray} activeIndex={0} setCarouselOpen={setCarouselOpen} />}
 

@@ -9,11 +9,7 @@ import DecorationLeftLine from '@/components/DecorationLeftLine';
 const page = () => {
   return (
     <>
-      <HeroSection
-        backgroundURL="/event_hero.jpg"
-        mobileHeight={70}
-        desktopHeight={80}
-      >
+      <HeroSection backgroundURL="/event_hero.jpg" mobileHeight={100} desktopHeight={105}>
         <Container sx={{ height: '100%' }}>
           <Stack
             alignItems="center"

@@ -14,6 +14,7 @@ import Image from 'next/image';
 import { styled } from '@mui/material';
 import AccordionComponent from '@/components/pages/szolgaltatasok/Accordion';
 import DecorationRightLine from '@/components/DecorationRightLine';
+import Reviews from '@/components/Reviews';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -64,8 +65,7 @@ const howIWorkItems = [
 const accordionData = [
   {
     question: 'Játszol mulatós zenét?',
-    answer:
-      'Nekem a ti kívánságotok az első, ha azt szeretnétek, mulatós zenét is szívesen játszom',
+    answer: 'Nekem a ti kívánságotok az első, ha azt szeretnétek, mulatós zenét is szívesen játszom',
   },
   {
     question: 'A fénytechikának / füstgépnek van e külön díja?',
@@ -84,12 +84,7 @@ const accordionData = [
 const page = () => {
   return (
     <>
-      <HeroSection
-        backgroundURL="/hero_wedding.avif"
-        mobileHeight={40}
-        desktopHeight={70}
-        sx={{ '&:after': { opacity: 0.4 } }}
-      >
+      <HeroSection backgroundURL="/hero_wedding.avif" mobileHeight={40} desktopHeight={70} sx={{ '&:after': { opacity: 0.4 } }}>
         <DecorationRightLine sx={{ display: { xs: 'none', md: 'block' } }} />
       </HeroSection>
       <Container
@@ -104,21 +99,16 @@ const page = () => {
       >
         <Typography variant="body1" color="text.primary">
           <Typography component="span" variant="h4" color="primary.light">
-            Gratulálok
+            Gratulálok{''}
           </Typography>
-          friss eljegyzésedhez! Az esküvő az élet egyik legfontosabb napja, és a
-          tökéletes zene elengedhetetlen ahhoz, hogy a hangulat valóban
-          felejthetetlen legyen! Magam is házas ember lévén, pontosan tudom
-          micsoda kihívás a Nagy Nap megszervezése.
+          friss eljegyzésedhez! Az esküvő az élet egyik legfontosabb napja, és a tökéletes zene elengedhetetlen ahhoz, hogy a hangulat valóban
+          felejthetetlen legyen! Magam is házas ember lévén, pontosan tudom micsoda kihívás a Nagy Nap megszervezése.
         </Typography>
 
+        {/*------------ MIÉRT ENGEM ? -----------*/}
+
         <Box sx={{ pt: { xs: 10, md: 15 } }}>
-          <Typography
-            component="h2"
-            variant="h4"
-            color="primary.light"
-            sx={{ pb: 5 }}
-          >
+          <Typography component="h2" variant="h4" color="primary.light" sx={{ pb: 5 }}>
             Miért válassz engem az esküvődre?
           </Typography>
           <List
@@ -130,51 +120,32 @@ const page = () => {
             }}
           >
             <ListItem disableGutters sx={{ pt: 0, alignItems: 'flex-start' }}>
-              <CircleIcon
-                sx={{ width: '12px', mt: 0.5, mr: 2 }}
-                fontSize="small"
-              />
+              <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
               <Typography variant="body1" color="text.primary">
-                <strong>Személyre szabott zenei élmény</strong>: Nem sablonokban
-                gondolkodom. Mint minden ember, minden esküvő egyedi, más a
-                környezet, az ízlés, más a vendégkör. A profi esküvő dj
-                feladata, hogy egyedi ízlésetek és elképzeléseitek alapján
-                állítsa össze a lejátszási listát. Éppen ezért, nem kínálok kész
-                esküvő-csomagokat. Esküvő-dj ajánlatom a személyes
-                megbeszélésünk alapján alakítom ki.
+                <strong>Személyre szabott zenei élmény</strong>: Nem sablonokban gondolkodom. Mint minden ember, minden esküvő egyedi, más a
+                környezet, az ízlés, más a vendégkör. A profi esküvő dj feladata, hogy egyedi ízlésetek és elképzeléseitek alapján állítsa össze a
+                lejátszási listát. Éppen ezért, nem kínálok kész esküvő-csomagokat. Esküvő-dj ajánlatom a személyes megbeszélésünk alapján alakítom
+                ki.
               </Typography>
             </ListItem>
             <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
-              <CircleIcon
-                sx={{ width: '12px', mt: 0.5, mr: 2 }}
-                fontSize="small"
-              />
+              <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
               <Typography variant="body1" color="text.primary">
-                <strong>Profi technika és megbízhatóság</strong>: A technikai
-                eszközállományom sok év alatt fejlesztettem, hogy a hangzás
+                <strong>Profi technika és megbízhatóság</strong>: A technikai eszközállományom sok év alatt fejlesztettem, hogy a hangzás
                 kristálytiszta, a fények pedig hangulatosak legyenek.
               </Typography>
             </ListItem>
             <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
-              <CircleIcon
-                sx={{ width: '12px', mt: 0.5, mr: 2 }}
-                fontSize="small"
-              />
+              <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
               <Typography variant="body1" color="text.primary">
-                <strong>Rugalmasság és kommunikáció</strong>: Fontosnak tartom a
-                folyamatos kapcsolattartást. Szívesen válaszolok minden
-                kérdésre, és rugalmasan alkalmazkodom az esetleges
-                változásokhoz.
+                <strong>Rugalmasság és kommunikáció</strong>: Fontosnak tartom a folyamatos kapcsolattartást. Szívesen válaszolok minden kérdésre, és
+                rugalmasan alkalmazkodom az esetleges változásokhoz.
               </Typography>
             </ListItem>
             <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
-              <CircleIcon
-                sx={{ width: '12px', mt: 0.5, mr: 2 }}
-                fontSize="small"
-              />
+              <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
               <Typography variant="body1" color="text.primary">
-                <strong>Stresszmentes tervezés</strong>: Leveszem a vállatokról
-                a zenei tervezés terhét, így teljes mértékben a pillanatra
+                <strong>Stresszmentes tervezés</strong>: Leveszem a vállatokról a zenei tervezés terhét, így teljes mértékben a pillanatra
                 koncentrálhattok.
               </Typography>
             </ListItem>
@@ -182,25 +153,18 @@ const page = () => {
         </Box>
       </Container>
 
+      <Reviews />
+
+      {/*------------ HOGYAN DOLGOZOM  -----------*/}
+
       <Container disableGutters maxWidth="lg">
         <StyledBox sx={{ mb: 10 }}>
-          <Image
-            src="/wedding_2.avif"
-            alt=""
-            width={500}
-            height={500}
-            priority={true}
-          />
+          <Image src="/wedding_2.avif" alt="" width={500} height={500} priority={true} />
         </StyledBox>
       </Container>
       <Container maxWidth="lg">
         <Box sx={{ pb: 10 }}>
-          <Typography
-            component="h2"
-            variant="h4"
-            color="primary.light"
-            sx={{ pb: 5 }}
-          >
+          <Typography component="h2" variant="h4" color="primary.light" sx={{ pb: 5 }}>
             Hogyan dolgozom?
           </Typography>
           <Box component="ol" sx={{ pl: 2.5 }}>
@@ -241,13 +205,9 @@ const page = () => {
                 },
               }}
             >
-              <Image
-                src="/wedding_3.jpg"
-                alt=""
-                width={500}
-                height={500}
-                priority={true}
-              />
+              {/*------------ GYIK -----------*/}
+
+              <Image src="/wedding_3.jpg" alt="" width={500} height={500} priority={true} />
             </StyledBox>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
