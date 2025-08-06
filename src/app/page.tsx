@@ -8,7 +8,7 @@ import { grey } from '@mui/material/colors';
 
 import WhyMeList from '@/components/pages/home/WhyMeList';
 import ServicesList from '@/components/pages/home/ServicesList';
-import ImageCarousel from '@/components/ImageCarousel';
+// import ImageCarousel from '@/components/ImageCarousel';
 import Reviews from '@/components/Reviews';
 import ImageGallery from '@/components/ImageGallery';
 
