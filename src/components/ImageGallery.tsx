@@ -16,11 +16,11 @@ const ImageGallery = ({ images }: { images: StaticImageData[] }) => {
           spaceBetween: 0,
         },
         640: {
-          slidesPerView: 2, // 👈 2 slides on tablets and small laptops
+          slidesPerView: 3, // 👈 3 slides on tablets and small laptops
           spaceBetween: 10,
         },
         1024: {
-          slidesPerView: 3, // 👈 3 slides on desktops
+          slidesPerView: 4, // 👈 4 slides on desktops
           spaceBetween: 20,
         },
       }}
@@ -30,7 +30,7 @@ const ImageGallery = ({ images }: { images: StaticImageData[] }) => {
       {images &&
         images.map((image, index) => (
           <SwiperSlide key={index}>
-            <Box sx={{ position: 'relative', width: { sx: '100%', md: '370px' }, height: '280px', overflow: 'hidden' }}>
+            <Box sx={{ position: 'relative', width: { sx: '100%', md: '100%' }, height: '280px', overflow: 'hidden' }}>
               <Image src={image} alt="" width={650} height={650} style={{ objectFit: 'cover', objectPosition: 'center', marginInline: 'auto' }} />
             </Box>
           </SwiperSlide>
