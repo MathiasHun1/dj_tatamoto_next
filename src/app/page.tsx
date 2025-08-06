@@ -10,12 +10,17 @@ import WhyMeList from '@/components/pages/home/WhyMeList';
 import ServicesList from '@/components/pages/home/ServicesList';
 import ImageCarousel from '@/components/ImageCarousel';
 import Reviews from '@/components/Reviews';
+import ImageGallery from '@/components/ImageGallery';
 
-import img1 from '../../public/images/gallery/main/2.jpg';
-import img2 from '../../public/images/gallery/main/1.jpg';
+import img1 from '../../public/images/gallery/main/1.jpg';
+import img2 from '../../public/images/gallery/main/2.jpg';
 import img3 from '../../public/images/gallery/main/3.jpg';
+import img4 from '../../public/images/gallery/main/4.jpg';
+import img6 from '../../public/images/gallery/main/6.jpg';
+import img7 from '../../public/images/gallery/main/7.jpg';
+import img8 from '../../public/images/gallery/main/8.jpg';
 
-const imagesArray = [img1, img2, img3];
+const imagesArray = [img1, img2, img3, img4, img6, img7, img8];
 
 export default function Home() {
   const [carouselOpen, setCarouselOpen] = useState(false);
@@ -69,8 +74,10 @@ export default function Home() {
 
       {/*------------ GALERIA --------------*/}
       <div style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '24px', margin: '40px 0' }}>-- GALÉRIA HELYE --</div>
-
-      {carouselOpen && <ImageCarousel imagesArray={imagesArray} activeIndex={0} setCarouselOpen={setCarouselOpen} />}
+      <Box sx={{ pb: 8 }}>
+        <ImageGallery images={imagesArray} />
+      </Box>
+      {/* {carouselOpen && <ImageCarousel imagesArray={imagesArray} activeIndex={0} setCarouselOpen={setCarouselOpen} />} */}
 
       {/*------------ Vélemények --------------*/}
       <Reviews />
