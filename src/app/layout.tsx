@@ -1,5 +1,5 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { Roboto, Playpen_Sans } from 'next/font/google';
+import { Roboto, Playpen_Sans, Montserrat, Poppins } from 'next/font/google';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import theme from '../theme';
@@ -23,6 +23,20 @@ const playpenSans = Playpen_Sans({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-playpenSans',
+});
+
+const montserrat = Montserrat({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+});
+
+const poppins = Poppins({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
 });
 
 export const metadata: Metadata = {
@@ -57,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="hu" className={`${roboto.variable} ${playpenSans.variable}`}>
+    <html lang="hu" className={`${roboto.variable} `}>
       <head>
         <script
           type="application/ld+json"

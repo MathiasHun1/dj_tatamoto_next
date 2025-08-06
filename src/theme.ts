@@ -4,9 +4,8 @@ import { deepPurple, yellow } from '@mui/material/colors';
 import { grey } from '@mui/material/colors';
 
 const theme = createTheme({
-  // cssVariables: true,
   typography: {
-    fontFamily: 'var(--font-playpenSans)',
+    fontFamily: 'var(--font-roboto)',
     body1: {
       lineHeight: 1.8,
       fontWeight: 200,
