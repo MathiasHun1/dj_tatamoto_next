@@ -9,7 +9,7 @@ const DecorationLeftLine = () => {
         content: '""',
         inset: 0,
         clipPath: {
-          xs: 'polygon(0 100%, 100% 100%, 100% 90%, 50% 98%)',
+          xs: 'polygon(0 100%, 100% 100%, 100% 95%, 0 100%)',
           md: 'polygon(0 100%, 100% 100%, 100% 95%, 0 100%)',
         },
         backgroundColor: (theme) => theme.palette.background.default,

@@ -7,6 +7,33 @@ import Image from 'next/image';
 import eventImg from '../../../../public/images/gallery/event/event1.jpg';
 import Reviews from '@/components/Reviews';
 
+const howIWorkItems = [
+  {
+    strongText: 'Első kapcsolatfelvétel',
+    text: 'Vedd fel velem a kapcsolatot telefonon vagy e-mailben, hogy megbeszéljük az esküvő dátumát és az alapvető elképzeléseket.',
+  },
+  {
+    strongText: 'Személyes konzultáció',
+    text: 'Találkozzunk egy kötetlen beszélgetésre, ahol részletesen átbeszéljük az igényeiteket, zenei preferenciáitokat, az esküvő menetét és minden egyéb részletet.',
+  },
+  {
+    strongText: 'Ajánlatkészítés',
+    text: ' Az egyeztetettek alapján elkészítem a személyre szabott, részletes árajánlatot.',
+  },
+  {
+    strongText: 'Szerződéskötés',
+    text: 'A megegyezés után szerződést kötünk a szolgáltatásról.',
+  },
+  {
+    strongText: 'Zenei tervezés',
+    text: ' Folyamatosan egyeztetünk a zenékkel kapcsolatban, és összeállítjuk a tökéletes playlistet.',
+  },
+  {
+    strongText: 'A Nagy Nap',
+    text: 'Megérkezem a helyszínre, felállítom a technikát, és gondoskodom róla, hogy minden zökkenőmentes legyen!',
+  },
+];
+
 const accordionData = [
   {
     question: 'Adhatok le kívánságlistát?',
@@ -123,9 +150,30 @@ const EventContent = () => {
               </ListItem>
             </List>
           </Box>
-
-          <Reviews />
         </Grid>
+
+        <Reviews />
+
+        {/*------------ HOGYAN DOLGOZOM  -----------*/}
+
+        <Container maxWidth="lg">
+          <Box sx={{ pb: 10 }}>
+            <Typography component="h2" variant="h4" color="text.secondary" sx={{ pb: 5 }}>
+              Hogyan dolgozom?
+            </Typography>
+            <Box component="ol" sx={{ pl: 2.5 }}>
+              <Stack spacing={{ xs: 2, md: 3 }}>
+                {howIWorkItems.map((item, index) => (
+                  <li key={index}>
+                    <Typography variant="body1" color="text.primary">
+                      <strong>{item.strongText}</strong>: {item.text}
+                    </Typography>
+                  </li>
+                ))}
+              </Stack>
+            </Box>
+          </Box>
+        </Container>
 
         {/*------------ GYIK  -----------*/}
         <Grid size={{ xs: 12 }}>
