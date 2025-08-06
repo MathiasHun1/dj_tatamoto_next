@@ -1,12 +1,24 @@
+'use client';
+
 import { Box, Container, Stack, Typography } from '@mui/material';
 import HeroSection from '@/components/HeroSection';
 import Logo from '@/components/Logo';
 
 import WhyMeList from '@/components/pages/home/WhyMeList';
 import ServicesList from '@/components/pages/home/ServicesList';
+import ImageCarousel from '@/components/ImageCarousel';
 import { grey } from '@mui/material/colors';
 
+import img1 from '../../public/images/gallery/main/2.jpg';
+import img2 from '../../public/images/gallery/main/1.jpg';
+import img3 from '../../public/images/gallery/main/3.jpg';
+import { useState } from 'react';
+
+const imagesArray = [img1, img2, img3];
+
 export default function Home() {
+  const [carouselOpen, setCarouselOpen] = useState(true);
+
   return (
     <>
       <HeroSection backgroundURL="/hero2.jpg" mobileHeight={100} desktopHeight={100}>
@@ -53,6 +65,10 @@ export default function Home() {
           <WhyMeList />
         </Box>
       </Container>
+
+      {/*------------ GALERIA --------------*/}
+
+      {carouselOpen && <ImageCarousel imagesArray={imagesArray} activeIndex={0} setCarouselOpen={setCarouselOpen} />}
     </>
   );
 }

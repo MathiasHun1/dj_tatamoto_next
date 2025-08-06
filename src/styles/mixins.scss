@@ -1,0 +1,19 @@
+@mixin wrapper {
+  padding-inline: 1rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@mixin app-width-wrapper {
+  width: 100%;
+  max-width: 100rem;
+  margin-inline: auto;
+}
+
+$breakpoint-small: 35rem;
+
+@mixin small-above {
+  @media (min-width: $breakpoint-small) {
+    @content;
+  }
+}
