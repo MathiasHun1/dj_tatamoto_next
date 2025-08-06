@@ -9,12 +9,29 @@ import { Box } from '@mui/material';
 
 const ImageGallery = ({ images }: { images: StaticImageData[] }) => {
   return (
-    <Swiper spaceBetween={20} slidesPerView={3} loop={true} grabCursor={true}>
+    <Swiper
+      breakpoints={{
+        0: {
+          slidesPerView: 1, // 👈 1 slide on very small screens (mobile)
+          spaceBetween: 0,
+        },
+        640: {
+          slidesPerView: 2, // 👈 2 slides on tablets and small laptops
+          spaceBetween: 10,
+        },
+        1024: {
+          slidesPerView: 3, // 👈 3 slides on desktops
+          spaceBetween: 20,
+        },
+      }}
+      loop={true}
+      grabCursor={true}
+    >
       {images &&
         images.map((image, index) => (
           <SwiperSlide key={index}>
-            <Box sx={{ position: 'relative', width: '370px', height: '280px', overflow: 'hidden' }}>
-              <Image src={image} alt="" width={650} height={650} style={{ objectFit: 'cover', objectPosition: 'center' }} />
+            <Box sx={{ position: 'relative', width: { sx: '100%', md: '370px' }, height: '280px', overflow: 'hidden' }}>
+              <Image src={image} alt="" width={650} height={650} style={{ objectFit: 'cover', objectPosition: 'center', marginInline: 'auto' }} />
             </Box>
           </SwiperSlide>
         ))}
