@@ -13,14 +13,7 @@ type Props = {
   backgroundDarkness?: number;
 };
 
-const HeroSection = ({
-  backgroundURL,
-  children,
-  mobileHeight = 500,
-  desktopHeight = 900,
-  backgroundDarkness = 0.55,
-  sx,
-}: Props) => {
+const HeroSection = ({ backgroundURL, children, mobileHeight = 500, desktopHeight = 900, backgroundDarkness = 0.7, sx }: Props) => {
   const boxStyles = {
     position: 'relative',
     zIndex: -10,

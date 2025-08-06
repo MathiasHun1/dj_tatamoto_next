@@ -13,8 +13,7 @@ const cards = [
   },
   {
     titleText: 'Céges rendezvény',
-    bodyText:
-      'Évzárók, csapatépítők - egy profi dj és a jó zene megalapozza a sikeres eseményt!',
+    bodyText: 'Évzárók, csapatépítők - egy profi dj és a jó zene megalapozza a sikeres eseményt!',
     imageUrl: '/workplace-party-image.jpg',
     pageLink: '/szolgaltatasok/rendezvenydj',
   },
@@ -31,9 +30,7 @@ const ServicesList = () => {
   const bigBoxHeight = 500;
 
   return (
-    <Container
-      maxWidth="xl"
-      disableGutters
+    <Box
       sx={{
         position: 'relative',
       }}
@@ -60,11 +57,7 @@ const ServicesList = () => {
           </Typography>
         </Box>
 
-        <Container
-          maxWidth="xl"
-          data-id="cards-container"
-          sx={{ height: { md: '850px' }, py: { xs: 4, md: 8 } }}
-        >
+        <Container maxWidth="xl" data-id="cards-container" sx={{ height: { md: '850px' }, py: { xs: 4, md: 8 } }}>
           <Stack spacing={{ xs: 2, sm: 2, md: 0 }} direction={{ md: 'row' }}>
             {cards.map((card, index) => (
               <Box
@@ -73,9 +66,7 @@ const ServicesList = () => {
                   width: { xs: '100%', md: '50%' },
                   overflow: 'hidden',
                   transform: {
-                    md: `translateX(${
-                      index === 0 ? '12%' : index === 2 ? '-12%' : '0'
-                    }) translateY(${index * 20}%)`,
+                    md: `translateX(${index === 0 ? '12%' : index === 2 ? '-12%' : '0'}) translateY(${index * 10}%)`,
                   },
                   ':hover': {},
                 }}
@@ -92,7 +83,7 @@ const ServicesList = () => {
           </Stack>
         </Container>
       </Stack>
-    </Container>
+    </Box>
   );
 };
 
