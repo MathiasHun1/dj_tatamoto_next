@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { Box, Container, Stack, Typography } from '@mui/material';
 import HeroSection from '@/components/HeroSection';
 import Logo from '@/components/Logo';
