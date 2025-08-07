@@ -7,7 +7,6 @@ import { grey } from '@mui/material/colors';
 
 import WhyMeList from '@/components/pages/home/WhyMeList';
 import ServicesList from '@/components/pages/home/ServicesList';
-// import ImageCarousel from '@/components/ImageCarousel';
 import Reviews from '@/components/Reviews';
 import ImageGallery from '@/components/ImageGallery';
 
@@ -22,8 +21,6 @@ import img8 from '../../public/images/gallery/main/8.jpg';
 const imagesArray = [img1, img2, img3, img4, img6, img7, img8];
 
 export default function Home() {
-  // const [carouselOpen, setCarouselOpen] = useState(false);
-
   return (
     <>
       <HeroSection backgroundURL="/hero2.jpg" mobileHeight={100} desktopHeight={100}>
