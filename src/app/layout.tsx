@@ -4,7 +4,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import theme from '../theme';
 import type { Metadata } from 'next';
-import './globals.css';
+import './globals.scss';
 import { jsonLD } from '@/jsonLD';
 
 import Box from '@mui/material/Box';
