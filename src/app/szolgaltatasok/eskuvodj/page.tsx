@@ -1,3 +1,5 @@
+'use client';
+
 import HeroSection from '@/components/HeroSection';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
