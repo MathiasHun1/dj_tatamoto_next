@@ -7,9 +7,9 @@ import Image from 'next/image';
 import Reviews from '@/components/Reviews';
 import EventCard from '@/components/EventCard';
 import eventImg from '../../../../public/images/gallery/event/event1.jpg';
-// import ImageGallery from '@/components/ImageGallery';
-// import { eventImages } from '@/shared/imageData';
-// import { grey } from '@mui/material/colors';
+import ImageGallery from '@/components/ImageGallery';
+import { eventImages } from '@/shared/imageData';
+import { grey } from '@mui/material/colors';
 
 import HeroSection from '@/components/HeroSection';
 // import EventContent from '@/components/pages/szolgaltatasok/EventContent';
@@ -166,9 +166,9 @@ const page = () => {
             </Box>
 
             {/*------------ GALERIA --------------*/}
-            {/* <Box sx={{ backgroundColor: grey[900] }}>
+            <Box sx={{ backgroundColor: grey[900] }}>
               <ImageGallery images={eventImages} />
-            </Box> */}
+            </Box>
           </Container>
 
           {/*------------ GYIK  -----------*/}
