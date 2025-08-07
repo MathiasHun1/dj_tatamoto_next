@@ -79,24 +79,24 @@ export default function ContactForm() {
   return (
     <Box sx={{ maxWidth: '600px', margin: '0 auto' }}>
       <div className="mb-3 bg-primary p-4 rounded-3">
-        <h2 className="">Ajánlatkérés</h2>
+        <h2 className="pb-3">Ajánlatkérés</h2>
         <form onSubmit={handleSubmit} className="">
-          <div>
-            <label htmlFor="name" className="form-label">
+          <div className="mb-3">
+            <label htmlFor="name" className="form-label mb-0">
               Neved
             </label>
             <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="form-control" />
           </div>
 
-          <div>
-            <label htmlFor="email" className="form-label">
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label mb-0">
               Email
             </label>
             <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="form-control" />
           </div>
 
-          <div>
-            <label htmlFor="subject" className="form-label">
+          <div className="mb-3">
+            <label htmlFor="subject" className="form-label mb-0">
               Esemény típusa
             </label>
             <select id="subject" name="subject" value={formData.subject} onChange={handleChange} required className="form-control">
@@ -106,9 +106,9 @@ export default function ContactForm() {
             </select>
           </div>
 
-          <div>
-            <label htmlFor="message" className="form-label">
-              Your Message
+          <div className="mb-3">
+            <label htmlFor="message" className="form-label mb-0">
+              Üzenet
             </label>
             <textarea
               id="message"
@@ -130,7 +130,7 @@ export default function ContactForm() {
               onChange={handleChange}
               className="form-checkbox"
             />
-            <label htmlFor="priceRequest" className="form-label">
+            <label htmlFor="priceRequest" className="form-label mb-0">
               I am requesting a price estimate
             </label>
           </div>
