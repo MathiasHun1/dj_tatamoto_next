@@ -15,6 +15,8 @@ import { styled } from '@mui/material';
 import AccordionComponent from '@/components/pages/szolgaltatasok/Accordion';
 import DecorationRightLine from '@/components/DecorationRightLine';
 import Reviews from '@/components/Reviews';
+import ImageGallery from '@/components/ImageGallery';
+import { weddingImages } from '@/shared/imageData';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -108,7 +110,7 @@ const page = () => {
         {/*------------ MIÉRT ENGEM ? -----------*/}
 
         <Box sx={{ pt: { xs: 10, md: 15 } }}>
-          <Typography component="h2" variant="h4" color="primary.light" sx={{ pb: 5 }}>
+          <Typography component="h2" variant="h3" color="primary.light" sx={{ pb: 5 }}>
             Miért válassz engem az esküvődre?
           </Typography>
           <List
@@ -163,8 +165,8 @@ const page = () => {
         </StyledBox>
       </Container>
       <Container maxWidth="lg">
-        <Box sx={{ pb: 10 }}>
-          <Typography component="h2" variant="h4" color="primary.light" sx={{ pb: 5 }}>
+        <Box sx={{ pb: { xs: 4, md: 6 } }}>
+          <Typography component="h2" variant="h3" color="primary.light" sx={{ pb: 5 }}>
             Hogyan dolgozom?
           </Typography>
           <Box component="ol" sx={{ pl: 2.5 }}>
@@ -179,11 +181,24 @@ const page = () => {
             </Stack>
           </Box>
         </Box>
+        {/*------------ GALERIA --------------*/}
+        <Box sx={{ pb: { xs: 4, md: 12 }, backgroundColor: grey[900] }}>
+          <ImageGallery images={weddingImages} />
+        </Box>
       </Container>
 
-      <Container disableGutters maxWidth="lg" sx={{ pb: 15 }}>
+      {/*------------ GYIK -----------*/}
+      <Container maxWidth="lg" sx={{ pt: { xs: 4, md: 6 }, pb: 15 }}>
+        <Typography variant="h4" color="primary.light" sx={{ pb: { xs: 4, md: 6 } }}>
+          Gyakran ismételt kérdések
+        </Typography>
+
         <Grid container spacing={{ xs: 0, md: 5 }}>
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 7 }}>
+            <AccordionComponent data={accordionData} />
+          </Grid>
+
+          <Grid size={{ xs: 12, md: 5 }} sx={{ display: { xs: 'none', md: 'block' } }}>
             <StyledBox
               sx={{
                 height: { xs: '250px', md: '350px' },
@@ -205,18 +220,8 @@ const page = () => {
                 },
               }}
             >
-              {/*------------ GYIK -----------*/}
-
               <Image src="/wedding_3.jpg" alt="" width={500} height={500} priority={true} />
             </StyledBox>
-          </Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Container maxWidth="lg">
-              <Typography variant="h4" color="primary.light" sx={{ pb: 3 }}>
-                Gyakran ismételt kérdések
-              </Typography>
-              <AccordionComponent data={accordionData} />
-            </Container>
           </Grid>
         </Grid>
       </Container>

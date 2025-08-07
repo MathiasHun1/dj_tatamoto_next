@@ -1,11 +1,16 @@
+'use client';
+
 import { Grid, Container, Typography, Stack, Box, List, ListItem } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
+import ImageGallery from '@/components/ImageGallery';
+import { grey } from '@mui/material/colors';
 
 import AccordionComponent from './Accordion';
 import EventCard from '@/components/EventCard';
 import Image from 'next/image';
 import eventImg from '../../../../public/images/gallery/event/event1.jpg';
 import Reviews from '@/components/Reviews';
+import { eventImages } from '@/shared/imageData';
 
 const howIWorkItems = [
   {
@@ -67,7 +72,7 @@ const EventContent = () => {
           position: 'relative',
           zIndex: 10,
         }}
-        spacing={{ xs: 8 }}
+        spacing={{ xs: 0 }}
       >
         <Grid size={12} offset={{ md: 0 }} sx={{ zIndex: 10 }}>
           <Grid container gap={3}>
@@ -157,8 +162,8 @@ const EventContent = () => {
 
         {/*------------ HOGYAN DOLGOZOM  -----------*/}
 
-        <Container maxWidth="lg">
-          <Box sx={{ pb: 10 }}>
+        <Container disableGutters maxWidth="lg" sx={{ pb: { xs: 10, md: 10 } }}>
+          <Box sx={{ pb: { xs: 4, md: 6 } }}>
             <Typography component="h2" variant="h4" color="text.secondary" sx={{ pb: 5 }}>
               Hogyan dolgozom?
             </Typography>
@@ -174,10 +179,19 @@ const EventContent = () => {
               </Stack>
             </Box>
           </Box>
+
+          {/*------------ GALERIA --------------*/}
+          <Box sx={{ backgroundColor: grey[900] }}>
+            <ImageGallery images={eventImages} />
+          </Box>
         </Container>
 
         {/*------------ GYIK  -----------*/}
         <Grid size={{ xs: 12 }}>
+          <Typography variant="h4" color="text.secondary" sx={{ pb: { xs: 4, md: 6 } }}>
+            Gyakran ismételt kérdések
+          </Typography>
+
           <AccordionComponent data={accordionData} />
         </Grid>
 
@@ -188,7 +202,13 @@ const EventContent = () => {
             filter: '',
           }}
         >
-          <Stack spacing={{ xs: 4 }} alignItems="center" justifyContent={{ md: 'space-evenly' }} direction={{ md: 'row' }} sx={{ pt: { md: 6 } }}>
+          <Stack
+            spacing={{ xs: 4 }}
+            alignItems="center"
+            justifyContent={{ md: 'space-evenly' }}
+            direction={{ md: 'row' }}
+            sx={{ pt: { xs: 6 }, pb: { xs: 8, md: 8 } }}
+          >
             <EventCard imageSource="/restaurant.jpg" cardText="Éttermi aláfestés" />
             <EventCard imageSource="/dance.jpg" cardText="Tánc" />
             <EventCard imageSource="/event_outdoor.jpg" cardText="Kültéri rendezvény" />

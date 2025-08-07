@@ -14,7 +14,7 @@ const Reviews = dynamic(
         <ReactGoogleReviews
           layout="carousel"
           featurableId={publicKey}
-          carouselSpeed={8000}
+          carouselSpeed={10000}
           maxCharacters={300}
           maxItems={3}
           carouselClassName="carousel"
