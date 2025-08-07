@@ -15,8 +15,8 @@ import { styled } from '@mui/material';
 import AccordionComponent from '@/components/pages/szolgaltatasok/Accordion';
 import DecorationRightLine from '@/components/DecorationRightLine';
 import Reviews from '@/components/Reviews';
-// import ImageGallery from '@/components/ImageGallery';
-// import { weddingImages } from '@/shared/imageData';
+import ImageGallery from '@/components/ImageGallery';
+import { weddingImages } from '@/shared/imageData';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -182,9 +182,9 @@ const page = () => {
           </Box>
         </Box>
         {/*------------ GALERIA --------------*/}
-        {/* <Box sx={{ pb: { xs: 4, md: 12 }, backgroundColor: grey[900] }}>
+        <Box sx={{ pb: { xs: 4, md: 12 }, backgroundColor: grey[900] }}>
           <ImageGallery images={weddingImages} />
-        </Box> */}
+        </Box>
       </Container>
 
       {/*------------ GYIK -----------*/}
