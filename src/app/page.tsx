@@ -23,7 +23,7 @@ import img8 from '../../public/images/gallery/main/8.jpg';
 const imagesArray = [img1, img2, img3, img4, img6, img7, img8];
 
 export default function Home() {
-  const [carouselOpen, setCarouselOpen] = useState(false);
+  // const [carouselOpen, setCarouselOpen] = useState(false);
 
   return (
     <>
