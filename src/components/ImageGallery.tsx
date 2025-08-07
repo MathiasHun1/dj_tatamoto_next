@@ -1,11 +1,12 @@
+'use client';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/virtual';
 import 'swiper/css/navigation';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
-import { Box } from '@mui/material';
+// import { Box } from '@mui/material';
 
 const ImageGallery = ({ images }: { images: StaticImageData[] }) => {
   return (
@@ -30,9 +31,9 @@ const ImageGallery = ({ images }: { images: StaticImageData[] }) => {
       {images &&
         images.map((image, index) => (
           <SwiperSlide key={index}>
-            <Box sx={{ position: 'relative', width: { sx: '100%', md: '100%' }, height: '280px', overflow: 'hidden', borderRadius: '8px' }}>
-              <Image src={image} alt="" width={650} height={650} style={{ objectFit: 'cover', objectPosition: 'center', marginInline: 'auto' }} />
-            </Box>
+            <Image src={image} alt="" width={650} height={650} style={{ objectFit: 'cover', objectPosition: 'center', marginInline: 'auto' }} />
+            {/* <Box sx={{ position: 'relative', width: { sx: '100%', md: '100%' }, height: '280px', overflow: 'hidden', borderRadius: '8px' }}>
+            </Box> */}
           </SwiperSlide>
         ))}
     </Swiper>

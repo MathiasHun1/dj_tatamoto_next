@@ -1,9 +1,10 @@
 'use client';
+
 import { createTheme } from '@mui/material/styles';
 import { deepPurple, yellow } from '@mui/material/colors';
 import { grey } from '@mui/material/colors';
 
-const baseTheme = createTheme();
+// const baseTheme = createTheme();
 
 const theme = createTheme({
   typography: {
@@ -12,9 +13,9 @@ const theme = createTheme({
       lineHeight: 1.8,
       fontWeight: 200,
       fontSize: '1rem',
-      [baseTheme.breakpoints.up('sm')]: {
-        fontSize: '1.2rem', // Font size for 'sm' screens and up
-      },
+      // [baseTheme.breakpoints.up('sm')]: {
+      //   fontSize: '1.2rem', // Font size for 'sm' screens and up
+      // },
     },
   },
 
