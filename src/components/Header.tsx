@@ -81,9 +81,7 @@ export default function Header() {
                   width: '50px',
                 }}
               >
-                <MenuIcon
-                  sx={{ width: '100%', height: '100%', aspectRatio: 1 }}
-                />
+                <MenuIcon sx={{ width: '100%', height: '100%', aspectRatio: 1 }} />
               </IconButton>
               <Box
                 component="div"
@@ -94,12 +92,7 @@ export default function Header() {
                 }}
               >
                 <Box sx={{ width: '160px' }}>
-                  <Image
-                    src="/tataLogo.svg"
-                    alt="dj tataMoto logo"
-                    width={200}
-                    height={100}
-                  />
+                  <Image src="/tataLogo.svg" alt="dj tataMoto logo" width={200} height={100} />
                 </Box>
               </Box>
 
@@ -189,8 +182,6 @@ const HeaderTabs = () => {
         <Tab component={Link} href="/bemutatkozas" label="Bemutatkozás" />
 
         <Tab label="Szolgáltatások" onClick={handleOpen} />
-
-        <Tab component={Link} href="/galeria" label="Galéria" />
 
         <Tab component={Link} href="/kapcsolat" label="Kapcsolat" />
       </Tabs>
