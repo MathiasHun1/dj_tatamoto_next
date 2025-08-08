@@ -17,6 +17,7 @@ import DecorationRightLine from '@/components/DecorationRightLine';
 import Reviews from '@/components/Reviews';
 import ImageGallery from '@/components/ImageGallery';
 import { weddingImages } from '@/shared/imageData';
+import { howIWorkWeddingText, accordionWeddingData } from '@/shared/textData';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -36,52 +37,6 @@ const StyledBox = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.background.default,
   },
 }));
-
-const howIWorkItems = [
-  {
-    strongText: 'Első kapcsolatfelvétel',
-    text: 'Vedd fel velem a kapcsolatot telefonon vagy e-mailben, hogy megbeszéljük az esküvő dátumát és az alapvető elképzeléseket.',
-  },
-  {
-    strongText: 'Személyes konzultáció',
-    text: 'Találkozzunk egy kötetlen beszélgetésre, ahol részletesen átbeszéljük az igényeiteket, zenei preferenciáitokat, az esküvő menetét és minden egyéb részletet.',
-  },
-  {
-    strongText: 'Ajánlatkészítés',
-    text: ' Az egyeztetettek alapján elkészítem a személyre szabott, részletes árajánlatot.',
-  },
-  {
-    strongText: 'Szerződéskötés',
-    text: 'A megegyezés után szerződést kötünk a szolgáltatásról.',
-  },
-  {
-    strongText: 'Zenei tervezés',
-    text: ' Folyamatosan egyeztetünk a zenékkel kapcsolatban, és összeállítjuk a tökéletes playlistet.',
-  },
-  {
-    strongText: 'A Nagy Nap',
-    text: 'Megérkezem a helyszínre, felállítom a technikát, és gondoskodom róla, hogy minden zökkenőmentes legyen!',
-  },
-];
-
-const accordionData = [
-  {
-    question: 'Játszol mulatós zenét?',
-    answer: 'Nekem a ti kívánságotok az első, ha azt szeretnétek, mulatós zenét is szívesen játszom',
-  },
-  {
-    question: 'A fénytechikának / füstgépnek van e külön díja?',
-    answer: 'Nincs, az ár tartalmazza a komplett felszerelést',
-  },
-  {
-    question: 'Vendégmikrofon van e?',
-    answer: 'Igen, vezeték nélküli mikrofonnal tudok szolgálni',
-  },
-  {
-    question: 'Ceremónia hangosítását meg tudod oldani?',
-    answer: 'Természetesen!',
-  },
-];
 
 const page = () => {
   return (
@@ -171,7 +126,7 @@ const page = () => {
           </Typography>
           <Box component="ol" sx={{ pl: 2.5 }}>
             <Stack spacing={{ xs: 2, md: 3 }}>
-              {howIWorkItems.map((item, index) => (
+              {howIWorkWeddingText.map((item, index) => (
                 <li key={index}>
                   <Typography variant="body1" color="text.primary">
                     <strong>{item.strongText}</strong>: {item.text}
@@ -195,7 +150,7 @@ const page = () => {
 
         <Grid container spacing={{ xs: 0, md: 5 }}>
           <Grid size={{ xs: 12, md: 7 }}>
-            <AccordionComponent data={accordionData} />
+            <AccordionComponent data={accordionWeddingData} />
           </Grid>
 
           <Grid size={{ xs: 12, md: 5 }} sx={{ display: { xs: 'none', md: 'block' } }}>

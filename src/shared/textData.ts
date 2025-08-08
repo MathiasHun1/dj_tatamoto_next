@@ -48,3 +48,22 @@ export const accordionEventsText = [
     answer: 'Legalább két óra kell a szükséges technika összeszereléséhez, tehát két órával a buli előtt',
   },
 ];
+
+export const accordionWeddingData = [
+  {
+    question: 'Játszol mulatós zenét?',
+    answer: 'Nekem a ti kívánságotok az első, ha azt szeretnétek, mulatós zenét is szívesen játszom',
+  },
+  {
+    question: 'A fénytechikának / füstgépnek van e külön díja?',
+    answer: 'Nincs, az ár tartalmazza a komplett felszerelést',
+  },
+  {
+    question: 'Vendégmikrofon van e?',
+    answer: 'Igen, vezeték nélküli mikrofonnal tudok szolgálni',
+  },
+  {
+    question: 'Ceremónia hangosítását meg tudod oldani?',
+    answer: 'Természetesen!',
+  },
+];
