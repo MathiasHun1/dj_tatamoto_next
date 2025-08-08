@@ -1,6 +1,4 @@
-import { Box, Typography, ListItem, darken, Paper, styled } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Theme } from '@mui/material';
+import { Box, Typography, Paper, styled } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 

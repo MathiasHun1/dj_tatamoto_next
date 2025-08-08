@@ -15,7 +15,7 @@ import HeroSection from '@/components/HeroSection';
 // import EventContent from '@/components/pages/szolgaltatasok/EventContent';
 import DecorationLeftLine from '@/components/DecorationLeftLine';
 import AccordionComponent from '@/components/pages/szolgaltatasok/Accordion';
-import { accordionEventsText, howIWorkWeddingText } from '@/shared/textData';
+import { accordionEventsText, howIWorkWeddingText, whyMeWeddingText } from '@/shared/textData';
 import CtaButton from '@/components/CtaButton';
 
 const page = () => {
@@ -37,21 +37,23 @@ const page = () => {
               },
             }}
           >
-            <Typography component="h1" variant="h4" color="text.secondary">
-              CÉGES BULI
-            </Typography>
-            <Typography component="h1" variant="h4" color="text.secondary">
-              PRIVÁT BULI
-            </Typography>
-            <Typography component="h1" variant="h4" color="text.secondary">
-              KÜLTÉRI RENDEZVÉNY
+            <Typography component="h1">
+              <Typography component="span" variant="h4" color="text.secondary" sx={{ display: 'block', pb: 5 }}>
+                CÉGES BULI
+              </Typography>
+              <Typography component="span" variant="h4" color="text.secondary" sx={{ display: 'block', pb: 5 }}>
+                PRIVÁT BULI
+              </Typography>
+              <Typography component="span" variant="h4" color="text.secondary" sx={{ display: 'block' }}>
+                KÜLTÉRI RENDEZVÉNY
+              </Typography>
             </Typography>
           </Stack>
         </Container>
         <DecorationLeftLine />
       </HeroSection>
 
-      <Container maxWidth="lg" sx={{ pb: { md: 6 }, pt: 6 }}>
+      <Container maxWidth="lg" sx={{ pb: { md: 6 }, pt: { xs: 6, md: 14 } }}>
         <Grid
           container
           sx={{
@@ -63,7 +65,7 @@ const page = () => {
           <Grid size={12} offset={{ md: 0 }} sx={{ zIndex: 10 }}>
             <Grid container gap={3}>
               <Grid size={{ xs: 12, md: 6 }}>
-                <Typography component="span" variant="h5" color="text.secondary" sx={{ fontWeight: 'bold' }}>
+                <Typography component="h2" variant="h4" color="text.secondary" sx={{ pb: 2 }}>
                   Profi DJ szolgáltatás minden eseményre
                 </Typography>{' '}
                 <Typography variant="body1" color="text.primary">
@@ -105,7 +107,7 @@ const page = () => {
             {/*------------ MIÉRT ENGEM ? -----------*/}
 
             <Box sx={{ pt: { xs: 10, md: 15 } }}>
-              <Typography component="h2" variant="h4" color="text.secondary" sx={{ pb: 5 }}>
+              <Typography component="h2" variant="h4" color="text.secondary" sx={{ pb: 2 }}>
                 Miért válassz engem az rendezvényre?
               </Typography>
               <List
@@ -116,36 +118,14 @@ const page = () => {
                   },
                 }}
               >
-                <ListItem disableGutters sx={{ pt: 0, alignItems: 'flex-start' }}>
-                  <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
-                  <Typography variant="body1" color="text.primary">
-                    <strong>Személyre szabott zenei élmény</strong>: Nem sablonokban gondolkodom. Mint minden ember, minden esküvő egyedi, más a
-                    környezet, az ízlés, más a vendégkör. A profi esküvő dj feladata, hogy egyedi ízlésetek és elképzeléseitek alapján állítsa össze a
-                    lejátszási listát. Éppen ezért, nem kínálok kész esküvő-csomagokat. Esküvő-dj ajánlatom a személyes megbeszélésünk alapján
-                    alakítom ki.
-                  </Typography>
-                </ListItem>
-                <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
-                  <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
-                  <Typography variant="body1" color="text.primary">
-                    <strong>Profi technika és megbízhatóság</strong>: A technikai eszközállományom sok év alatt fejlesztettem, hogy a hangzás
-                    kristálytiszta, a fények pedig hangulatosak legyenek.
-                  </Typography>
-                </ListItem>
-                <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
-                  <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
-                  <Typography variant="body1" color="text.primary">
-                    <strong>Rugalmasság és kommunikáció</strong>: Fontosnak tartom a folyamatos kapcsolattartást. Szívesen válaszolok minden kérdésre,
-                    és rugalmasan alkalmazkodom az esetleges változásokhoz.
-                  </Typography>
-                </ListItem>
-                <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
-                  <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
-                  <Typography variant="body1" color="text.primary">
-                    <strong>Stresszmentes tervezés</strong>: Leveszem a vállatokról a zenei tervezés terhét, így teljes mértékben a pillanatra
-                    koncentrálhattok.
-                  </Typography>
-                </ListItem>
+                {whyMeWeddingText.map((item, index) => (
+                  <ListItem disableGutters sx={{ pt: 0, alignItems: 'flex-start' }} key={index}>
+                    <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
+                    <Typography variant="body1" color="text.primary">
+                      <strong>{item.strongText}</strong>: {item.text}
+                    </Typography>
+                  </ListItem>
+                ))}
               </List>
             </Box>
             <Box sx={{ pt: { xs: 5, md: 10 } }}>
@@ -161,7 +141,7 @@ const page = () => {
 
           <Container disableGutters maxWidth="lg" sx={{ pb: { xs: 10, md: 10 } }}>
             <Box sx={{ pb: { xs: 4, md: 6 } }}>
-              <Typography component="h2" variant="h4" color="text.secondary" sx={{ pb: 5 }}>
+              <Typography component="h2" variant="h4" color="text.secondary" sx={{ pb: 2 }}>
                 Hogyan dolgozom?
               </Typography>
               <Box component="ol" sx={{ pl: 2.5 }}>
@@ -188,7 +168,7 @@ const page = () => {
 
           {/*------------ GYIK  -----------*/}
           <Grid size={{ xs: 12 }}>
-            <Typography variant="h4" color="text.secondary" sx={{ pb: { xs: 4, md: 6 } }}>
+            <Typography component="h2" variant="h4" color="text.secondary" sx={{ pb: { xs: 4, md: 6 } }}>
               Gyakran ismételt kérdések
             </Typography>
 
