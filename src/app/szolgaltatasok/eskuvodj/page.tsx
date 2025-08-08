@@ -16,7 +16,7 @@ import AccordionComponent from '@/components/pages/szolgaltatasok/Accordion';
 import Reviews from '@/components/Reviews';
 import ImageGallery from '@/components/ImageGallery';
 import { weddingImages } from '@/shared/imageData';
-import { howIWorkWeddingText, accordionWeddingData } from '@/shared/textData';
+import { howIWorkWeddingText, accordionWeddingData, whyMeWeddingText } from '@/shared/textData';
 import weddingStockImg from '../../../../public/wedding_stock1.jpg';
 
 const StyledBox = styled(Box)(({ theme }) => ({
@@ -115,36 +115,14 @@ const page = () => {
               },
             }}
           >
-            <ListItem disableGutters sx={{ pt: 0, alignItems: 'flex-start' }}>
-              <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
-              <Typography variant="body1" color="text.primary">
-                <strong>Személyre szabott zenei élmény</strong>: Nem sablonokban gondolkodom. Mint minden ember, minden esküvő egyedi, más a
-                környezet, az ízlés, más a vendégkör. A profi esküvő dj feladata, hogy egyedi ízlésetek és elképzeléseitek alapján állítsa össze a
-                lejátszási listát. Éppen ezért, nem kínálok kész esküvő-csomagokat. Esküvő-dj ajánlatom a személyes megbeszélésünk alapján alakítom
-                ki.
-              </Typography>
-            </ListItem>
-            <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
-              <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
-              <Typography variant="body1" color="text.primary">
-                <strong>Profi technika és megbízhatóság</strong>: A technikai eszközállományom sok év alatt fejlesztettem, hogy a hangzás
-                kristálytiszta, a fények pedig hangulatosak legyenek.
-              </Typography>
-            </ListItem>
-            <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
-              <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
-              <Typography variant="body1" color="text.primary">
-                <strong>Rugalmasság és kommunikáció</strong>: Fontosnak tartom a folyamatos kapcsolattartást. Szívesen válaszolok minden kérdésre, és
-                rugalmasan alkalmazkodom az esetleges változásokhoz.
-              </Typography>
-            </ListItem>
-            <ListItem disableGutters sx={{ alignItems: 'flex-start' }}>
-              <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
-              <Typography variant="body1" color="text.primary">
-                <strong>Stresszmentes tervezés</strong>: Leveszem a vállatokról a zenei tervezés terhét, így teljes mértékben a pillanatra
-                koncentrálhattok.
-              </Typography>
-            </ListItem>
+            {whyMeWeddingText.map((item, index) => (
+              <ListItem disableGutters sx={{ pt: 0, alignItems: 'flex-start' }} key={index}>
+                <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
+                <Typography variant="body1" color="text.primary">
+                  <strong>{item.strongText}</strong>: {item.text}
+                </Typography>
+              </ListItem>
+            ))}
           </List>
         </Box>
       </Container>
@@ -167,9 +145,12 @@ const page = () => {
             <Stack spacing={{ xs: 2, md: 3 }}>
               {howIWorkWeddingText.map((item, index) => (
                 <li key={index}>
-                  <Typography variant="body1" color="text.primary">
-                    <strong>{item.strongText}</strong>: {item.text}
-                  </Typography>
+                  <Box color="text.primary">
+                    <Typography component="h3" variant="body1" sx={{ display: 'inline-block', fontWeight: 'bold', textDecoration: 'underline' }}>
+                      {item.strongText}
+                    </Typography>
+                    : {item.text}
+                  </Box>
                 </li>
               ))}
             </Stack>

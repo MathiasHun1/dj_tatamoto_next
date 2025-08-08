@@ -25,6 +25,33 @@ export const howIWorkWeddingText = [
   },
 ];
 
+export const whyMeWeddingText = [
+  {
+    strongText: 'Személyre szabott zenei élmény',
+    text: 'Nem sablonokban gondolkodom. Mint minden ember, minden esküvő egyedi, más a környezet, az ízlés, más a vendégkör. A profi esküvő dj feladata, hogy egyedi ízlésetek és elképzeléseitek alapján állítsa össze a lejátszási listát. Éppen ezért, nem kínálok kész esküvő-csomagokat. Esküvő-dj ajánlatom a személyes megbeszélésünk alapján alakítom ki.',
+  },
+  {
+    strongText: 'Profi technika és megbízhatóság',
+    text: 'A technikai eszközállományom sok év alatt fejlesztettem, hogy a hangzás kristálytiszta, a fények pedig hangulatosak legyenek.',
+  },
+  {
+    strongText: 'Rugalmasság és kommunikáció',
+    text: 'Fontosnak tartom a folyamatos kapcsolattartást. Szívesen válaszolok minden kérdésre, és rugalmasan alkalmazkodom az esetleges változásokhoz.',
+  },
+  {
+    strongText: 'Tapasztalat és szakértelem',
+    text: 'Több éves tapasztalattal rendelkezem az esküvői DJ-zés terén, és folyamatosan képezem magam, hogy a legújabb trendeknek megfelelő szolgáltatást nyújthassak.',
+  },
+  {
+    strongText: 'Kreativitás és egyediség',
+    text: 'Minden esküvő egyedi, és én is így közelítem meg őket. Kreatív megoldásokat kínálok, hogy a ti nagy napotok igazán emlékezetes legyen.',
+  },
+  {
+    strongText: 'Stresszmentes tervezés',
+    text: 'Leveszem a vállatokról a zenei tervezés terhét, így teljes mértékben a pillanatra koncentrálhattok.',
+  },
+];
+
 export const accordionEventsText = [
   {
     question: 'Adhatok le kívánságlistát?',

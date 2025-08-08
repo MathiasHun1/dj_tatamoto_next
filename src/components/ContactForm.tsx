@@ -7,18 +7,20 @@ import { useState } from 'react';
 interface FormData {
   name: string;
   email: string;
+  phone: string;
   subject: string;
   message: string;
-  priceRequest: boolean;
+  // priceRequest: boolean;
 }
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: '',
-    priceRequest: false,
+    // priceRequest: false,
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
@@ -44,7 +46,7 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('idle');
-    setMessage('Sending...');
+    setMessage('Küldés...');
 
     try {
       const response = await fetch('/api/contact', {
@@ -65,20 +67,21 @@ export default function ContactForm() {
       setFormData({
         name: '',
         email: '',
+        phone: '',
         subject: '',
         message: '',
-        priceRequest: false,
+        // priceRequest: false,
       });
     } catch (error) {
       console.error(error);
-      setMessage('An error occurred. Please try again.');
+      setMessage('Hiba történt, kérem próbálja újra.');
       setStatus('error');
     }
   };
 
   return (
     <Box sx={{ maxWidth: '600px', margin: '0 auto' }}>
-      <div className="mb-3 bg-primary p-4 rounded-3">
+      <div className="mb-3 bg-secondary p-4 rounded-3 text-black">
         <h2 className="pb-3">Ajánlatkérés</h2>
         <form onSubmit={handleSubmit} className="">
           <div className="mb-3">
@@ -96,13 +99,28 @@ export default function ContactForm() {
           </div>
 
           <div className="mb-3">
+            <label htmlFor="phone" className="form-label mb-0">
+              Telefonszám (opcionális)
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="form-control"
+              placeholder="+36 20 123 4567"
+            />
+          </div>
+
+          <div className="mb-3">
             <label htmlFor="subject" className="form-label mb-0">
               Esemény típusa
             </label>
             <select id="subject" name="subject" value={formData.subject} onChange={handleChange} required className="form-control">
               <option value="">Válassz egy eseményt</option>
-              <option value="wedding">Esküvő</option>
-              <option value="birthday">Rendezvény</option>
+              <option value="esküvő">Esküvő</option>
+              <option value="rendezvény">Rendezvény</option>
             </select>
           </div>
 
@@ -121,7 +139,7 @@ export default function ContactForm() {
             ></textarea>
           </div>
 
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             <input
               type="checkbox"
               id="priceRequest"
@@ -131,13 +149,13 @@ export default function ContactForm() {
               className="form-checkbox"
             />
             <label htmlFor="priceRequest" className="form-label mb-0">
-              I am requesting a price estimate
+              Szeretnék árajánlatot kérni
             </label>
-          </div>
+          </div> */}
 
           <div>
-            <button type="submit" disabled={message === 'Sending...'} className="btn btn-secondary">
-              {message === 'Sending...' ? 'Sending...' : 'Send Message'}
+            <button type="submit" disabled={message === 'Sending...'} className="btn btn-primary">
+              {message === 'Küldés...' ? 'Folyamatban...' : 'Üzenet küldése'}
             </button>
           </div>
 

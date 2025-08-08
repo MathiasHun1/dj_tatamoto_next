@@ -5,7 +5,7 @@ import nodemailer from 'nodemailer';
 export async function POST(request: Request) {
   try {
     // Parse the JSON data from the request body
-    const { name, email, subject, message, priceRequest } = await request.json();
+    const { name, email, phone, subject, message } = await request.json();
 
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
@@ -23,9 +23,9 @@ export async function POST(request: Request) {
       <h1>New Contact Form Submission</h1>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
       <p><strong>Subject:</strong> ${subject}</p>
       <p><strong>Message:</strong> ${message}</p>
-      <p><strong>Price Request:</strong> ${priceRequest ? 'Yes' : 'No'}</p>
     `;
 
     // Send the email
@@ -38,9 +38,9 @@ export async function POST(request: Request) {
     });
 
     // Return a success response
-    return NextResponse.json({ message: 'Message sent successfully!' }, { status: 200 });
+    return NextResponse.json({ message: 'Üzenet sikeresen elküldve!' }, { status: 200 });
   } catch (error) {
     console.error('API Error:', error);
-    return NextResponse.json({ message: 'Error sending message.' }, { status: 500 });
+    return NextResponse.json({ message: 'Hiba történt az üzenet küldésekor.' }, { status: 500 });
   }
 }
