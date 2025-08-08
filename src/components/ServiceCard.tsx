@@ -64,25 +64,9 @@ const ServiceCard = ({ titleText, bodyText, imageURL, pageLink }: ServiceCardPro
             {bodyText}
           </Typography>
           {pageLink && (
-            <ListItem
-              disablePadding
-              component={Link}
-              href={pageLink}
-              sx={{
-                mt: 4,
-                gap: 1,
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-                '&:hover .MuiTypography-root, &:hover .MuiSvgIcon-root': {
-                  color: (theme: Theme) => darken(theme.palette.secondary.main, 0.1),
-                },
-              }}
-            >
-              <Typography variant="body1" color="secondary" sx={{ textDecoration: 'underline' }}>
-                Megnézem
-              </Typography>
-              <ArrowForwardIcon color="secondary" />
-            </ListItem>
+            <div className="btn btn-secondary mt-4">
+              <Link href={pageLink}>Megnézem</Link>
+            </div>
           )}
         </Box>
       </TextSection>

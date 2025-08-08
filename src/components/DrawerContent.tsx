@@ -1,16 +1,12 @@
+'use client';
+
 import React, { useState } from 'react';
-import {
-  Box,
-  Divider,
-  List,
-  ListItemButton,
-  ListItemText,
-  Collapse,
-} from '@mui/material';
+import { Box, Divider, List, ListItemButton, ListItemText, Collapse } from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 type Props = {
   handleDrawerToggle: () => void;
@@ -18,22 +14,22 @@ type Props = {
 
 const DrawerContent = ({ handleDrawerToggle }: Props) => {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   const handleClick = (e: React.SyntheticEvent) => {
     e.stopPropagation();
     setOpen(!open);
   };
 
+  const goToMainPage = () => {
+    router.push('/');
+  };
+
   return (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Box sx={{ py: 2 }}>
-        <Box sx={{ width: '60px', marginInline: 'auto' }}>
-          <Image
-            src="/DJTata_logo_clipped.svg"
-            alt="logo dj tatamoto"
-            width={100}
-            height={100}
-          />
+        <Box sx={{ width: '60px', marginInline: 'auto' }} onClick={goToMainPage}>
+          <Image src="/DJTata_logo_clipped.svg" alt="logo dj tatamoto" width={100} height={100} />
         </Box>
       </Box>
       <Divider />
@@ -56,18 +52,11 @@ const DrawerContent = ({ handleDrawerToggle }: Props) => {
               <ListItemText primary="Esküvő" sx={{ pl: 3 }} />
             </ListItemButton>
 
-            <ListItemButton
-              component={Link}
-              href="/szolgaltatasok/rendezvenydj"
-            >
+            <ListItemButton component={Link} href="/szolgaltatasok/rendezvenydj">
               <ListItemText primary="Rendezvény" sx={{ pl: 3 }} />
             </ListItemButton>
           </List>
         </Collapse>
-
-        <ListItemButton component={Link} href="/galeria">
-          <ListItemText primary="Fotók" />
-        </ListItemButton>
 
         <ListItemButton component={Link} href="/kapcsolat">
           <ListItemText primary="Kapcsolat" />
