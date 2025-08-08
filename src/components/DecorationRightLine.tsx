@@ -10,7 +10,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   position: 'absolute',
   inset: 0,
   bottom: '-1px',
-  clipPath: 'polygon(0 100%, 100% 100%, 100% 90%, 0 70%)',
+  clipPath: 'polygon(0 100%, 100% 100%, 100% 90%, 0 80%)',
   backgroundColor: theme.palette.background.default,
   zIndex: 100,
 }));

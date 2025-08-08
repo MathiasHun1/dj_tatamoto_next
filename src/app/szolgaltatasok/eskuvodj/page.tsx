@@ -13,11 +13,11 @@ import { grey } from '@mui/material/colors';
 import Image from 'next/image';
 import { styled } from '@mui/material';
 import AccordionComponent from '@/components/pages/szolgaltatasok/Accordion';
-import DecorationRightLine from '@/components/DecorationRightLine';
 import Reviews from '@/components/Reviews';
 import ImageGallery from '@/components/ImageGallery';
 import { weddingImages } from '@/shared/imageData';
 import { howIWorkWeddingText, accordionWeddingData } from '@/shared/textData';
+import weddingStockImg from '../../../../public/wedding_stock1.jpg';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -41,8 +41,20 @@ const StyledBox = styled(Box)(({ theme }) => ({
 const page = () => {
   return (
     <>
-      <HeroSection backgroundURL="/hero_wedding.avif" mobileHeight={40} desktopHeight={70} sx={{ '&:after': { opacity: 0.4 } }}>
-        <DecorationRightLine sx={{ display: { xs: 'none', md: 'block' } }} />
+      <HeroSection backgroundURL="/hero_wedding.avif" mobileHeight={100} desktopHeight={100} sx={{ '&:after': { opacity: 0.8 } }}>
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 2,
+            display: 'grid',
+            placeContent: 'center',
+          }}
+        >
+          <Typography component="h1" variant="h1" color="secondary" sx={{ textAlign: 'center' }}>
+            Esküvői DJ Szolgáltatások
+          </Typography>
+        </Box>
       </HeroSection>
       <Container
         maxWidth="lg"
@@ -54,13 +66,40 @@ const page = () => {
           },
         }}
       >
-        <Typography variant="body1" color="text.primary">
-          <Typography component="span" variant="h4" color="primary.light">
-            Gratulálok{''}
-          </Typography>
-          friss eljegyzésedhez! Az esküvő az élet egyik legfontosabb napja, és a tökéletes zene elengedhetetlen ahhoz, hogy a hangulat valóban
-          felejthetetlen legyen! Magam is házas ember lévén, pontosan tudom micsoda kihívás a Nagy Nap megszervezése.
-        </Typography>
+        <Container maxWidth="md" disableGutters sx={{ pt: { xs: 0, md: 12 } }}>
+          <Grid container gap={3}>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Typography variant="body1" color="text.primary">
+                <Typography component="span" variant="h3" color="primary.light">
+                  Gratulálok{' '}
+                </Typography>
+                friss eljegyzésedhez! Az esküvő az élet egyik legfontosabb napja, és a tökéletes zene elengedhetetlen ahhoz, hogy a hangulat valóban
+                felejthetetlen legyen! Magam is házas ember lévén, pontosan tudom micsoda kihívás a Nagy Nap megszervezése.
+              </Typography>
+            </Grid>
+
+            {/*------- Image big screen -------*/}
+            <Grid size={5} sx={{ display: { xs: 'none', md: 'block' } }}>
+              <Image
+                src={weddingStockImg}
+                alt="DJ szolgáltatás"
+                width={500}
+                height={500}
+                style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+              />
+            </Grid>
+          </Grid>
+          {/*------- Image small screen -------*/}
+          <Box component="span" sx={{ display: { xs: 'block', md: 'none' }, mt: 2, mb: 2 }}>
+            <Image
+              src={weddingStockImg}
+              alt="DJ szolgáltatás"
+              width={500}
+              height={500}
+              style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+            />
+          </Box>
+        </Container>
 
         {/*------------ MIÉRT ENGEM ? -----------*/}
 

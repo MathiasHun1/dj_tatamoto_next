@@ -9,6 +9,13 @@ const baseTheme = createTheme();
 const theme = createTheme({
   typography: {
     fontFamily: 'var(--font-roboto)',
+    h1: {
+      fontWeight: 500,
+      fontSize: '2.5rem',
+      [baseTheme.breakpoints.up('sm')]: {
+        fontSize: '3rem', // Font size for 'sm' screens and up
+      },
+    },
     body1: {
       lineHeight: 1.8,
       fontWeight: 200,
