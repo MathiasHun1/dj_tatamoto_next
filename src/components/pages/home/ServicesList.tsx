@@ -1,7 +1,6 @@
 'use client';
 
 import { Box, Typography, Stack, Container } from '@mui/material';
-
 import ServiceCard from '@/components/ServiceCard';
 
 const cards = [
@@ -35,7 +34,7 @@ const ServicesList = () => {
         position: 'relative',
       }}
     >
-      <Stack component="section" sx={{ pb: 0.5 }}>
+      <Stack component="section">
         <Box
           sx={(theme) => ({
             height: `${smallBoxHeight}px`,
@@ -52,12 +51,12 @@ const ServicesList = () => {
             },
           })}
         >
-          <Typography variant="h4" align="center">
+          <Typography component="h2" variant="h4" align="center">
             Szolgáltatásaim
           </Typography>
         </Box>
 
-        <Container maxWidth="xl" data-id="cards-container" sx={{ height: { md: '850px' }, py: { xs: 4, md: 8 } }}>
+        <Container maxWidth="xl" data-id="cards-container" sx={{ height: { md: '850px' }, pb: { xs: 10 }, pt: { xs: 10 } }}>
           <Stack spacing={{ xs: 2, sm: 2, md: 0 }} direction={{ md: 'row' }}>
             {cards.map((card, index) => (
               <Box

@@ -1,11 +1,4 @@
-import {
-  Box,
-  Typography,
-  ListItem,
-  darken,
-  Paper,
-  styled,
-} from '@mui/material';
+import { Box, Typography, ListItem, darken, Paper, styled } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Theme } from '@mui/material';
 import Image from 'next/image';
@@ -50,22 +43,11 @@ const TextSection = styled(Box)({
   alignItems: 'center',
 });
 
-const ServiceCard = ({
-  titleText,
-  bodyText,
-  imageURL,
-  pageLink,
-}: ServiceCardProps) => {
+const ServiceCard = ({ titleText, bodyText, imageURL, pageLink }: ServiceCardProps) => {
   return (
     <ContainingBox sx={{ borderRadius: { md: '16px' } }}>
       <ImageSection>
-        <Image
-          src={imageURL}
-          alt=""
-          width={300}
-          height={500}
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-        />
+        <Image src={imageURL} alt="" width={300} height={500} style={{ objectFit: 'cover', objectPosition: 'center' }} />
       </ImageSection>
       <Overlay />
       <TextSection data-id="card-text-container">
@@ -75,12 +57,7 @@ const ServiceCard = ({
             marginInline: 'auto',
           }}
         >
-          <Typography
-            variant="h5"
-            color="text.secondary"
-            align="left"
-            sx={{ pb: 3 }}
-          >
+          <Typography component="h3" variant="h5" color="text.secondary" align="left" sx={{ pb: 3 }}>
             {titleText}
           </Typography>
           <Typography variant="body1" align="left">
@@ -97,16 +74,11 @@ const ServiceCard = ({
                 alignItems: 'center',
                 justifyContent: 'flex-start',
                 '&:hover .MuiTypography-root, &:hover .MuiSvgIcon-root': {
-                  color: (theme: Theme) =>
-                    darken(theme.palette.secondary.main, 0.1),
+                  color: (theme: Theme) => darken(theme.palette.secondary.main, 0.1),
                 },
               }}
             >
-              <Typography
-                variant="body1"
-                color="secondary"
-                sx={{ textDecoration: 'underline' }}
-              >
+              <Typography variant="body1" color="secondary" sx={{ textDecoration: 'underline' }}>
                 Megnézem
               </Typography>
               <ArrowForwardIcon color="secondary" />

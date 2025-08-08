@@ -1,5 +1,3 @@
-'use client';
-
 import { Box, Container, Stack, Typography } from '@mui/material';
 import HeroSection from '@/components/HeroSection';
 import Logo from '@/components/Logo';
@@ -30,20 +28,47 @@ export default function Home() {
         >
           <Logo sx={{ width: { xs: '250px', md: '400px' } }} />
 
-          <Typography variant="h4" color="secondary" sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}>
-            ESKÜVŐ DJ
+          <Typography component="h1" variant="h4" color="secondary" sx={{ textAlign: 'center', display: { xs: 'none', md: 'block' } }}>
+            <span style={{ display: 'inline-block', marginBottom: '8px' }}>ESKÜVŐ DJ - RENDEZVÉNY DJ</span>
+            <br />
+            <span style={{ display: 'inline-block', marginBottom: '8px' }}>BUDAPESTEN</span>
+            <br />
+            <span>ORSZÁGOSAN</span>
           </Typography>
 
-          <Typography variant="h4" color="secondary" sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}>
-            RENDEZVÉNY DJ
-          </Typography>
-
-          <Typography variant="h4" color="secondary" sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}>
-            BUDAPESTEN
-          </Typography>
-
-          <Typography variant="h4" color="secondary" sx={{ fontWeight: 'bold', fontSize: { xs: '24px' } }}>
-            ORSZÁGOSAN
+          <Typography component="h1" variant="h4" color="secondary" sx={{ textAlign: 'center', display: { xs: 'block', md: 'none' } }}>
+            <Typography
+              component="span"
+              variant="h4"
+              color="secondary"
+              sx={{ fontWeight: 'bold', fontSize: { xs: '24px' }, display: 'block', pb: 2.5 }}
+            >
+              ESKÜVŐ DJ
+            </Typography>
+            <Typography
+              component="span"
+              variant="h4"
+              color="secondary"
+              sx={{ fontWeight: 'bold', fontSize: { xs: '24px' }, display: 'block', pb: 2.5 }}
+            >
+              RENDEZVÉNY DJ
+            </Typography>
+            <Typography
+              component="span"
+              variant="h4"
+              color="secondary"
+              sx={{ fontWeight: 'bold', fontSize: { xs: '24px' }, display: 'block', pb: 2.5 }}
+            >
+              BUDAPESTEN
+            </Typography>
+            <Typography
+              component="span"
+              variant="h4"
+              color="secondary"
+              sx={{ fontWeight: 'bold', fontSize: { xs: '24px' }, display: 'block', pb: 2.5 }}
+            >
+              ORSZÁGOSAN
+            </Typography>
           </Typography>
         </Stack>
         {/* <DecorLine /> */}
@@ -55,17 +80,23 @@ export default function Home() {
 
       {/*------------ MIERT ENGEM --------------*/}
       <Container maxWidth="lg" sx={{ position: 'relative', backgroundColor: grey[900] }}>
-        <Box component="section" sx={{ pt: 8 }}>
+        <Box component="section" sx={{ pt: 0 }}>
           <WhyMeList />
         </Box>
       </Container>
 
       {/*------------ GALERIA --------------*/}
-      <Box sx={{ pt: 0, pb: { xs: 4, md: 12 }, px: { xs: 2, md: 4 }, backgroundColor: grey[900] }}>
+      <Typography component="h2" variant="h4" align="center" sx={{ pb: 4, textTransform: 'uppercase' }}>
+        Néhány kép az eseményeimről
+      </Typography>
+      <Container maxWidth="lg" sx={{ pt: 0, pb: { xs: 12, md: 12 }, px: { xs: 2, md: 4 }, backgroundColor: grey[900] }}>
         <ImageGallery images={mainPageImages} />
-      </Box>
+      </Container>
 
       {/*------------ Vélemények --------------*/}
+      <Typography component="h2" variant="h4" align="center" sx={{ pb: 3, textTransform: 'uppercase' }}>
+        Rólam írták..
+      </Typography>
       <Reviews />
     </>
   );

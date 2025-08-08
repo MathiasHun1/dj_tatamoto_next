@@ -28,11 +28,11 @@ const cards = [
 
 const WhyMeList = () => {
   return (
-    <Stack component="ul" spacing={3} sx={{ pb: 10 }}>
-      <Typography variant="h4" align="center" sx={{ textTransform: 'uppercase', pb: 4 }}>
+    <Stack component="ul" sx={{ pb: 10, pl: 0, mb: 0 }}>
+      <Typography component="h2" variant="h4" align="center" sx={{ textTransform: 'uppercase', pb: 4 }}>
         Miért érdemes engem választanod?
       </Typography>
-      <Grid container spacing={4}>
+      <Grid container spacing={4} sx={{ mt: 0 }}>
         {cards.map((card, index) => (
           <Grid key={index} size={{ xs: 12, md: 6 }} offset={{ md: index === 4 ? 3 : 0 }}>
             <ListItem title={card.title} body={card.body} />
@@ -56,7 +56,7 @@ const ListItem = ({ title, body }: Props) => {
           <CheckIcon color="secondary" fontSize="large" />
         </Box>
         <Box>
-          <Typography variant="h5" sx={{ pb: 1.2 }}>
+          <Typography component="h3" variant="h5" sx={{ pb: 1.2 }}>
             {title}
           </Typography>
           <Typography variant="body1">{body}</Typography>
