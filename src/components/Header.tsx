@@ -37,6 +37,21 @@ const containerVariants = {
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { isHidden } = useHideAnimation();
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const [navTabValue, setNavTabValue] = useState(0);
+  const open = Boolean(anchorEl);
+
+  const handleOpen = (e: React.SyntheticEvent) => {
+    setAnchorEl(e.target as HTMLButtonElement);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handlePathChange = (_event: React.SyntheticEvent, newValue: number) => {
+    setNavTabValue(newValue);
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -91,16 +106,55 @@ export default function Header() {
                   pt: 2,
                 }}
               >
-                <Box sx={{ width: '160px' }}>
-                  <Image src="/tataLogo.svg" alt="dj tataMoto logo" width={200} height={100} />
+                {/* Logo */}
+                <Box sx={{ width: '70px' }} onClick={() => setNavTabValue(0)}>
+                  <Link href="/">
+                    <Image src="/DJTata_logo_clipped.svg" alt="logo dj tatamoto" width={100} height={100} />
+                  </Link>
                 </Box>
               </Box>
 
-              <HeaderTabs />
+              {/* Navigation links desktop*/}
+              <Tabs
+                value={navTabValue}
+                onChange={(e, value) => handlePathChange(e, value)}
+                role="navigation"
+                sx={{
+                  display: { xs: 'none', md: 'block' },
+                  '& .MuiTab-root': {
+                    color: (theme) => theme.palette.text.primary,
+                  },
+                  '& .MuiTab-root.Mui-selected': {
+                    color: (theme) => theme.palette.secondary.light,
+                  },
+                }}
+              >
+                <Tab component={Link} href="/" label="Kezdőlap" />
+
+                <Tab component={Link} href="/bemutatkozas" label="Bemutatkozás" />
+
+                <Tab label="Szolgáltatások" onClick={handleOpen} />
+
+                <Tab component={Link} href="/kapcsolat" label="Kapcsolat" />
+              </Tabs>
+              <Menu open={open} anchorEl={anchorEl} onClose={handleClose}>
+                <MenuItem>
+                  <Link href="/szolgaltatasok/eskuvodj" onClick={handleClose}>
+                    Esküvő
+                  </Link>
+                </MenuItem>
+
+                <MenuItem>
+                  <Link href="/szolgaltatasok/rendezvenydj" onClick={handleClose}>
+                    Rendezvény
+                  </Link>
+                </MenuItem>
+              </Menu>
             </Toolbar>
           </Container>
         </AppBar>
 
+        {/* Navigation links mobile */}
         <Drawer
           component="nav"
           variant="temporary"
@@ -143,61 +197,3 @@ export default function Header() {
     </>
   );
 }
-
-const HeaderTabs = () => {
-  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
-  const open = Boolean(anchorEl);
-  const [value, setValue] = useState(0);
-
-  const handleOpen = (e: React.SyntheticEvent) => {
-    setAnchorEl(e.target as HTMLButtonElement);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
-
-  return (
-    <>
-      <Tabs
-        value={value}
-        onChange={(e, value) => handleChange(e, value)}
-        role="navigation"
-        sx={{
-          display: { xs: 'none', md: 'block' },
-          '& .MuiTab-root': {
-            color: (theme) => theme.palette.text.primary,
-          },
-          '& .MuiTab-root.Mui-selected': {
-            color: (theme) => theme.palette.secondary.light,
-          },
-        }}
-      >
-        <Tab component={Link} href="/" label="Kezdőlap" />
-
-        <Tab component={Link} href="/bemutatkozas" label="Bemutatkozás" />
-
-        <Tab label="Szolgáltatások" onClick={handleOpen} />
-
-        <Tab component={Link} href="/kapcsolat" label="Kapcsolat" />
-      </Tabs>
-      <Menu open={open} anchorEl={anchorEl} onClose={handleClose}>
-        <MenuItem>
-          <Link href="/szolgaltatasok/eskuvodj" onClick={handleClose}>
-            Esküvő
-          </Link>
-        </MenuItem>
-
-        <MenuItem>
-          <Link href="/szolgaltatasok/rendezvenydj" onClick={handleClose}>
-            Rendezvény
-          </Link>
-        </MenuItem>
-      </Menu>
-    </>
-  );
-};
