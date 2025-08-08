@@ -10,7 +10,7 @@ const Reviews = dynamic(
     const publicKey = 'fc9078bc-e5a6-4293-b229-1265ca76f40f';
 
     return Promise.resolve(() => (
-      <Box sx={{ mb: 10 }}>
+      <Box>
         <ReactGoogleReviews
           layout="carousel"
           featurableId={publicKey}

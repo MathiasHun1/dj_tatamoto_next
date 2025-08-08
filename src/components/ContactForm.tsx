@@ -80,8 +80,8 @@ export default function ContactForm() {
   };
 
   return (
-    <Box sx={{ maxWidth: '600px', margin: '0 auto' }}>
-      <div className="mb-3 bg-secondary p-4 rounded-3 text-black">
+    <Box sx={{ width: '100%', maxWidth: '600px', margin: '0 auto' }}>
+      <div id="contact-form" className="mb-3 bg-secondary p-4 rounded-3 text-black">
         <h2 className="pb-3">Ajánlatkérés</h2>
         <form onSubmit={handleSubmit} className="">
           <div className="mb-3">

@@ -1,25 +1,17 @@
 'use client';
-
-import {
-  Container,
-  Typography,
-  List,
-  ListSubheader,
-  ListItem,
-  Divider,
-  Box,
-  Stack,
-} from '@mui/material';
+import { Container, Typography, List, ListSubheader, ListItem, Divider, Box, Stack } from '@mui/material';
 import { styled } from '@mui/material';
 import { grey, deepPurple } from '@mui/material/colors';
 import MailIcon from '@mui/icons-material/Mail';
 import PhoneIcon from '@mui/icons-material/Phone';
 import HomeIcon from '@mui/icons-material/Home';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import theme from '@/theme';
 import DecorSeparatorLine from './DecorSeparatorLine';
 import SocialIcons from './SocialIcons';
+import ContactForm from './ContactForm';
 
 const SubHeader = styled(ListSubheader)({
   backgroundColor: 'inherit',
@@ -41,6 +33,8 @@ const SyledList = styled(List)(({ theme }) => ({
 }));
 
 const Footer = () => {
+  const pathName = usePathname();
+
   return (
     <Box
       component="footer"
@@ -77,62 +71,30 @@ const Footer = () => {
                   href="https://www.google.com/maps/place/Djtatamoto/@47.4303017,19.1140728,17z/data=!4m14!1m7!3m6!1s0x4741dd7eb9e549bd:0x9ac5b4c196c7bda4!2sDjtatamoto!8m2!3d47.4302982!4d19.1189437!16s%2Fg%2F11x842q0q3!3m5!1s0x4741dd7eb9e549bd:0x9ac5b4c196c7bda4!8m2!3d47.4302982!4d19.1189437!16s%2Fg%2F11x842q0q3?hl=hu&entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                 >
-                  <LightText variant="body2">
-                    1201 Budapest Szondi utca 11
-                  </LightText>
+                  <LightText variant="body2">1201 Budapest Szondi utca 11</LightText>
                 </Link>
               </ListItem>
-              <Divider
-                variant="fullWidth"
-                sx={{ my: 2, display: { md: 'none' } }}
-              />
+              <Divider variant="fullWidth" sx={{ my: 2, display: { md: 'none' } }} />
             </SyledList>
             {/*---------    PARTNERS   ------------*/}
             <SyledList>
               <SubHeader>PARTNEREIM</SubHeader>
-              <ListItem
-                disableGutters
-                component="a"
-                href="https://www.facebook.com/ballaszilardceremoniamester"
-                target="_blank"
-              >
-                <LightText
-                  variant="body2"
-                  sx={{ '&:hover': { color: 'white' } }}
-                >
+              <ListItem disableGutters component="a" href="https://www.facebook.com/ballaszilardceremoniamester" target="_blank">
+                <LightText variant="body2" sx={{ '&:hover': { color: 'white' } }}>
                   Balla Szilárd - ceremóniamester
                 </LightText>
               </ListItem>
-              <ListItem
-                disableGutters
-                component="a"
-                href="https://www.borostyanvendeghaz-matraderecske.hu/"
-                target="_blank"
-              >
-                <LightText
-                  variant="body2"
-                  sx={{ '&:hover': { color: 'white' } }}
-                >
+              <ListItem disableGutters component="a" href="https://www.borostyanvendeghaz-matraderecske.hu/" target="_blank">
+                <LightText variant="body2" sx={{ '&:hover': { color: 'white' } }}>
                   Borostyán vendégház - Mátraderecske
                 </LightText>
               </ListItem>
-              <ListItem
-                disableGutters
-                component="a"
-                href="https://masszazsbarlang.hu/"
-                target="_blank"
-              >
-                <LightText
-                  variant="body2"
-                  sx={{ '&:hover': { color: 'white' } }}
-                >
+              <ListItem disableGutters component="a" href="https://masszazsbarlang.hu/" target="_blank">
+                <LightText variant="body2" sx={{ '&:hover': { color: 'white' } }}>
                   Andi masszázs - masszázsbarlang
                 </LightText>
               </ListItem>
-              <Divider
-                variant="fullWidth"
-                sx={{ my: 2, display: { md: 'none' } }}
-              />
+              <Divider variant="fullWidth" sx={{ my: 2, display: { md: 'none' } }} />
             </SyledList>
             {/*---------------   INFO   -------------*/}
             <SyledList>
@@ -144,13 +106,13 @@ const Footer = () => {
                 <LightText variant="body2">Esküvő Dj - Rendezvény Dj</LightText>
               </ListItem>
               <ListItem disableGutters>
-                <LightText variant="body2">
-                  Magyari László EV - DjTataMoto
-                </LightText>
+                <LightText variant="body2">Magyari László EV - DjTataMoto</LightText>
               </ListItem>
             </SyledList>
           </Box>
           <SocialIcons />
+          {/* Render the contact form */}
+          {pathName !== '/kapcsolat' && <ContactForm />}
           <Typography variant="body2" color="divider" align="center" sx={{}}>
             © {new Date().getFullYear()} - Minden jog fenntartva!
           </Typography>

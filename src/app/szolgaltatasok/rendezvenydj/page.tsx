@@ -16,6 +16,7 @@ import HeroSection from '@/components/HeroSection';
 import DecorationLeftLine from '@/components/DecorationLeftLine';
 import AccordionComponent from '@/components/pages/szolgaltatasok/Accordion';
 import { accordionEventsText, howIWorkWeddingText } from '@/shared/textData';
+import CtaButton from '@/components/CtaButton';
 
 const page = () => {
   return (
@@ -89,11 +90,18 @@ const page = () => {
               {/*------- Image big screen -------*/}
               <Grid size={5} sx={{ display: { xs: 'none', md: 'block' } }}>
                 <Image src={eventImg} alt="DJ szolgáltatás" width={500} height={500} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+                <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', pt: 4 }}>
+                  <CtaButton />
+                </Box>
               </Grid>
             </Grid>
+
+            <Box sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: 'center', pt: 4 }}>
+              <CtaButton />
+            </Box>
           </Grid>
 
-          <Grid size={12}>
+          <Grid size={12} sx={{ pb: { xs: 8, md: 12 } }}>
             {/*------------ MIÉRT ENGEM ? -----------*/}
 
             <Box sx={{ pt: { xs: 10, md: 15 } }}>
@@ -143,6 +151,10 @@ const page = () => {
             <Box sx={{ pt: { xs: 5, md: 10 } }}>
               <Reviews />
             </Box>
+
+            <Box sx={{ display: 'flex', justifyContent: 'center', pt: 0 }}>
+              <CtaButton />
+            </Box>
           </Grid>
 
           {/*------------ HOGYAN DOLGOZOM  -----------*/}
@@ -168,6 +180,9 @@ const page = () => {
             {/*------------ GALERIA --------------*/}
             <Box sx={{ backgroundColor: grey[900] }}>
               <ImageGallery images={eventImages} />
+            </Box>
+            <Box sx={{ display: 'flex', justifyContent: 'center', pt: 4 }}>
+              <CtaButton />
             </Box>
           </Container>
 

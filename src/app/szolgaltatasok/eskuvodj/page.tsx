@@ -18,6 +18,7 @@ import ImageGallery from '@/components/ImageGallery';
 import { weddingImages } from '@/shared/imageData';
 import { howIWorkWeddingText, accordionWeddingData, whyMeWeddingText } from '@/shared/textData';
 import weddingStockImg from '../../../../public/wedding_stock1.jpg';
+import CtaButton from '@/components/CtaButton';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -99,6 +100,9 @@ const page = () => {
               style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
             />
           </Box>
+          <Box sx={{ width: { xs: '100%', md: 'auto' }, display: { xs: 'flex', md: 'block' }, justifyContent: { xs: 'center' } }}>
+            <CtaButton />
+          </Box>
         </Container>
 
         {/*------------ MIÉRT ENGEM ? -----------*/}
@@ -128,6 +132,10 @@ const page = () => {
       </Container>
 
       <Reviews />
+
+      <Box sx={{ display: 'flex', justifyContent: 'center', pb: { xs: 8, md: 8 } }}>
+        <CtaButton />
+      </Box>
 
       {/*------------ HOGYAN DOLGOZOM  -----------*/}
 
@@ -161,6 +169,10 @@ const page = () => {
           <ImageGallery images={weddingImages} />
         </Box>
       </Container>
+
+      <Box sx={{ display: 'flex', justifyContent: 'center', pb: { xs: 8, md: 8 } }}>
+        <CtaButton />
+      </Box>
 
       {/*------------ GYIK -----------*/}
       <Container maxWidth="lg" sx={{ pt: { xs: 4, md: 6 }, pb: 15 }}>
