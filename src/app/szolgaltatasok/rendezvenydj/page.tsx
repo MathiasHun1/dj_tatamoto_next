@@ -15,7 +15,7 @@ import HeroSection from '@/components/HeroSection';
 // import EventContent from '@/components/pages/szolgaltatasok/EventContent';
 import DecorationLeftLine from '@/components/DecorationLeftLine';
 import AccordionComponent from '@/components/pages/szolgaltatasok/Accordion';
-import { accordionEventsText, howIWorkWeddingText, whyMeWeddingText } from '@/shared/textData';
+import { accordionEventsText, whyMeEventsText, howIWorkEventsText } from '@/shared/textData';
 import CtaButton from '@/components/CtaButton';
 
 const page = () => {
@@ -118,7 +118,7 @@ const page = () => {
                   },
                 }}
               >
-                {whyMeWeddingText.map((item, index) => (
+                {whyMeEventsText.map((item, index) => (
                   <ListItem disableGutters sx={{ pt: 0, alignItems: 'flex-start' }} key={index}>
                     <CircleIcon sx={{ width: '12px', mt: 0.5, mr: 2 }} fontSize="small" />
                     <Typography variant="body1" color="text.primary">
@@ -146,7 +146,7 @@ const page = () => {
               </Typography>
               <Box component="ol" sx={{ pl: 2.5 }}>
                 <Stack spacing={{ xs: 2, md: 3 }}>
-                  {howIWorkWeddingText.map((item, index) => (
+                  {howIWorkEventsText.map((item, index) => (
                     <li key={index}>
                       <Typography variant="body1" color="text.primary">
                         <strong>{item.strongText}</strong>: {item.text}
