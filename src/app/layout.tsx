@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   title: 'Dj Tatamoto - esküvő - rendezvény',
   description: 'Profi Dj esküvőre, rendezvényre, céges bulira, privát bulira',
   keywords: 'dj, eskuvo dj, rendezveny dj',
+
   robots: {
     index: true, // allow indexing
     follow: true, // allow following links
@@ -59,6 +60,7 @@ export default function RootLayout({
             __html: JSON.stringify(jsonLD),
           }}
         />
+        <link rel="icon" href="/DJTata_logo_clipped.svg" type="image/x-icon" sizes="any" />
       </head>
 
       <body>
