@@ -6,7 +6,7 @@ import theme from '../theme';
 import type { Metadata } from 'next';
 import './globals.scss';
 import { jsonLD } from '@/jsonLD';
-// import Script from 'next/script';
+import Script from 'next/script';
 
 import Box from '@mui/material/Box';
 import Header from '@/components/Header';
@@ -60,6 +60,7 @@ export default function RootLayout({
           }}
         />
       </head>
+
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
@@ -69,6 +70,21 @@ export default function RootLayout({
             <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
+
+        <Script id="cookieyes" src="https://cdn-cookieyes.com/client_data/9fdf0b420c114cd8c060c3aa/script.js" strategy="beforeInteractive" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-F2LEWZGS9T" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied'
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-F2LEWZGS9T', { 'anonymize_ip': true });
+      `}
+        </Script>
       </body>
     </html>
   );
