@@ -6,6 +6,7 @@ import theme from '../theme';
 import type { Metadata } from 'next';
 import './globals.scss';
 import { jsonLD } from '@/jsonLD';
+// import Script from 'next/script';
 
 import Box from '@mui/material/Box';
 import Header from '@/components/Header';
