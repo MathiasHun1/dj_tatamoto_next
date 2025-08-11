@@ -101,7 +101,7 @@ const page = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }} sx={{ display: 'flex', justifyContent: { xs: 'start' }, pt: 4 }}>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'start' }, pt: 4 }}>
             <CtaButton />
           </Grid>
 
