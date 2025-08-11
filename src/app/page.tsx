@@ -13,7 +13,7 @@ import { mainPageImages } from '@/shared/imageData';
 export default function Home() {
   return (
     <>
-      <HeroSection backgroundURL="/hero2.jpg" mobileHeight={100} desktopHeight={100}>
+      <HeroSection backgroundURL="/hero2.jpg" mobileHeight={65} desktopHeight={65}>
         <Stack
           data-id="stackElement"
           direction="column"

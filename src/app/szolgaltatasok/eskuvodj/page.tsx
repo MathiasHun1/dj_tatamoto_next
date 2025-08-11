@@ -42,7 +42,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
 const page = () => {
   return (
     <>
-      <HeroSection backgroundURL="/hero_wedding.avif" mobileHeight={100} desktopHeight={100} sx={{ '&:after': { opacity: 0.8 } }}>
+      <HeroSection backgroundURL="/hero_wedding.jpg" mobileHeight={50} desktopHeight={65} sx={{ '&:after': { opacity: 0.8 } }}>
         <Box
           sx={{
             position: 'absolute',

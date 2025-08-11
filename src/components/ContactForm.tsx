@@ -1,29 +1,30 @@
-'use client'; // This directive marks the component as a Client Component
+'use client';
 
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-// Define the type for the form data
 interface FormData {
   name: string;
   email: string;
   phone: string;
   subject: string;
   message: string;
-  // priceRequest: boolean;
 }
 
 export default function ContactForm() {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     phone: '',
     subject: '',
     message: '',
-    // priceRequest: false,
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+  const [termsAccepted, setTermsAccepted] = useState(false);
 
   // Handle input changes for all form fields
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -45,6 +46,11 @@ export default function ContactForm() {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!checkTermsAccepted()) {
+      return;
+    }
+
     setStatus('idle');
     setMessage('Küldés...');
 
@@ -72,11 +78,37 @@ export default function ContactForm() {
         message: '',
         // priceRequest: false,
       });
+
+      sessionStorage.setItem('formSuccess', 'true');
+      router.push('/koszonjuk'); // Redirect to thank you page
     } catch (error) {
       console.error(error);
       setMessage('Hiba történt, kérem próbálja újra.');
       setStatus('error');
     }
+  };
+
+  // Check if terms are accepted
+  const checkTermsAccepted = () => {
+    if (!termsAccepted) {
+      setMessage('Kérjük, fogadja el az adatvédelmi nyilatkozatot.');
+      setStatus('error');
+      return false;
+    }
+    return true;
+  };
+
+  // Handle terms acceptance change
+  const termsAcceptionChange = () => {
+    if (termsAccepted) {
+      setMessage('Kérjük, fogadja el az adatvédelmi nyilatkozatot.');
+      setStatus('error');
+    } else {
+      setMessage('');
+      setStatus('idle');
+    }
+
+    setTermsAccepted(!termsAccepted);
   };
 
   return (
@@ -139,28 +171,33 @@ export default function ContactForm() {
             ></textarea>
           </div>
 
-          {/* <div className="flex items-center">
+          <div className="flex items-center">
             <input
               type="checkbox"
               id="priceRequest"
               name="priceRequest"
-              checked={formData.priceRequest}
-              onChange={handleChange}
+              checked={termsAccepted}
+              onChange={termsAcceptionChange}
               className="form-checkbox"
             />
-            <label htmlFor="priceRequest" className="form-label mb-0">
-              Szeretnék árajánlatot kérni
+            <label htmlFor="priceRequest" className="form-label mb-0 ps-2">
+              Elfogadom az{' '}
+              <Link href="/adatvedelem" className="text-primary">
+                Adatvédelmi Nyilatkozat-ban foglaltakat
+              </Link>
             </label>
-          </div> */}
+          </div>
+
+          <Typography variant="body2" color="initial" sx={{ pb: 1 }}>
+            {message && status === 'success' && <span className="">{message}</span>}
+            {message && status === 'error' && <span className="">{message}</span>}
+          </Typography>
 
           <div>
             <button type="submit" disabled={message === 'Sending...'} className="btn btn-primary">
               {message === 'Küldés...' ? 'Folyamatban...' : 'Üzenet küldése'}
             </button>
           </div>
-
-          {message && status === 'success' && <p className="">{message}</p>}
-          {message && status === 'error' && <p className="">{message}</p>}
         </form>
       </div>
     </Box>

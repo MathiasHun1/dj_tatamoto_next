@@ -5,7 +5,7 @@ import ContactForm from '@/components/ContactForm';
 
 const page = () => {
   return (
-    <Container sx={{ pt: { xs: 20, md: 30 }, pb: { xs: 10, md: 16 }, minHeight: '100vh' }}>
+    <Container sx={{ pt: { xs: 20, md: 30 } }}>
       <List sx={{ width: 'fit-content', marginInline: 'auto' }}>
         <Typography component="h1" variant="h3" color="text.secondary" textAlign="center" sx={{ pb: 5 }}>
           Kapcsolat

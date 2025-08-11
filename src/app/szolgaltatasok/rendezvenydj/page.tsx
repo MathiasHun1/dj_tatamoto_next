@@ -21,7 +21,7 @@ import CtaButton from '@/components/CtaButton';
 const page = () => {
   return (
     <>
-      <HeroSection backgroundURL="/event_hero.jpg" mobileHeight={100} desktopHeight={105}>
+      <HeroSection backgroundURL="/event_hero.jpg" mobileHeight={65} desktopHeight={65}>
         <Container sx={{ height: '100%' }}>
           <Stack
             alignItems="center"
