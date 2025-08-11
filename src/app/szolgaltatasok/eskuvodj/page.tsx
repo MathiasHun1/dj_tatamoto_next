@@ -71,7 +71,7 @@ const page = () => {
           <Grid container gap={3}>
             <Grid size={{ xs: 12, md: 6 }}>
               <Typography variant="body1" color="text.primary">
-                <Typography component="span" variant="h3" color="primary.light">
+                <Typography component="span" variant="h4" color="primary.light">
                   Gratulálok{' '}
                 </Typography>
                 friss eljegyzésedhez! Az esküvő az élet egyik legfontosabb napja, és a tökéletes zene elengedhetetlen ahhoz, hogy a hangulat valóban
@@ -108,7 +108,7 @@ const page = () => {
         {/*------------ MIÉRT ENGEM ? -----------*/}
 
         <Box sx={{ pt: { xs: 10, md: 15 } }}>
-          <Typography component="h2" variant="h3" color="primary.light" sx={{ pb: 5 }}>
+          <Typography component="h2" variant="h4" color="primary.light" sx={{ pb: { xs: 4, md: 5 } }}>
             Miért válassz engem az esküvődre?
           </Typography>
           <List
@@ -133,37 +133,64 @@ const page = () => {
 
       <Reviews />
 
-      <Box sx={{ display: 'flex', justifyContent: 'center', pb: { xs: 8, md: 8 } }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', pb: { xs: 8, md: 20 } }}>
         <CtaButton />
       </Box>
 
       {/*------------ HOGYAN DOLGOZOM  -----------*/}
 
-      <Container disableGutters maxWidth="lg">
-        <StyledBox sx={{ mb: 10 }}>
-          <Image src="/wedding_2.avif" alt="" width={500} height={500} priority={true} />
-        </StyledBox>
-      </Container>
       <Container maxWidth="lg">
-        <Box sx={{ pb: { xs: 4, md: 6 } }}>
-          <Typography component="h2" variant="h3" color="primary.light" sx={{ pb: 5 }}>
-            Hogyan dolgozom?
-          </Typography>
-          <Box component="ol" sx={{ pl: 2.5 }}>
-            <Stack spacing={{ xs: 2, md: 3 }}>
-              {howIWorkWeddingText.map((item, index) => (
-                <li key={index}>
-                  <Box color="text.primary">
-                    <Typography component="h3" variant="body1" sx={{ display: 'inline-block', fontWeight: 'bold', textDecoration: 'underline' }}>
-                      {item.strongText}
-                    </Typography>
-                    : {item.text}
-                  </Box>
-                </li>
-              ))}
-            </Stack>
-          </Box>
-        </Box>
+        <Typography component="h2" variant="h4" color="primary.light" sx={{ pb: { xs: 4 } }}>
+          Hogyan dolgozom?
+        </Typography>
+        <Grid container spacing={3} sx={{ mb: { xs: 6, md: 12 } }}>
+          {/*Image for mobile */}
+          <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: 'block', md: 'none' }, pb: 3 }}>
+            <Box sx={{ borderRadius: '8px', overflow: 'hidden', height: '100%' }}>
+              <Image
+                src="/wedding_2.avif"
+                alt=""
+                width={500}
+                height={500}
+                priority={true}
+                style={{ height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+              />
+            </Box>
+          </Grid>
+
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box sx={{}}>
+              <Box component="ol" sx={{ pl: 2.5 }}>
+                <Stack spacing={{ xs: 2, md: 3 }}>
+                  {howIWorkWeddingText.map((item, index) => (
+                    <li key={index}>
+                      <Box color="text.primary">
+                        <Typography component="h3" variant="body1" sx={{ display: 'inline-block', fontWeight: 'bold', textDecoration: 'underline' }}>
+                          {item.strongText}
+                        </Typography>
+                        : {item.text}
+                      </Box>
+                    </li>
+                  ))}
+                </Stack>
+              </Box>
+            </Box>
+          </Grid>
+
+          {/*Image for desktop */}
+          <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: 'none', md: 'block' } }}>
+            <Box sx={{ borderRadius: '8px', overflow: 'hidden', height: '100%' }}>
+              <Image
+                src="/wedding_2.avif"
+                alt=""
+                width={500}
+                height={500}
+                priority={true}
+                style={{ height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+              />
+            </Box>
+          </Grid>
+        </Grid>
         {/*------------ GALERIA --------------*/}
         <Box sx={{ pb: { xs: 4, md: 12 }, backgroundColor: grey[900] }}>
           <ImageGallery images={weddingImages} />

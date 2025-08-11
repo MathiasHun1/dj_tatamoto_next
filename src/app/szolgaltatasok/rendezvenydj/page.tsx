@@ -63,7 +63,7 @@ const page = () => {
           spacing={{ xs: 0 }}
         >
           <Grid size={12} offset={{ md: 0 }} sx={{ zIndex: 10 }}>
-            <Grid container gap={3}>
+            <Grid container spacing={4}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography component="h2" variant="h4" color="text.secondary" sx={{ pb: 2 }}>
                   Profi DJ szolgáltatás minden eseményre
@@ -73,7 +73,7 @@ const page = () => {
                   elérhető dal mellet, az esetlegesen helyszínen felvetődő kívánságokat is be tudom szerezni azonnal. Mindenki megtalálja a kedvére
                   való zenét, a legkisebbektől a legidősebbekig. A zenei felhozatal mellett a látványos fénytechnikával, füstgéppel gondoskodom arról,
                   hogy a hangulat felejthetetlen legyen.
-                  {/*------- Image small screen -------*/}
+                  {/*Image small screen */}
                   <Box component="span" sx={{ display: { xs: 'block', md: 'none' }, mt: 2, mb: 2 }}>
                     <Image
                       src={eventImg}
@@ -89,18 +89,20 @@ const page = () => {
                 </Typography>
               </Grid>
 
-              {/*------- Image big screen -------*/}
-              <Grid size={5} sx={{ display: { xs: 'none', md: 'block' } }}>
-                <Image src={eventImg} alt="DJ szolgáltatás" width={500} height={500} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
-                <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', pt: 4 }}>
-                  <CtaButton />
-                </Box>
+              {/*Image big screen */}
+              <Grid size={6} sx={{ display: { xs: 'none', md: 'block' } }}>
+                <Image
+                  src={eventImg}
+                  alt="DJ szolgáltatás"
+                  width={500}
+                  height={500}
+                  style={{ width: '100%', height: '100%', borderRadius: '8px', objectFit: 'cover' }}
+                />
               </Grid>
             </Grid>
-
-            <Box sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: 'center', pt: 4 }}>
-              <CtaButton />
-            </Box>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ display: 'flex', justifyContent: { xs: 'center' }, pt: 4 }}>
+            <CtaButton />
           </Grid>
 
           <Grid size={12} sx={{ pb: { xs: 8, md: 12 } }}>
