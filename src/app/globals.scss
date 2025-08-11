@@ -129,4 +129,8 @@ strong {
   & svg {
     fill: white !important;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
