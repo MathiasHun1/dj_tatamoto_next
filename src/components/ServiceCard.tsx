@@ -37,6 +37,7 @@ const TextSection = styled(Box)({
   right: '40%',
   backdropFilter: 'blur(5px)',
   padding: '32px',
+  paddingBottom: '64px',
   display: 'flex',
   alignItems: 'center',
 });
@@ -51,20 +52,27 @@ const ServiceCard = ({ titleText, bodyText, imageURL, pageLink }: ServiceCardPro
       <TextSection data-id="card-text-container">
         <Box
           sx={{
-            maxWidth: '12ch',
+            maxWidth: '16ch',
             marginInline: 'auto',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
           }}
         >
-          <Typography component="h3" variant="h5" color="text.secondary" align="left" sx={{ pb: 3 }}>
-            {titleText}
-          </Typography>
-          <Typography variant="body1" align="left">
-            {bodyText}
-          </Typography>
+          <Box>
+            <Typography component="h3" variant="h5" color="text.secondary" align="left" sx={{ pb: 3 }}>
+              {titleText}
+            </Typography>
+            <Typography variant="body1" align="left">
+              {bodyText}
+            </Typography>
+          </Box>
           {pageLink && (
-            <div className="btn btn-secondary mt-4">
+            <Box className="btn btn-secondary mt-4" sx={{ alignSelf: 'start' }}>
               <Link href={pageLink}>Megnézem</Link>
-            </div>
+            </Box>
           )}
         </Box>
       </TextSection>
