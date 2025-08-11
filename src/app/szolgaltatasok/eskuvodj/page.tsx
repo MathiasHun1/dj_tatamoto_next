@@ -176,7 +176,7 @@ const page = () => {
 
       {/*------------ GYIK -----------*/}
       <Container maxWidth="lg" sx={{ pt: { xs: 4, md: 6 }, pb: 15 }}>
-        <Typography variant="h4" color="primary.light" sx={{ pb: { xs: 4, md: 6 } }}>
+        <Typography component="h2" variant="h4" color="primary.light" sx={{ pb: { xs: 4, md: 6 } }}>
           Gyakran ismételt kérdések
         </Typography>
 
