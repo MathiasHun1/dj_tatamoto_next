@@ -19,6 +19,7 @@ import { weddingImages } from '@/shared/imageData';
 import { howIWorkWeddingText, accordionWeddingData, whyMeWeddingText } from '@/shared/textData';
 import weddingStockImg from '../../../../public/wedding_stock1.jpg';
 import CtaButton from '@/components/CtaButton';
+import ContactForm from '@/components/ContactForm';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -197,9 +198,9 @@ const page = () => {
         </Box>
       </Container>
 
-      <Box sx={{ display: 'flex', justifyContent: 'center', pb: { xs: 8, md: 8 } }}>
-        <CtaButton />
-      </Box>
+      <Container sx={{ pt: 4 }}>
+        <ContactForm />
+      </Container>
 
       {/*------------ GYIK -----------*/}
       <Container maxWidth="lg" sx={{ pt: { xs: 4, md: 6 }, pb: 15 }}>

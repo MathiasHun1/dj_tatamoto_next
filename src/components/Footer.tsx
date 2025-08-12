@@ -39,7 +39,7 @@ const Footer = () => {
     <>
       <Box sx={{ py: 6 }}>
         {/* Render the contact form */}
-        {pathName !== '/kapcsolat' && pathName !== '/koszonjuk' && <ContactForm />}
+        {pathName === '/' || pathName === '/bemutatkozas' ? <ContactForm /> : null}
       </Box>
       <Box
         component="footer"

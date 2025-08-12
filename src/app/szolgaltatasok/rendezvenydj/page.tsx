@@ -17,6 +17,7 @@ import DecorationLeftLine from '@/components/DecorationLeftLine';
 import AccordionComponent from '@/components/pages/szolgaltatasok/Accordion';
 import { accordionEventsText, whyMeEventsText, howIWorkEventsText } from '@/shared/textData';
 import CtaButton from '@/components/CtaButton';
+import ContactForm from '@/components/ContactForm';
 
 const page = () => {
   return (
@@ -163,9 +164,10 @@ const page = () => {
             <Box sx={{ backgroundColor: grey[900] }}>
               <ImageGallery images={eventImages} />
             </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'center', pt: 4 }}>
-              <CtaButton />
-            </Box>
+          </Container>
+
+          <Container disableGutters sx={{ pb: 6 }}>
+            <ContactForm />
           </Container>
 
           {/*------------ GYIK  -----------*/}
