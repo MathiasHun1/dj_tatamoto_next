@@ -7,7 +7,8 @@ import event3 from '../../public/images/gallery/event/event3.jpg';
 import event4 from '../../public/images/gallery/event/event4.jpg';
 import event5 from '../../public/images/gallery/event/event5.jpg';
 import event6 from '../../public/images/gallery/event/event6.jpg';
+import event7 from '../../public/images/gallery/event/event7.jpg';
 
-export const mainPageImages = [wedding1, wedding2, event1, event2, event3, event4, event5, event6];
+export const mainPageImages = [wedding1, wedding2, event1, event2, event3, event4, event5, event6, event7];
 export const weddingImages = [wedding1, wedding2, event1, event2, event3];
-export const eventImages = [event5, event2, event3, event4, event6];
+export const eventImages = [event5, event2, event3, event4, event6, event7];
