@@ -6,7 +6,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 import Image from 'next/image';
 import Reviews from '@/components/Reviews';
 import EventCard from '@/components/EventCard';
-import eventImg from '../../../../public/images/gallery/event/event1.jpg';
+import eventImg from '../../../../public/images/gallery/event/event7.jpg';
 import ImageGallery from '@/components/ImageGallery';
 import { eventImages } from '@/shared/imageData';
 import { grey } from '@mui/material/colors';
