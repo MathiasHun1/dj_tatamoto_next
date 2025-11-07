@@ -130,11 +130,9 @@ export default function Header() {
                 }}
               >
                 <Tab component={Link} href="/" label="Kezdőlap" />
-
                 <Tab component={Link} href="/bemutatkozas" label="Bemutatkozás" />
-
                 <Tab label="Szolgáltatások" onClick={handleOpen} />
-
+                <Tab component={Link} href="/referenciak" label="Referenciáim" />
                 <Tab component={Link} href="/kapcsolat" label="Kapcsolat" />
               </Tabs>
               <Menu open={open} anchorEl={anchorEl} onClose={handleClose}>
