@@ -19,7 +19,7 @@ const ThankYouPage = () => {
       setAllowed(true);
       sessionStorage.removeItem('formSuccess');
     }
-  }, []);
+  }, [router]);
 
   if (!allowed) {
     return null;
