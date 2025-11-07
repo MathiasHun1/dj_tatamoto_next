@@ -58,6 +58,10 @@ const DrawerContent = ({ handleDrawerToggle }: Props) => {
           </List>
         </Collapse>
 
+        <ListItemButton component={Link} href="/referenciak">
+          <ListItemText primary="Referenciáim" />
+        </ListItemButton>
+
         <ListItemButton component={Link} href="/kapcsolat">
           <ListItemText primary="Kapcsolat" />
         </ListItemButton>
