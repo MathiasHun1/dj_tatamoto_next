@@ -12,4 +12,4 @@ import event8 from '../../public/images/gallery/event/event8.jpg';
 
 export const mainPageImages = [event8, wedding1, wedding2, event1, event2, event3, event4, event5, event6, event7];
 export const weddingImages = [wedding1, wedding2, event1, event2, event3];
-export const eventImages = [event5, event2, event3, event4, event6, event7, event8];
+export const eventImages = [event8, event5, event2, event3, event4, event6, event7];
