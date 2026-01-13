@@ -11,6 +11,7 @@ interface FormData {
   phone: string;
   subject: string;
   message: string;
+  place: string
 }
 
 export default function ContactForm() {
@@ -21,6 +22,7 @@ export default function ContactForm() {
     phone: '',
     subject: '',
     message: '',
+    place: ''
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
@@ -76,6 +78,7 @@ export default function ContactForm() {
         phone: '',
         subject: '',
         message: '',
+        place: ''
         // priceRequest: false,
       });
 
@@ -91,7 +94,7 @@ export default function ContactForm() {
   // Check if terms are accepted
   const checkTermsAccepted = () => {
     if (!termsAccepted) {
-      setMessage('Kérjük, fogadja el az adatvédelmi nyilatkozatot.');
+      setMessage('Kérlek fogadd el az adatvédelmi nyilatkozatot.');
       setStatus('error');
       return false;
     }
@@ -101,7 +104,7 @@ export default function ContactForm() {
   // Handle terms acceptance change
   const termsAcceptionChange = () => {
     if (termsAccepted) {
-      setMessage('Kérjük, fogadja el az adatvédelmi nyilatkozatot.');
+      setMessage('Kérlek fogadd el az adatvédelmi nyilatkozatot.');
       setStatus('error');
     } else {
       setMessage('');
@@ -154,6 +157,13 @@ export default function ContactForm() {
               <option value="esküvő">Esküvő</option>
               <option value="rendezvény">Rendezvény</option>
             </select>
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="place" className="form-label mb-0">
+              Esemény helyszíne (település)
+            </label>
+            <input type="text" id="place" name="place" value={formData.place} onChange={handleChange} required className="form-control" />
           </div>
 
           <div className="mb-3">
