@@ -61,9 +61,26 @@ export default function RootLayout({
           }}
         />
         <link rel="icon" href="/DJTata_logo_clipped.svg" type="image/x-icon" sizes="any" />
+        <Script id="fb-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1601443591080405');
+            fbq('track', 'PageView');
+          `}
+        </Script>
       </head>
 
       <body>
+        <noscript><img height="1" width="1" style={{ display: 'none' }}
+        src="https://www.facebook.com/tr?id=1601443591080405&ev=PageView&noscript=1"
+        /></noscript>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -87,6 +104,7 @@ export default function RootLayout({
         gtag('config', 'G-F2LEWZGS9T', { 'anonymize_ip': true });
       `}
         </Script>
+        
       </body>
     </html>
   );
