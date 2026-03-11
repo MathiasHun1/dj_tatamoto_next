@@ -84,9 +84,14 @@ const Footer = () => {
               {/*---------    PARTNERS   ------------*/}
               <SyledList>
                 <SubHeader>PARTNEREIM</SubHeader>
+                <ListItem disableGutters component="a" href="https://www.facebook.com/frechzoltan" target="_blank">
+                  <LightText variant="body2" sx={{ '&:hover': { color: 'white' } }}>
+                    Frech' Zoltán - Ceremóniamester
+                  </LightText>
+                </ListItem>
                 <ListItem disableGutters component="a" href="https://www.facebook.com/ballaszilardceremoniamester" target="_blank">
                   <LightText variant="body2" sx={{ '&:hover': { color: 'white' } }}>
-                    Balla Szilárd - ceremóniamester
+                    Balla Szilárd - Ceremóniamester
                   </LightText>
                 </ListItem>
                 <ListItem disableGutters component="a" href="https://www.borostyanvendeghaz-matraderecske.hu/" target="_blank">
@@ -96,7 +101,7 @@ const Footer = () => {
                 </ListItem>
                 <ListItem disableGutters component="a" href="https://masszazsbarlang.hu/" target="_blank">
                   <LightText variant="body2" sx={{ '&:hover': { color: 'white' } }}>
-                    Andi masszázs - masszázsbarlang
+                    Andi masszázs - Masszázsbarlang
                   </LightText>
                 </ListItem>
                 <Divider variant="fullWidth" sx={{ my: 2, display: { md: 'none' } }} />
